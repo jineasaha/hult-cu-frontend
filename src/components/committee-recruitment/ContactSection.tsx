@@ -2,6 +2,7 @@
 
 import { Check, Copy } from "lucide-react";
 import { useState } from "react";
+import { Reveal } from "../ui/Reveal";
 
 const contacts = [
   {
@@ -151,7 +152,7 @@ export function ContactSection() {
           {/* ========================================================== */}
           {/* HEADER                                                     */}
           {/* ========================================================== */}
-
+          <Reveal delay={0.2} y={28}>
           <div
             className="
               mx-auto
@@ -246,12 +247,14 @@ export function ContactSection() {
             </p>
 
           </div>
+          </Reveal>
 
 
           {/* ========================================================== */}
           {/* CONTACT DIRECTORY                                          */}
           {/* ========================================================== */}
 
+          <Reveal delay={0.2} y={28}>
           <div className="relative mt-12 sm:mt-14 lg:mt-16">
 
             {/* Shared soft glow behind cards */}
@@ -688,7 +691,7 @@ export function ContactSection() {
             </div>
 
           </div>
-
+          </Reveal>
 
           {/* ========================================================== */}
           {/* BOTTOM EDITORIAL NOTE                                     */}

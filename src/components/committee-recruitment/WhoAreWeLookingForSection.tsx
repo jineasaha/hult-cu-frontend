@@ -1,3 +1,5 @@
+import { Reveal } from "../ui/Reveal";
+
 function ArrowUpRight({ className = "" }: { className?: string }) {
   return (
     <svg
@@ -87,6 +89,7 @@ style={{
     {/* TOP LABEL                                                 */}
     {/* ========================================================== */}
 
+    <Reveal delay={0.05} duration={0.65} y={18}>
     <div className="mb-8 flex items-center gap-4 sm:mb-6">
 
       <span className="h-px w-10 bg-[#0B1F3A]/20 sm:w-12" />
@@ -105,6 +108,7 @@ style={{
       </p>
 
     </div>
+    </Reveal>
 
 
     {/* ========================================================== */}
@@ -127,6 +131,7 @@ style={{
       {/* LEFT — HEADING + TAGLINE                               */}
       {/* ======================================================== */}
 
+      <Reveal delay={0.15} duration={0.7} y={22}>
       <div className="relative lg:pt-1">
 
         <h2
@@ -225,12 +230,14 @@ style={{
         </div>
 
       </div>
+      </Reveal>
 
 
       {/* ======================================================== */}
       {/* RIGHT — FROSTED GLASS PANEL                            */}
       {/* ======================================================== */}
 
+      <Reveal delay={0.25} duration={0.75} y={26}>
       <div
         className="
           relative
@@ -606,6 +613,7 @@ style={{
         </div>
 
       </div>
+      </Reveal>
 
     </div>
 
@@ -614,6 +622,7 @@ style={{
     {/* BOTTOM QUALITIES                                          */}
     {/* ========================================================== */}
 
+    <Reveal delay={0.42} duration={0.65} y={18}>
     <div
       className="
         mt-16
@@ -669,6 +678,7 @@ style={{
       </div>
 
     </div>
+    </Reveal>
 
   </div>
 

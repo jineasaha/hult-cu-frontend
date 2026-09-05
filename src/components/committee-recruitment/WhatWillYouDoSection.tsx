@@ -1,3 +1,5 @@
+import { Reveal } from "../ui/Reveal";
+
 const responsibilities = [
   "Promote the Hult Prize across campus",
   "Coordinate with departments and students",
@@ -309,6 +311,7 @@ export function WhatWillYouDoSection() {
     {/* CENTERED HEADER                                            */}
     {/* ========================================================== */}
 
+    <Reveal delay={0.05} duration={0.7} y={22}>
     <div className="mx-auto max-w-[820px] text-center">
 
       {/* Eyebrow */}
@@ -401,12 +404,14 @@ export function WhatWillYouDoSection() {
       </p>
 
     </div>
+    </Reveal>
 
 
     {/* ========================================================== */}
     {/* RESPONSIBILITY FIELD                                      */}
     {/* ========================================================== */}
 
+    <Reveal delay={0.22} duration={0.8} y={28}>
     <div
       className="
         relative
@@ -887,6 +892,7 @@ export function WhatWillYouDoSection() {
       </div>
 
     </div>
+    </Reveal>
 
 
     {/* ========================================================== */}
@@ -944,6 +950,7 @@ export function WhatWillYouDoSection() {
     {/* BOTTOM EDITORIAL LINE                                     */}
     {/* ========================================================== */}
 
+    <Reveal delay={0.42} duration={0.65} y={16}>
     <div
       className="
         mx-auto
@@ -991,6 +998,7 @@ export function WhatWillYouDoSection() {
       />
 
     </div>
+    </Reveal>
 
   </div>
 

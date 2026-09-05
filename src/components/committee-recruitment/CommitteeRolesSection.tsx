@@ -1,3 +1,5 @@
+import { Reveal } from "../ui/Reveal";
+
 function ArrowRight({ className = "" }: { className?: string }) {
   return (
     <svg
@@ -198,6 +200,7 @@ export function CommitteeRolesSection() {
     {/* HEADER                                                      */}
     {/* ========================================================== */}
 
+    <Reveal delay={0.05} duration={0.7} y={22}>
     <div className="mx-auto max-w-[820px] text-center">
 
       {/* Eyebrow */}
@@ -269,6 +272,7 @@ export function CommitteeRolesSection() {
       </p>
 
     </div>
+    </Reveal>
 
 
     {/* ========================================================== */}
@@ -296,6 +300,7 @@ export function CommitteeRolesSection() {
       {/* LARGE FROSTED CONTAINER                                  */}
       {/* ======================================================== */}
 
+      <Reveal delay={0.22} duration={0.8} y={28}>
       <div
         className="
           relative
@@ -792,6 +797,7 @@ export function CommitteeRolesSection() {
         </div>
 
       </div>
+      </Reveal>
 
     </div>
 
@@ -800,6 +806,7 @@ export function CommitteeRolesSection() {
     {/* BOTTOM ACCENT                                             */}
     {/* ========================================================== */}
 
+    <Reveal delay={0.42} duration={0.65} y={16}>
     <div className="mt-12 flex items-center justify-center gap-3">
 
       <span className="h-px w-12 bg-[#0B1F3A]/10" />
@@ -819,6 +826,7 @@ export function CommitteeRolesSection() {
       <span className="h-px w-12 bg-[#0B1F3A]/10" />
 
     </div>
+    </Reveal>
 
   </div>
 

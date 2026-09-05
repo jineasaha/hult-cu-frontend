@@ -5,11 +5,13 @@ import Link from "next/link";
 import { AnimatePresence, motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
+import { usePathname } from "next/navigation";
 
 import { Container } from "@/components/ui/Container";
 
 export function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const pathname = usePathname();
 
   const closeMenu = () => {
     setIsMenuOpen(false);
@@ -112,23 +114,23 @@ export function Navbar() {
         >
           <Link
             href="/"
-            className="group relative px-4 py-2 font-body text-sm font-semibold text-charcoal transition-colors duration-200 hover:text-hult-pink"
+            className={`group relative px-4 py-2 font-body text-sm font-semibold transition-colors duration-200 hover:text-hult-pink ${pathname === "/" ? "text-hult-pink" : "text-charcoal"}`}
           >
             Home
             <span
               aria-hidden="true"
-              className="absolute bottom-0 left-4 right-4 h-0.5 origin-left scale-x-0 bg-hult-pink transition-transform duration-200 group-hover:scale-x-100"
+              className={`absolute bottom-0 left-4 right-4 h-0.5 origin-left bg-hult-pink transition-transform duration-200 ${pathname === "/" ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"}`}
             />
           </Link>
 
           <Link
             href="/committee-recruitment"
-            className="group relative px-4 py-2 font-body text-sm font-semibold text-charcoal transition-colors duration-200 hover:text-hult-pink"
+            className={`group relative px-4 py-2 font-body text-sm font-semibold transition-colors duration-200 hover:text-hult-pink ${pathname === "/committee-recruitment" ? "text-hult-pink" : "text-charcoal"}`}
           >
             Recruitment
             <span
               aria-hidden="true"
-              className="absolute bottom-0 left-4 right-4 h-0.5 origin-left scale-x-0 bg-hult-pink transition-transform duration-200 group-hover:scale-x-100"
+              className={`absolute bottom-0 left-4 right-4 h-0.5 origin-left bg-hult-pink transition-transform duration-200 ${pathname === "/committee-recruitment" ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"}`}
             />
           </Link>
         </nav>
@@ -377,7 +379,8 @@ export function Navbar() {
                     <Link
                       href="/"
                       onClick={closeMenu}
-                      className="flex items-center justify-between border-b border-black/5 py-5 font-display text-2xl font-bold tracking-[-0.04em] text-charcoal transition-colors hover:text-hult-pink"
+                      aria-current={pathname === "/" ? "page" : undefined}
+                      className={`flex items-center justify-between border-b border-black/5 py-5 font-display text-2xl font-bold tracking-[-0.04em] transition-colors hover:text-hult-pink ${pathname === "/" ? "text-hult-pink" : "text-charcoal"}`}
                     >
                       Home
                       <span className="text-hult-pink">↗</span>
@@ -401,7 +404,8 @@ export function Navbar() {
                     <Link
                       href="/committee-recruitment"
                       onClick={closeMenu}
-                      className="flex items-center justify-between border-b border-black/5 py-5 font-display text-2xl font-bold tracking-[-0.04em] text-charcoal transition-colors hover:text-hult-pink"
+                      aria-current={pathname === "/committee-recruitment" ? "page" : undefined}
+                      className={`flex items-center justify-between border-b border-black/5 py-5 font-display text-2xl font-bold tracking-[-0.04em] transition-colors hover:text-hult-pink ${pathname === "/committee-recruitment" ? "text-hult-pink" : "text-charcoal"}`}
                     >
                       Recruitment
                       <span className="text-hult-pink">↗</span>

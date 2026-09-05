@@ -1,6 +1,7 @@
 "use client";
 
 import { ArrowDownToLine, FileText, Paperclip } from "lucide-react";
+import { Reveal } from "../ui/Reveal";
 
 function ArrowUpRight({ className = "" }: { className?: string }) {
   return (
@@ -93,6 +94,7 @@ export function BeforeYouApplySection() {
         {/* TOP — BEFORE YOU APPLY                                    */}
         {/* ========================================================== */}
 
+        <Reveal delay={0.05}>
         <div className="grid gap-12 lg:grid-cols-[1fr_0.58fr] lg:items-center">
 
           {/* -------------------------------------------------------- */}
@@ -382,6 +384,7 @@ export function BeforeYouApplySection() {
           </div>
 
         </div>
+        </Reveal>
 
 
         {/* ========================================================== */}
@@ -405,6 +408,7 @@ export function BeforeYouApplySection() {
         {/* BOTTOM — APPLICATIONS ARE OPEN                             */}
         {/* ========================================================== */}
 
+        <Reveal delay={0.25}>
         <div
           className="
             relative
@@ -489,7 +493,7 @@ export function BeforeYouApplySection() {
 
             {/* APPLY BUTTON */}
             <a
-              href="https://forms.google.com/YOUR_FORM_LINK"
+              href="https://forms.gle/8pJx7ekXyKi3WQJk9"
               target="_blank"
               rel="noopener noreferrer"
               className="
@@ -534,6 +538,7 @@ export function BeforeYouApplySection() {
 
           </div>
         </div>
+        </Reveal>
 
       </div>
     </div>

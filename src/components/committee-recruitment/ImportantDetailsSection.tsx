@@ -1,3 +1,5 @@
+import { Reveal } from "../ui/Reveal";
+
 export function ImportantDetailsSection() {
   return (
 <section
@@ -100,6 +102,7 @@ export function ImportantDetailsSection() {
     {/* SECTION HEADING                                            */}
     {/* ========================================================== */}
 
+    <Reveal delay={0.05}>
     <div
       className="
         mb-9
@@ -184,12 +187,14 @@ export function ImportantDetailsSection() {
       </p>
 
     </div>
+    </Reveal>
 
 
     {/* ============================================================ */}
 {/* PREMIUM GLASS INFORMATION PANEL                              */}
 {/* ============================================================ */}
 
+<Reveal delay={0.22}>
 <div
   className="
     group
@@ -1089,6 +1094,7 @@ export function ImportantDetailsSection() {
   </div>
 
 </div>
+</Reveal>
   </div>
 
 </section>
