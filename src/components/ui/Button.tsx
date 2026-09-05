@@ -57,7 +57,7 @@ const buttonVariants = cva(
       variant: "primary",
       size: "md",
     },
-  }
+  },
 );
 
 /* ---------- Shared styling props ---------- */
@@ -70,20 +70,14 @@ type ButtonStyleProps = VariantProps<typeof buttonVariants> & {
 /* ---------- Normal button ---------- */
 
 type NativeButtonProps = ButtonStyleProps &
-  Omit<
-    ButtonHTMLAttributes<HTMLButtonElement>,
-    keyof ButtonStyleProps
-  > & {
+  Omit<ButtonHTMLAttributes<HTMLButtonElement>, keyof ButtonStyleProps> & {
     href?: never;
   };
 
 /* ---------- Link button ---------- */
 
 type LinkButtonProps = ButtonStyleProps &
-  Omit<
-    AnchorHTMLAttributes<HTMLAnchorElement>,
-    keyof ButtonStyleProps
-  > & {
+  Omit<AnchorHTMLAttributes<HTMLAnchorElement>, keyof ButtonStyleProps> & {
     href: string;
   };
 
@@ -93,9 +87,7 @@ type ButtonProps = NativeButtonProps | LinkButtonProps;
 
 /* ---------- Type guard ---------- */
 
-function isLinkButton(
-  props: ButtonProps
-): props is LinkButtonProps {
+function isLinkButton(props: ButtonProps): props is LinkButtonProps {
   return props.href !== undefined;
 }
 
@@ -103,55 +95,35 @@ function isLinkButton(
 
 export function Button(props: ButtonProps) {
   if (isLinkButton(props)) {
-    const {
-      href,
-      variant,
-      size,
-      className,
-      children,
-      ...linkProps
-    } = props;
+    const { href, variant, size, className, children, ...linkProps } = props;
 
     const classes = cn(
       buttonVariants({
         variant,
         size,
       }),
-      className
+      className,
     );
 
     return (
-      <Link
-        href={href}
-        className={classes}
-        {...linkProps}
-      >
+      <Link href={href} className={classes} {...linkProps}>
         {children}
       </Link>
     );
   }
 
-  const {
-    variant,
-    size,
-    className,
-    children,
-    ...buttonProps
-  } = props;
+  const { variant, size, className, children, ...buttonProps } = props;
 
   const classes = cn(
     buttonVariants({
       variant,
       size,
     }),
-    className
+    className,
   );
 
   return (
-    <button
-      className={classes}
-      {...buttonProps}
-    >
+    <button className={classes} {...buttonProps}>
       {children}
     </button>
   );
