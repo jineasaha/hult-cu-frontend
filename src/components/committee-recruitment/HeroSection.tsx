@@ -217,33 +217,13 @@ export function HeroSection() {
           {/* ======================================================== */}
 
           <Reveal delay={0.15} duration={0.75} y={22}>
-            <h1
-              className="
-                mx-auto
-                max-w-[950px]
-                font-display
-                text-[clamp(3rem,6.7vw,5.25rem)]
-                font-bold
-                leading-[0.94]
-                tracking-[-0.055em]
-              "
-            >
+            <h1 className="mx-auto max-w-[950px] font-display text-[clamp(3rem,6.7vw,5.25rem)] font-bold leading-[0.94] tracking-[-0.055em]">
 
               <span className="block text-[#171522]">
                 Join the team
               </span>
 
-              <span
-                className="
-                  block
-                  bg-gradient-to-r
-                  from-[#0F0F0F]
-                  via-[#E6007E]
-                  to-[#741E3F]
-                  bg-clip-text
-                  text-transparent
-                "
-              >
+              <span className="block bg-gradient-to-r from-[#0F0F0F] via-[#E6007E] to-[#741E3F] bg-clip-text text-transparent">
                 behind the impact.
               </span>
 
@@ -274,70 +254,17 @@ export function HeroSection() {
               <Link
                 href="https://forms.gle/8pJx7ekXyKi3WQJk9"
                 target="_blank"
-                className="
-                  group
-                  inline-flex
-                  h-12
-                  items-center
-                  justify-center
-                  gap-3
-                  rounded-full
-                  bg-[#E6007E]
-                  px-7
-                  text-sm
-                  font-bold
-                  text-white
-                  shadow-[0_10px_25px_rgba(184,34,119,0.20)]
-                  transition-all
-                  duration-300
-                  hover:-translate-y-0.5
-                  hover:bg-[#C2186B]
-                  hover:shadow-[0_14px_30px_rgba(184,34,119,0.25)]
-                  focus-visible:outline-none
-                  focus-visible:ring-2
-                  focus-visible:ring-white
-                "
+                className="group inline-flex h-12 items-center justify-center gap-3 rounded-full bg-[#E6007E] px-7 text-sm font-bold text-white shadow-[0_10px_25px_rgba(184,34,119,0.20)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#C2186B] hover:shadow-[0_14px_30px_rgba(184,34,119,0.25)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
               >
                 Apply Now
 
-                <ArrowUpRight
-                  className="
-                    h-4 w-4
-                    transition-transform
-                    duration-300
-                    group-hover:-translate-y-0.5
-                    group-hover:translate-x-0.5
-                  "
-                />
+                <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
 
               </Link>
 
               <Link
                 href="#roles"
-                className="
-                  inline-flex
-                  h-12
-                  items-center
-                  justify-center
-                  rounded-full
-                  border
-                  border-charcoal/[0.12]
-                  bg-white/60
-                  px-7
-                  text-sm
-                  font-semibold
-                  text-charcoal
-                  shadow-[0_6px_20px_rgba(60,30,55,0.06)]
-                  backdrop-blur-md
-                  transition-all
-                  duration-300
-                  hover:-translate-y-0.5
-                  hover:bg-charcoal/20
-                  hover:shadow-[0_10px_25px_rgba(60,30,55,0.09)]
-                  focus-visible:outline-none
-                  focus-visible:ring-2
-                  focus-visible:ring-hult-pink
-                "
+                className="inline-flex h-12 items-center justify-center rounded-full border border-charcoal/[0.12] bg-white/60 px-7 text-sm font-semibold text-charcoal shadow-[0_6px_20px_rgba(60,30,55,0.06)] backdrop-blur-md transition-all duration-300 hover:-translate-y-0.5 hover:bg-charcoal/20 hover:shadow-[0_10px_25px_rgba(60,30,55,0.09)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-hult-pink"
               >
                 Explore roles
               </Link>
@@ -350,32 +277,11 @@ export function HeroSection() {
           {/* ======================================================== */}
 
           <Reveal delay={0.5} duration={0.7} y={18}>
-            <div
-              className="
-                mt-9
-                flex
-                flex-wrap
-                items-center
-                justify-center
-                gap-x-7
-                gap-y-4
-                text-[13px]
-                text-[#302B35]
-              "
-            >
+            <div className="mt-9 flex flex-wrap items-center justify-center gap-x-7 gap-y-4 text-[13px] text-[#302B35]">
 
               <span className="flex items-center gap-2.5">
 
-                <span
-                  className="
-                    flex h-9 w-9
-                    items-center justify-center
-                    rounded-full
-                    border border-white/70
-                    bg-[#8E8E96]
-                    shadow-[0_5px_14px_rgba(40,30,45,0.14)]
-                  "
-                >
+                <span className="flex h-9 w-9 items-center justify-center rounded-full border border-white/70 bg-[#8E8E96] shadow-[0_5px_14px_rgba(40,30,45,0.14)]">
 
                   <svg
                     viewBox="0 0 24 24"
@@ -400,16 +306,8 @@ export function HeroSection() {
 
               <span className="flex items-center gap-2.5">
 
-                <span
-                  className="
-                    flex h-9 w-9
-                    items-center justify-center
-                    rounded-full
-                    border border-white/70
-                    bg-[#8E8E96]
-                    shadow-[0_5px_14px_rgba(40,30,45,0.14)]
-                  "
-                >
+                <span className="flex h-9 w-9 items-center justify-center rounded-full border border-white/70 bg-[#8E8E96] shadow-[0_5px_14px_rgba(40,30,45,0.14)]">
+
                   <svg
                     viewBox="0 0 24 24"
                     fill="none"
@@ -422,6 +320,7 @@ export function HeroSection() {
                     <path d="M3.5 19c.5-3 2.5-5 5.5-5s5 2 5.5 5" />
                     <path d="M14.5 14.5c2.7.1 4.6 1.6 5 4.5" />
                   </svg>
+
                 </span>
 
                 <span className="font-semibold tracking-[-0.01em]">
@@ -455,15 +354,7 @@ export function HeroSection() {
 
             <div>
 
-              <p
-                className="
-                  text-[9px]
-                  font-bold
-                  uppercase
-                  tracking-[0.28em]
-                  text-[#5B3154]
-                "
-              >
+              <p className="text-[9px] font-bold uppercase tracking-[0.28em] text-[#5B3154]">
                 PEOPLE WITH PURPOSE
               </p>
 
