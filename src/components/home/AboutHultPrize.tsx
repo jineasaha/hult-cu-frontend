@@ -120,7 +120,7 @@ export function AboutHultPrize() {
               About the Hult Prize
             </p>
 
-            <h2 className="mt-4 max-w-4xl font-display text-4xl font-bold leading-[1.02] tracking-[-0.055em] text-charcoal sm:text-5xl lg:text-6xl">
+            <h2 className="mt-4 max-w-4xl font-display text-4xl font-semibold leading-[1.02] tracking-[-0.055em] text-charcoal sm:text-5xl lg:text-6xl">
               Where student ideas become{" "}
               <span className="text-hult-pink">ideas for impact.</span>
             </h2>

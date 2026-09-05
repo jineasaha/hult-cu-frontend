@@ -7,7 +7,6 @@ import { Reveal } from "@/components/ui/Reveal";
 import { Section } from "@/components/ui/Section";
 
 const MAROON = "#7A1F3D";
-const NAVY = "#0B1F3A";
 
 type TechnicalSponsor = {
   name: string;
@@ -98,7 +97,10 @@ export function TechnicalSponsors() {
             </div>
 
             <h2 className="font-display text-4xl font-bold tracking-[-0.045em] text-[#0F0F0F] sm:text-5xl">
-              Built With <span style={{ color: MAROON }}>Great Partners</span>
+              Built With{" "}
+              <span className="bg-gradient-to-r from-[#0F0F0F] via-[#E6007E] to-[#741E3F] bg-clip-text text-transparent">
+                Great Partners
+              </span>
             </h2>
 
             <p className="mx-auto mt-4 max-w-xl font-sans text-sm leading-6 text-[#3F4148] sm:text-base">

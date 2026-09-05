@@ -25,7 +25,7 @@ const announcements: Announcement[] = [
     title: "Committee Recruitment is Ongoing",
     description:
       "Join the Hult Prize journey and become part of the team shaping this year's campus experience.",
-    href: "#",
+    href: "/committee-recruitment",
   },
   {
     title: "Positions Open for Faculty Contact Points",

@@ -93,8 +93,6 @@ export function PreviousCohorts() {
     resetTimer();
   };
 
-  const activeCohort = cohortImages[activeIndex];
-
   return (
     <Section
       id="cohorts"
@@ -157,8 +155,11 @@ export function PreviousCohorts() {
               />
             </div>
 
-            <h2 className="font-display text-4xl font-extrabold leading-none tracking-[-0.05em] text-[#0F0F0F] sm:text-5xl lg:text-6xl">
-              Previous <span style={{ color: HULT_PINK }}>Cohorts</span>
+            <h2 className="font-display text-4xl font-bold leading-none tracking-[-0.05em] text-[#0F0F0F] sm:text-5xl lg:text-6xl">
+              Previous{" "}
+              <span className="bg-gradient-to-r from-[#0F0F0F] via-[#E6007E] to-[#741E3F] bg-clip-text text-transparent">
+                Cohorts
+              </span>
             </h2>
 
             <p className="mx-auto mt-5 max-w-2xl font-sans text-sm leading-6 text-[#4B4B4B] sm:text-base">
