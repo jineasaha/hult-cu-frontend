@@ -60,7 +60,7 @@ export default function UpcomingEventsTicker() {
   useEffect(() => {
     const interval = setInterval(() => {
       next();
-    }, 3000);
+    }, 5000);
 
     return () => clearInterval(interval);
   }, []);
