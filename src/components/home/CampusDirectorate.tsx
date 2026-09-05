@@ -14,7 +14,7 @@ const directorate = [
     role: "Campus Director",
     department: "Electronics and Communication Engineering",
     tagline: "Driving the vision and direction of the campus journey.",
-    image: "/images/directorate/ashmit.png",
+    image: "/images/directorate/ashmit.jpg",
   },
   {
     name: "Diksha Rani",
@@ -223,14 +223,6 @@ function PersonProfile({
       ========================================== */}
 
       <div className="relative overflow-hidden rounded-[26px] border border-[#DFDFE3] bg-white shadow-[0_12px_35px_rgba(15,15,15,0.07)] transition-all duration-500 group-hover:-translate-y-1 group-hover:shadow-[0_18px_45px_rgba(15,15,15,0.11)]">
-        {/* Maroon accent */}
-
-        <div
-          aria-hidden="true"
-          className="absolute bottom-0 left-0 top-0 z-30 w-1"
-          style={{ backgroundColor: "#7A1F3D" }}
-        />
-
         <div className="grid grid-cols-[1.08fr_0.92fr]">
           {/* =========================================
               PHOTO

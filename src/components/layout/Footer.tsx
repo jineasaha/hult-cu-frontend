@@ -83,13 +83,15 @@ export function Footer() {
                 meaningful social impact.
               </p>
 
-              {/* Accent */}
-
-              <div
-                aria-hidden="true"
-                className="mt-7 h-[2px] w-10 rounded-full"
-                style={{ backgroundColor: HULT_PINK }}
-              />
+              <a
+                href="https://www.hultprize.org/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group mt-6 inline-flex items-center gap-2 rounded-full border border-white/15 bg-hult-pink px-4 py-2 font-sans text-[11px] font-bold text-white transition-all duration-300 hover:-translate-y-0.5 hover:border-[#FFB3D1]/40 hover:bg-[#c9006f]"
+              >
+                <span>Visit Hult Prize Global</span>
+                <ArrowUpRight className="h-3.5 w-3.5 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+              </a>
             </div>
 
             {/* =========================================
