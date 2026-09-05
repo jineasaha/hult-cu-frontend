@@ -49,13 +49,12 @@ export function Footer() {
               {/* Brand mark */}
 
               <div className="flex items-center gap-3">
-                <div
-                  className="flex h-10 w-10 items-center justify-center rounded-xl"
-                  style={{ backgroundColor: MAROON }}
-                >
-                  <span className="font-display text-lg font-extrabold text-white">
-                    H
-                  </span>
+                <div className="flex h-15 w-15 items-center justify-center overflow-hidden rounded-xl">
+                  <img
+                    src="/images/logos/hult1.png"
+                    alt="Hult Prize"
+                    className="h-full w-full object-contain p-1"
+                  />
                 </div>
 
                 <div>
@@ -107,6 +106,8 @@ export function Footer() {
                 </p>
 
                 <nav className="mt-5 flex flex-col gap-3.5">
+                  <FooterLink href="https://iic-caluniv.in/">IIC CU</FooterLink>
+
                   <FooterLink href="/">Home</FooterLink>
 
                   <FooterLink href="/committee-recruitment">

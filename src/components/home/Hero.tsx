@@ -32,7 +32,7 @@ export function Hero() {
         }}
       >
         <Image
-          src="/images/cuHero1.webp"
+          src="/images/cuHero.webp"
           alt="University of Calcutta building"
           fill
           priority
@@ -87,7 +87,7 @@ export function Hero() {
                   {/* Hult Prize */}
                   <div className="flex h-[clamp(4rem,9vw,7rem)] w-[clamp(4rem,9vw,7rem)] shrink-0 items-center justify-center rounded-2xl bg-white p-[clamp(0.4rem,0.9vw,0.7rem)]">
                     <Image
-                      src="/images/logos/hult-logo.png"
+                      src="/images/logos/hult_2.png"
                       alt="Hult Prize logo"
                       width={128}
                       height={128}

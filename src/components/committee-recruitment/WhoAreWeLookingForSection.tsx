@@ -82,7 +82,7 @@ export function WhoAreWeLookingForSection() {
 
           <Reveal delay={0.15} duration={0.7} y={22}>
             <div className="relative lg:pt-1">
-              <h2 className="max-w-[700px] font-display text-[2.5rem] font-bold leading-[0.97] tracking-[-0.05em] text-[#0B1F3A] sm:text-[3rem] md:text-[3.5rem] lg:text-[clamp(3.5rem,5.6vw,5rem)]">
+              <h2 className="max-w-[700px] font-display text-[2.5rem] font-bold leading-[0.97] tracking-[-0.05em] text-[#0B1F3A] sm:text-[3rem] md:text-[3.5rem] lg:text-[2.75rem] xl:text-[4rem]">
                 People who are
                 <br />
                 <span className="relative inline-block text-[#F2779B]">

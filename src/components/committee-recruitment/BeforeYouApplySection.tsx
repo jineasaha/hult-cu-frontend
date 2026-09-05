@@ -137,7 +137,7 @@ export function BeforeYouApplySection() {
 
                     <div className="relative z-10 h-[290px] w-[240px] overflow-hidden rounded-[8px] bg-white shadow-[0_25px_55px_rgba(0,0,0,0.5)] transition-transform duration-500 group-hover:scale-[1.015]">
                       <img
-                        src="/images/brochurepic.png"
+                        src="/brochure/brochurepic.png"
                         alt="Hult Prize recruitment brochure cover"
                         className="h-full w-full object-cover"
                       />
