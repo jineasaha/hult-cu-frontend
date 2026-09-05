@@ -140,3 +140,56 @@ select {
   background: var(--hult-pink);
   color: var(--white);
 }
+
+/* ================================================================
+   HULT PRIZE — PREMIUM HERO
+   ================================================================ */
+
+@keyframes heroFloat {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+
+  50% {
+    transform: translate3d(0, -7px, 0);
+  }
+}
+
+@keyframes heroGlow {
+  0%,
+  100% {
+    opacity: 0.7;
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+/* Keep decorative hero elements subtle and premium */
+.hero-glass {
+  -webkit-backdrop-filter: blur(24px);
+  backdrop-filter: blur(24px);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .hero-float {
+    animation: heroFloat 6s ease-in-out infinite;
+  }
+
+  .hero-glow {
+    animation: heroGlow 5s ease-in-out infinite;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
