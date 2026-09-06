@@ -16,7 +16,7 @@ export function AnnouncementModal({
   title = "We are now actively recruiting committee members for Hult 2026–27.",
   description = "Join the team behind Hult Prize at the University of Calcutta and be part of building the next chapter of our global social-impact journey.",
   primaryLabel = "Explore Recruitment",
-  secondaryLabel = "View Home Page",
+//   secondaryLabel = "View Home Page",
   primaryHref = "/committee-recruitment",
   eyebrow = "HULT PRIZE · 2026–27",
 }: AnnouncementModalProps) {
@@ -77,7 +77,7 @@ export function AnnouncementModal({
     >
       {/* Dark backdrop + background blur */}
       <div
-        className={`absolute inset-0 bg-[rgba(0,0,0,0.68)] backdrop-blur-[9px] transition-all duration-500 ease-out ${
+        className={`absolute inset-0 bg-[rgba(251, 215, 243, 0.68)] backdrop-blur-[6px] transition-all duration-500 ease-out ${
           isVisible ? "opacity-100" : "opacity-0"
         }`}
         aria-hidden="true"

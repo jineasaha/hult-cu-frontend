@@ -190,7 +190,7 @@ export function EventTimeline() {
         className="pointer-events-none absolute -bottom-40 -left-40 hidden h-[450px] w-[450px] rounded-full bg-white/50 blur-3xl sm:block"
       />
 
-      <Container>
+      <Container className="relative z-4">
         {/* HEADING */}
 
         <Reveal>

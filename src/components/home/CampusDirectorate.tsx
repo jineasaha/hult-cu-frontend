@@ -59,16 +59,16 @@ export function CampusDirectorate() {
       {/* Subtle decorative background */}
 
       <div
-        aria-hidden="true"
-        className="pointer-events-none absolute -left-32 top-20 h-64 w-64 rounded-full border-[28px] border-[#FFE6F1] opacity-70"
+      aria-hidden="true"
+      className="pointer-events-none absolute -left-32 top-20 z-0 h-64 w-64 rounded-full border-[28px] border-[#FFE6F1] opacity-70"
       />
 
       <div
-        aria-hidden="true"
-        className="pointer-events-none absolute -bottom-40 -right-32 h-72 w-72 rounded-full border-[35px] border-[#FFE6F1] opacity-60"
+      aria-hidden="true"
+      className="pointer-events-none absolute -bottom-40 -right-32 z-0 h-72 w-72 rounded-full border-[35px] border-[#FFE6F1] opacity-60"
       />
 
-      <Container>
+      <Container className="relative z-10">
         {/* =========================
             SECTION HEADER
         ========================== */}

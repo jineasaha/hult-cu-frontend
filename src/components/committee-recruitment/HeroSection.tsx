@@ -11,24 +11,41 @@ export function HeroSection() {
       {/* ============================================================ */}
       {/* BASE ENVIRONMENT                                             */}
       {/* ============================================================ */}
-
       <div
-        className="pointer-events-none absolute inset-0"
-        style={{
-          background: `
-            linear-gradient(
-              100deg,
-              #d8c7e2 0%,
-              #ead8e7 14%,
-              #f5e4ed 34%,
-              #f8e7ee 51%,
-              #f4d5e7 68%,
-              #df86bd 86%,
-              #a82c83 100%
-            )
-          `,
-        }}
-      />
+  className="pointer-events-none absolute inset-0"
+  style={{
+    background: `
+      linear-gradient(
+        100deg,
+        #f0dce9 0%,
+        #f5e4ed 18%,
+        #f9edf2 38%,
+        #f8eaf0 55%,
+        #f6e0eb 72%,
+        #efc5dc 88%,
+        #e7b3d0 100%
+      )
+    `,
+  }}
+/>
+
+{/* Soft maroon glow — mobile / small screens only */}
+<div
+  className="pointer-events-none absolute -left-[180px] -top-[180px] h-[430px] w-[430px] rounded-full blur-[90px] lg:hidden"
+  style={{
+    background:
+      "radial-gradient(circle, rgba(108,32,70,0.30) 0%, rgba(137,57,98,0.18) 38%, rgba(194,115,157,0.08) 60%, transparent 74%)",
+  }}
+/>
+
+{/* Soft maroon glow — mobile / small screens only */}
+<div
+  className="pointer-events-none absolute -bottom-[180px] -right-[180px] h-[470px] w-[470px] rounded-full blur-[95px] lg:hidden"
+  style={{
+    background:
+      "radial-gradient(circle, rgba(108,32,70,0.34) 0%, rgba(137,57,98,0.20) 38%, rgba(194,115,157,0.10) 60%, transparent 74%)",
+  }}
+/>
 
       {/* ============================================================ */}
       {/* CENTER EDITORIAL LIGHT                                      */}
@@ -181,6 +198,58 @@ export function HeroSection() {
       <div className="pointer-events-none absolute left-[18%] top-[22%] hidden h-[300px] w-px bg-white/30 lg:block" />
 
       <div className="pointer-events-none absolute right-[18%] top-[20%] hidden h-[270px] w-px bg-white/30 lg:block" />
+
+      {/* ============================================================ */}
+{/* MOBILE / TABLET SOFT PINK ENVIRONMENT                       */}
+{/* ============================================================ */}
+
+<div className="pointer-events-none absolute inset-0 lg:hidden">
+  {/* Soft elegant pink base */}
+  <div
+    className="absolute inset-0"
+    style={{
+      background:
+        "linear-gradient(135deg, #f7e8f1 0%, #faedf3 35%, #f9eaf1 65%, #f6e3ed 100%)",
+    }}
+  />
+
+  {/* Elegant maroon glow — top left */}
+  <div
+    className="absolute -left-[100px] -top-[85px] h-[240px] w-[320px] rounded-full blur-[70px]"
+    style={{
+      background:
+        "radial-gradient(circle at 48% 48%,  rgb(182, 63, 146) 3%, rgba(240, 153, 196, 0.93) 22%, rgba(243, 188, 216, 0.83) 44%, rgba(173,91,126,0.09) 63%, transparent 79%)",
+    }}
+  />
+
+  {/* Soft inner bloom from top-left */}
+  <div
+    className="absolute -left-[35px] -top-[35px] h-[180px] w-[210px] rounded-full blur-[45px]"
+    style={{
+      background:
+        "radial-gradient(circle, rgba(91,20,55,0.22) 0%, rgba(161, 92, 128, 0.1) 42%, transparent 72%)",
+    }}
+  />
+
+  {/* Elegant maroon glow — bottom right */}
+  <div
+    className="absolute -bottom-[120px] -right-[150px] h-[320px] w-[500px] rounded-full blur-[75px]"
+    style={{
+      background:
+        "radial-gradient(circle at 52% 52%, rgb(183, 81, 153) 3%, rgba(249, 174, 211, 0.93) 22%, rgba(243, 188, 216, 0.83) 44%, rgba(173,91,126,0.09) 63%, transparent 79%)",
+    }}
+  />
+
+  {/* Soft inner bloom from bottom-right */}
+  <div
+    className="absolute -bottom-[35px] -right-[35px] h-[220px] w-[220px] rounded-full blur-[48px]"
+    style={{
+      background:
+        "radial-gradient(circle, rgba(91,20,55,0.24) 0%, rgba(213, 149, 182, 0.1) 44%, transparent 74%)",
+    }}
+  />
+</div>
+
 
       {/* ============================================================ */}
       {/* HERO CONTENT                                                */}
