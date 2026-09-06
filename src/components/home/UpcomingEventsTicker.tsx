@@ -16,8 +16,9 @@ const MAROON = "#7A1F3D";
 const announcements: Announcement[] = [
   {
     title: "Student Coordinator Applications — Deadline Extended",
-    description: "Applications are now open until 8 September 2026.",
-    href: "https://forms.gle/ByizeqoFt2zg5sg79",
+    description:
+      "Applications are now open until 7th September 2026 (Midnight).",
+    href: "https://forms.gle/hWEgo2jzzHXt2PHr6",
     brochureHref: "/brochure/Student_coordinator_Recrutiment_Brochure.pdf",
     featured: true,
   },

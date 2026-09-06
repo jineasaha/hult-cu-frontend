@@ -7,7 +7,6 @@ import { Reveal } from "../ui/Reveal";
 export function HeroSection() {
   return (
     <section className="relative isolate min-h-[calc(100vh-80px)] overflow-hidden bg-[#e9d5e8]">
-
       {/* ============================================================ */}
       {/* BASE ENVIRONMENT                                             */}
       {/* ============================================================ */}
@@ -88,12 +87,12 @@ export function HeroSection() {
       {/* ============================================================ */}
 
       <div className="pointer-events-none absolute inset-y-0 left-0 hidden w-[14%] lg:block">
-
         {/* Main lilac column */}
         <div
           className="absolute inset-y-0 left-0 w-[72%] border-r border-white/35"
           style={{
-            background: "linear-gradient(165deg, #36061b 10%, #8b1b59 29%, #bb8198 48%, #c7b0be 72%, #680c32 100%)",
+            background:
+              "linear-gradient(165deg, #36061b 10%, #8b1b59 29%, #bb8198 48%, #c7b0be 72%, #680c32 100%)",
           }}
         />
 
@@ -117,7 +116,6 @@ export function HeroSection() {
               "linear-gradient(180deg, transparent 0%, white 40%, white 70%, transparent 100%)",
           }}
         />
-
       </div>
 
       {/* ============================================================ */}
@@ -125,7 +123,6 @@ export function HeroSection() {
       {/* ============================================================ */}
 
       <div className="pointer-events-none absolute inset-y-0 right-0 hidden w-[14%] lg:block">
-
         {/* Secondary pink strip */}
         <div
           className="absolute inset-y-0 left-0 w-[28%] border-l border-white/35"
@@ -139,7 +136,8 @@ export function HeroSection() {
         <div
           className="absolute inset-y-0 right-0 w-[72%] border-l border-white/25"
           style={{
-            background: "linear-gradient(165deg, #36061b 5%, #8b1b59 19%, #bb8198 36%, #c7b0be 50%, #680c32 85%, #36061b 100%)",
+            background:
+              "linear-gradient(165deg, #36061b 5%, #8b1b59 19%, #bb8198 36%, #c7b0be 50%, #680c32 85%, #36061b 100%)",
           }}
         />
 
@@ -154,7 +152,6 @@ export function HeroSection() {
               "linear-gradient(180deg, transparent, white, transparent)",
           }}
         />
-
       </div>
 
       {/* ============================================================ */}
@@ -162,7 +159,6 @@ export function HeroSection() {
       {/* ============================================================ */}
 
       <div className="pointer-events-none absolute inset-y-0 left-[14%] right-[14%] hidden lg:block">
-
         <div
           className="absolute inset-0 border-x border-white/30"
           style={{
@@ -188,7 +184,6 @@ export function HeroSection() {
               "linear-gradient(90deg, transparent, rgba(255,255,255,0.45), transparent)",
           }}
         />
-
       </div>
 
       {/* ============================================================ */}
@@ -256,28 +251,22 @@ export function HeroSection() {
       {/* ============================================================ */}
 
       <div className="relative z-10 mx-auto flex min-h-[calc(100vh-80px)] max-w-[1400px] items-center px-5 pb-24 pt-16 sm:px-8 lg:px-10">
-
         <div className="mx-auto w-full max-w-[1000px] text-center">
-
           {/* ======================================================== */}
           {/* BRAND LINE                                               */}
           {/* ======================================================== */}
 
           <Reveal delay={0.05} duration={0.65} y={18}>
             <div className="mb-8 flex items-center justify-center gap-4 sm:mb-9">
-
               <span className="h-px w-10 bg-charcoal/20 sm:w-14" />
 
               <p className="text-[9px] font-bold uppercase tracking-[0.34em] text-black sm:text-[10px]">
                 HULT PRIZE
-                <span className="mx-3 text-hult-pink">
-                  |
-                </span>
+                <span className="mx-3 text-hult-pink">|</span>
                 UNIVERSITY OF CALCUTTA
               </p>
 
               <span className="h-px w-10 bg-charcoal/20 sm:w-14" />
-
             </div>
           </Reveal>
 
@@ -295,7 +284,6 @@ export function HeroSection() {
               <span className="block bg-gradient-to-r from-[#0F0F0F] via-[#E6007E] to-[#741E3F] bg-clip-text text-transparent">
                 behind the impact.
               </span>
-
             </h1>
           </Reveal>
 
@@ -305,11 +293,10 @@ export function HeroSection() {
 
           <Reveal delay={0.28} duration={0.7} y={22}>
             <p className="mx-auto mt-7 max-w-[650px] text-[15px] font-medium leading-7 text-[#38303c]/75 sm:mt-8 sm:text-[16px] sm:leading-7">
-
               Be part of the team building the Hult Prize experience
               <br className="hidden sm:block" />
-              at the University of Calcutta — from the first idea to the final event.
-
+              at the University of Calcutta — from the first idea to the final
+              event.
             </p>
           </Reveal>
 
@@ -319,9 +306,8 @@ export function HeroSection() {
 
           <Reveal delay={0.38} duration={0.7} y={20}>
             <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:mt-9 sm:flex-row">
-
               <Link
-                href="https://forms.gle/8pJx7ekXyKi3WQJk9"
+                href="https://forms.gle/LtTt2biTb5ZPbDiF6"
                 target="_blank"
                 className="group inline-flex h-12 items-center justify-center gap-3 rounded-full bg-[#E6007E] px-7 text-sm font-bold text-white shadow-[0_10px_25px_rgba(184,34,119,0.20)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#C2186B] hover:shadow-[0_14px_30px_rgba(184,34,119,0.25)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
               >
@@ -337,7 +323,6 @@ export function HeroSection() {
               >
                 Explore roles
               </Link>
-
             </div>
           </Reveal>
 
@@ -362,13 +347,11 @@ export function HeroSection() {
                     <path d="m3 9 9-5 9 5-9 5-9-5Z" />
                     <path d="M6 11.2V16c0 1.7 2.7 3 6 3s6-1.3 6-3v-4.8" />
                   </svg>
-
                 </span>
 
                 <span className="font-semibold tracking-[-0.01em]">
                   University of Calcutta
                 </span>
-
               </span>
 
               <span className="hidden h-5 w-px bg-charcoal/15 sm:block" />
@@ -395,12 +378,9 @@ export function HeroSection() {
                 <span className="font-semibold tracking-[-0.01em]">
                   2026–27 Core Committee
                 </span>
-
               </span>
-
             </div>
           </Reveal>
-
         </div>
       </div>
 
@@ -415,9 +395,7 @@ export function HeroSection() {
         className="pointer-events-none absolute bottom-[8.5%] left-[9%] z-20 hidden lg:block"
       >
         <div className="pointer-events-none">
-
           <div className="flex items-start gap-4">
-
             {/* Accent */}
             <span className="mt-[5px] h-[2px] w-12 bg-[#E6007E]" />
 
@@ -426,11 +404,8 @@ export function HeroSection() {
               <p className="text-[9px] font-bold uppercase tracking-[0.28em] text-[#5B3154]">
                 PEOPLE WITH PURPOSE
               </p>
-
             </div>
-
           </div>
-
         </div>
       </Reveal>
 
@@ -445,21 +420,15 @@ export function HeroSection() {
         className="pointer-events-none absolute bottom-[8.5%] right-[8%] z-20 hidden lg:block"
       >
         <div className="pointer-events-none">
-
           <div className="flex items-start gap-4 text-right">
-
             <div>
-
               <p className="text-[9px] font-bold uppercase tracking-[0.28em] text-[#5B3154]">
                 SOLUTIONS FOR A BRIGHTER TOMORROW
               </p>
-
             </div>
 
             <span className="mt-1.5 h-px w-11 bg-white/70" />
-
           </div>
-
         </div>
       </Reveal>
 
@@ -474,12 +443,9 @@ export function HeroSection() {
         className="pointer-events-none absolute bottom-[5%] left-1/2 -translate-x-1/2"
       >
         <div className="pointer-events-none">
-
           <div className="h-1 w-8 rounded-full bg-hult-pink shadow-[0_0_14px_rgba(230,0,126,0.30)]" />
-
         </div>
       </Reveal>
-
     </section>
   );
 }
