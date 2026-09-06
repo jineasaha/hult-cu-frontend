@@ -61,7 +61,7 @@ export function ImportantDetailsSection() {
               </h2>
             </div>
 
-            <p className="max-w-[330px] text-[14px] font-bold leading-6 text-black/70 lg:mb-1 lg:text-[15px] lg:leading-7">
+            <p className="max-w-[330px] text-[14px] font-bold leading-6 text-white md:text-[var(--charcoal)] lg:mb-1 lg:text-[15px] lg:leading-7">
               A few important details before you begin your application and take
               the next step with the committee.
             </p>
