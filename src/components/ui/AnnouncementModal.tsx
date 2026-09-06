@@ -16,7 +16,7 @@ export function AnnouncementModal({
   title = "We are now actively recruiting committee members for Hult 2026–27.",
   description = "Join the team behind Hult Prize at the University of Calcutta and be part of building the next chapter of our global social-impact journey.",
   primaryLabel = "Explore Recruitment",
-//   secondaryLabel = "View Home Page",
+  secondaryLabel = "View Home Page",
   primaryHref = "/committee-recruitment",
   eyebrow = "HULT PRIZE · 2026–27",
 }: AnnouncementModalProps) {
