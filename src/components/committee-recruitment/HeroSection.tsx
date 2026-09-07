@@ -307,8 +307,7 @@ export function HeroSection() {
           <Reveal delay={0.38} duration={0.7} y={20}>
             <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:mt-9 sm:flex-row">
               <Link
-                href="https://forms.gle/LtTt2biTb5ZPbDiF6"
-                target="_blank"
+                href="#apply"
                 className="group inline-flex h-12 items-center justify-center gap-3 rounded-full bg-[#E6007E] px-7 text-sm font-bold text-white shadow-[0_10px_25px_rgba(184,34,119,0.20)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#C2186B] hover:shadow-[0_14px_30px_rgba(184,34,119,0.25)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
               >
                 Apply Now
