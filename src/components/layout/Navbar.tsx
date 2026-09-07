@@ -26,30 +26,13 @@ export function Navbar() {
 
         <div
           aria-hidden="true"
-          className="
-            absolute inset-0
-            rounded-[22px]
-            border border-white/65
-            bg-white/[0.68]
-            shadow-[0_18px_55px_rgba(15,15,15,0.12),0_4px_16px_rgba(15,15,15,0.05),inset_0_1px_0_rgba(255,255,255,0.95)]
-            backdrop-blur-2xl
-            backdrop-saturate-150
-            sm:rounded-[24px]
-            lg:rounded-[26px]
-          "
+          className="absolute inset-0 rounded-[22px] border border-white/65 bg-white/[0.68] shadow-[0_18px_55px_rgba(15,15,15,0.12),0_4px_16px_rgba(15,15,15,0.05),inset_0_1px_0_rgba(255,255,255,0.95)] backdrop-blur-2xl backdrop-saturate-150 sm:rounded-[24px] lg:rounded-[26px]"
         />
 
         {/* Extremely subtle atmospheric tint */}
         <div
           aria-hidden="true"
-          className="
-            pointer-events-none
-            absolute inset-0
-            overflow-hidden
-            rounded-[22px]
-            sm:rounded-[24px]
-            lg:rounded-[26px]
-          "
+          className="pointer-events-none absolute inset-0 overflow-hidden rounded-[22px] sm:rounded-[24px] lg:rounded-[26px]"
         >
           <div className="absolute -left-20 top-1/2 h-32 w-56 -translate-y-1/2 rounded-full bg-blue-200/20 blur-3xl" />
           <div className="absolute -right-20 top-1/2 h-32 w-56 -translate-y-1/2 rounded-full bg-pink-200/20 blur-3xl" />
@@ -69,37 +52,10 @@ export function Navbar() {
           href="/"
           aria-label="Hult Prize University of Calcutta home"
           onClick={closeMenu}
-          className="
-            relative z-10
-            flex min-w-0 shrink-0
-            items-center
-            lg:-ml-2
-            xl:-ml-3
-          "
+          className="relative z-10 flex min-w-0 shrink-0 items-center lg:-ml-2 xl:-ml-3"
         >
-          {/* =======================================================
-              MOBILE + TABLET — SINGLE COMPACT FROSTED STRIP
-          ======================================================== */}
-
-          <div
-            className="
-              flex
-              h-[42px]
-              shrink-0
-              items-center
-              rounded-[12px]
-              border border-white/65
-              bg-white/[0.55]
-              px-1.5
-              shadow-[inset_0_1px_0_rgba(255,255,255,0.8),0_4px_14px_rgba(15,15,15,0.05)]
-              backdrop-blur-xl
-              backdrop-saturate-150
-              sm:h-[46px]
-              sm:rounded-[13px]
-              sm:px-2
-              lg:hidden
-            "
-          >
+          {/* MOBILE + TABLET — SINGLE COMPACT FROSTED STRIP */}
+          <div className="flex h-[42px] shrink-0 items-center rounded-[12px] border border-white/65 bg-white/[0.55] px-1.5 shadow-[inset_0_1px_0_rgba(255,255,255,0.8),0_4px_14px_rgba(15,15,15,0.05)] backdrop-blur-xl backdrop-saturate-150 sm:h-[46px] sm:rounded-[13px] sm:px-2 lg:hidden">
             <div className="flex shrink-0 items-center gap-1 sm:gap-1.5">
               {/* University of Calcutta */}
               <div className="flex h-8 w-8 items-center justify-center sm:h-9 sm:w-9">
@@ -147,24 +103,10 @@ export function Navbar() {
             </div>
           </div>
 
-          {/* =======================================================
-              DESKTOP — INDIVIDUAL LARGER FROSTED GLASS LOGO TILES
-          ======================================================== */}
-
+          {/* DESKTOP — INDIVIDUAL LARGER FROSTED GLASS LOGO TILES */}
           <div className="hidden shrink-0 items-center gap-2.5 lg:flex">
             {/* University of Calcutta */}
-            <div
-              className="
-                flex h-[64px] w-[64px] shrink-0
-                items-center justify-center
-                rounded-[14px]
-                border border-white/65
-                bg-white/[0.28]
-                shadow-[inset_0_1px_0_rgba(255,255,255,0.8),0_4px_14px_rgba(15,15,15,0.05)]
-                backdrop-blur-xl
-                backdrop-saturate-150
-              "
-            >
+            <div className="flex h-[64px] w-[64px] shrink-0 items-center justify-center rounded-[14px] border border-white/65 bg-white/[0.28] shadow-[inset_0_1px_0_rgba(255,255,255,0.8),0_4px_14px_rgba(15,15,15,0.05)] backdrop-blur-xl backdrop-saturate-150">
               <Image
                 src="/images/logos/cu-logo.png"
                 alt="University of Calcutta"
@@ -175,18 +117,7 @@ export function Navbar() {
             </div>
 
             {/* Hult Prize */}
-            <div
-              className="
-                flex h-[64px] w-[64px] shrink-0
-                items-center justify-center
-                rounded-[14px]
-                border border-white/65
-                bg-white/[0.28]
-                shadow-[inset_0_1px_0_rgba(255,255,255,0.8),0_4px_14px_rgba(15,15,15,0.05)]
-                backdrop-blur-xl
-                backdrop-saturate-150
-              "
-            >
+            <div className="flex h-[64px] w-[64px] shrink-0 items-center justify-center rounded-[14px] border border-white/65 bg-white/[0.28] shadow-[inset_0_1px_0_rgba(255,255,255,0.8),0_4px_14px_rgba(15,15,15,0.05)] backdrop-blur-xl backdrop-saturate-150">
               <Image
                 src="/images/logos/hult-logo.png"
                 alt="Hult Prize"
@@ -197,18 +128,7 @@ export function Navbar() {
             </div>
 
             {/* Institution's Innovation Council */}
-            <div
-              className="
-                flex h-[64px] w-[64px] shrink-0
-                items-center justify-center
-                rounded-[14px]
-                border border-white/65
-                bg-white/[0.28]
-                shadow-[inset_0_1px_0_rgba(255,255,255,0.8),0_4px_14px_rgba(15,15,15,0.05)]
-                backdrop-blur-xl
-                backdrop-saturate-150
-              "
-            >
+            <div className="flex h-[64px] w-[64px] shrink-0 items-center justify-center rounded-[14px] border border-white/65 bg-white/[0.28] shadow-[inset_0_1px_0_rgba(255,255,255,0.8),0_4px_14px_rgba(15,15,15,0.05)] backdrop-blur-xl backdrop-saturate-150">
               <Image
                 src="/images/logos/iic-logo.png"
                 alt="Institution's Innovation Council"
@@ -219,18 +139,7 @@ export function Navbar() {
             </div>
 
             {/* OnCampus */}
-            <div
-              className="
-                flex h-[64px] w-[64px] shrink-0
-                items-center justify-center
-                rounded-[14px]
-                border border-white/65
-                bg-white/[0.28]
-                shadow-[inset_0_1px_0_rgba(255,255,255,0.8),0_4px_14px_rgba(15,15,15,0.05)]
-                backdrop-blur-xl
-                backdrop-saturate-150
-              "
-            >
+            <div className="flex h-[64px] w-[64px] shrink-0 items-center justify-center rounded-[14px] border border-white/65 bg-white/[0.28] shadow-[inset_0_1px_0_rgba(255,255,255,0.8),0_4px_14px_rgba(15,15,15,0.05)] backdrop-blur-xl backdrop-saturate-150">
               <Image
                 src="/images/logos/oncampus-logo.png"
                 alt="Hult Prize OnCampus"
@@ -244,17 +153,7 @@ export function Navbar() {
           {/* Divider */}
           <span
             aria-hidden="true"
-            className="
-              mx-2
-              hidden
-              h-9
-              w-px
-              bg-charcoal/10
-              sm:mx-3
-              sm:block
-              lg:mx-4
-              lg:h-11
-            "
+            className="mx-2 hidden h-9 w-px bg-charcoal/10 sm:mx-3 sm:block lg:mx-4 lg:h-11"
           />
 
           {/* Desktop / Tablet Brand */}
@@ -262,11 +161,9 @@ export function Navbar() {
             <span className="font-display text-[15px] font-extrabold tracking-[-0.045em] text-charcoal md:text-lg">
               HULT PRIZE
             </span>
-
             <span className="mt-1 font-body text-[8px] font-bold uppercase tracking-[0.14em] text-hult-pink md:text-[9px]">
               ONCAMPUS
             </span>
-
             <span className="mt-1 font-body text-[8px] font-bold uppercase tracking-[0.14em] text-gray md:text-[9px]">
               2026–27
             </span>
@@ -277,11 +174,9 @@ export function Navbar() {
             <span className="font-display text-[11px] font-extrabold tracking-[-0.045em] text-charcoal">
               HULT PRIZE
             </span>
-
             <span className="mt-0.5 font-body text-[6px] font-bold uppercase tracking-[0.12em] text-hult-pink">
               ONCAMPUS
             </span>
-
             <span className="mt-0.5 font-body text-[6px] font-bold uppercase tracking-[0.12em] text-gray">
               2026–27
             </span>
@@ -294,52 +189,27 @@ export function Navbar() {
 
         <nav
           aria-label="Main navigation"
-          className="
-            absolute
-            left-1/2
-            z-10
-            hidden
-            -translate-x-1/2
-            items-center
-            gap-1
-            lg:flex
-          "
+          className="absolute left-1/2 z-10 hidden -translate-x-1/2 items-center gap-1 lg:flex"
         >
           <Link
             href="/"
-            className={`group relative rounded-full px-5 py-3 font-body text-sm font-semibold transition-all duration-200 hover:text-hult-pink ${
-              pathname === "/" ? "text-hult-pink" : "text-charcoal"
-            }`}
+            className={`group relative rounded-full px-5 py-3 font-body text-sm font-semibold transition-all duration-200 hover:text-hult-pink ${pathname === "/" ? "text-hult-pink" : "text-charcoal"}`}
           >
             Home
-
             <span
               aria-hidden="true"
-              className={`absolute bottom-1.5 left-5 right-5 h-0.5 origin-left rounded-full bg-hult-pink transition-transform duration-200 ${
-                pathname === "/"
-                  ? "scale-x-100"
-                  : "scale-x-0 group-hover:scale-x-100"
-              }`}
+              className={`absolute bottom-1.5 left-5 right-5 h-0.5 origin-left rounded-full bg-hult-pink transition-transform duration-200 ${pathname === "/" ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"}`}
             />
           </Link>
 
           <Link
             href="/committee-recruitment"
-            className={`group relative rounded-full px-5 py-3 font-body text-sm font-semibold transition-all duration-200 hover:text-hult-pink ${
-              pathname === "/committee-recruitment"
-                ? "text-hult-pink"
-                : "text-charcoal"
-            }`}
+            className={`group relative rounded-full px-5 py-3 font-body text-sm font-semibold transition-all duration-200 hover:text-hult-pink ${pathname === "/committee-recruitment" ? "text-hult-pink" : "text-charcoal"}`}
           >
             Recruitment
-
             <span
               aria-hidden="true"
-              className={`absolute bottom-1.5 left-5 right-5 h-0.5 origin-left rounded-full bg-hult-pink transition-transform duration-200 ${
-                pathname === "/committee-recruitment"
-                  ? "scale-x-100"
-                  : "scale-x-0 group-hover:scale-x-100"
-              }`}
+              className={`absolute bottom-1.5 left-5 right-5 h-0.5 origin-left rounded-full bg-hult-pink transition-transform duration-200 ${pathname === "/committee-recruitment" ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"}`}
             />
           </Link>
         </nav>
@@ -349,7 +219,6 @@ export function Navbar() {
         ========================================================== */}
 
         <div className="relative z-10 ml-auto flex items-center">
-          {/* Social Divider */}
           <span
             aria-hidden="true"
             className="mr-3 hidden h-8 w-px bg-charcoal/10 xl:block"
@@ -363,15 +232,7 @@ export function Navbar() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Instagram"
-              className="
-                flex h-10 w-10
-                items-center justify-center
-                rounded-full
-                text-charcoal
-                transition-all duration-200
-                hover:bg-hult-pink/10
-                hover:text-hult-pink
-              "
+              className="flex h-10 w-10 items-center justify-center rounded-full text-charcoal transition-all duration-200 hover:bg-hult-pink/10 hover:text-hult-pink"
             >
               <svg
                 viewBox="0 0 24 24"
@@ -389,7 +250,6 @@ export function Navbar() {
                   stroke="currentColor"
                   strokeWidth="1.8"
                 />
-
                 <circle
                   cx="12"
                   cy="12"
@@ -397,7 +257,6 @@ export function Navbar() {
                   stroke="currentColor"
                   strokeWidth="1.8"
                 />
-
                 <circle cx="17.5" cy="6.5" r="1" fill="currentColor" />
               </svg>
             </a>
@@ -408,15 +267,7 @@ export function Navbar() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="LinkedIn"
-              className="
-                flex h-10 w-10
-                items-center justify-center
-                rounded-full
-                text-charcoal
-                transition-all duration-200
-                hover:bg-hult-pink/10
-                hover:text-hult-pink
-              "
+              className="flex h-10 w-10 items-center justify-center rounded-full text-charcoal transition-all duration-200 hover:bg-hult-pink/10 hover:text-hult-pink"
             >
               <svg
                 viewBox="0 0 24 24"
@@ -434,23 +285,19 @@ export function Navbar() {
                   stroke="currentColor"
                   strokeWidth="1.8"
                 />
-
                 <path
                   d="M8 10V16"
                   stroke="currentColor"
                   strokeWidth="1.8"
                   strokeLinecap="round"
                 />
-
                 <circle cx="8" cy="7.5" r="1" fill="currentColor" />
-
                 <path
                   d="M12 16V12.8C12 11.25 13.05 10 14.5 10C15.95 10 17 11.25 17 12.8V16"
                   stroke="currentColor"
                   strokeWidth="1.8"
                   strokeLinecap="round"
                 />
-
                 <path
                   d="M12 13V16"
                   stroke="currentColor"
@@ -470,26 +317,7 @@ export function Navbar() {
             aria-expanded={isMenuOpen}
             aria-controls="mobile-navigation"
             onClick={() => setIsMenuOpen((open) => !open)}
-            className="
-              ml-2
-              flex h-10 w-10
-              shrink-0
-              items-center justify-center
-              rounded-full
-              border border-charcoal/10
-              bg-white/50
-              text-charcoal
-              backdrop-blur-md
-              transition-all duration-200
-              hover:border-hult-pink
-              hover:bg-white/75
-              hover:text-hult-pink
-              focus-visible:outline-none
-              focus-visible:ring-2
-              focus-visible:ring-hult-pink
-              focus-visible:ring-offset-2
-              lg:hidden
-            "
+            className="ml-2 flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-charcoal/10 bg-white/50 text-charcoal backdrop-blur-md transition-all duration-200 hover:border-hult-pink hover:bg-white/75 hover:text-hult-pink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-hult-pink focus-visible:ring-offset-2 lg:hidden"
           >
             {isMenuOpen ? (
               <X size={20} strokeWidth={2} />
@@ -507,147 +335,48 @@ export function Navbar() {
       <AnimatePresence>
         {isMenuOpen && (
           <motion.div
+            id="mobile-navigation"
             className="pointer-events-auto fixed inset-0 z-[60] lg:hidden"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.2 }}
           >
-            {/* =====================================================
-                FULL SCREEN BACKGROUND
-            ====================================================== */}
-
+            {/* FULL SCREEN BACKGROUND */}
             <motion.div
-              className="
-                absolute inset-0
-                overflow-hidden
-                bg-[#f7eef5]
-              "
+              className="absolute inset-0 overflow-hidden bg-[#f7eef5]"
               initial={{ x: "100%" }}
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
-              transition={{
-                duration: 0.55,
-                ease: [0.22, 1, 0.36, 1],
-              }}
+              transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
             >
               {/* Soft frosted base */}
               <div
                 aria-hidden="true"
-                className="
-                  absolute inset-0
-                  bg-[linear-gradient(135deg,rgba(255,255,255,0.94)_0%,rgba(248,237,245,0.94)_45%,rgba(240,218,233,0.96)_100%)]
-                  backdrop-blur-3xl
-                "
+                className="absolute inset-0 bg-[linear-gradient(135deg,rgba(255,255,255,0.94)_0%,rgba(248,237,245,0.94)_45%,rgba(240,218,233,0.96)_100%)] backdrop-blur-3xl"
               />
 
-              {/* =================================================
-                  ATMOSPHERIC GLOWS
-              ================================================== */}
-
+              {/* Atmospheric glows */}
               <div
                 aria-hidden="true"
-                className="
-                  absolute
-                  -left-32
-                  -top-32
-                  h-[420px]
-                  w-[420px]
-                  rounded-full
-                  bg-hult-pink/10
-                  blur-[90px]
-                "
+                className="absolute -left-32 -top-32 h-[420px] w-[420px] rounded-full bg-hult-pink/10 blur-[90px]"
               />
-
               <div
                 aria-hidden="true"
-                className="
-                  absolute
-                  -right-32
-                  top-[18%]
-                  h-[460px]
-                  w-[460px]
-                  rounded-full
-                  bg-[#aabce8]/20
-                  blur-[100px]
-                "
+                className="absolute -right-32 top-[18%] h-[460px] w-[460px] rounded-full bg-[#aabce8]/20 blur-[100px]"
               />
-
               <div
                 aria-hidden="true"
-                className="
-                  absolute
-                  -bottom-40
-                  left-[15%]
-                  h-[420px]
-                  w-[620px]
-                  rounded-full
-                  bg-hult-pink/10
-                  blur-[110px]
-                "
+                className="absolute -bottom-40 left-[15%] h-[420px] w-[620px] rounded-full bg-hult-pink/10 blur-[110px]"
               />
 
-              {/* =================================================
-                  VERY SUBTLE GRID / EDITORIAL LINES
-              ================================================== */}
-
-              <div
-                aria-hidden="true"
-                className="
-                  absolute
-                  inset-y-0
-                  left-[12%]
-                  w-px
-                  bg-charcoal/[0.05]
-                "
-              />
-
-              <div
-                aria-hidden="true"
-                className="
-                  absolute
-                  inset-y-0
-                  right-[12%]
-                  w-px
-                  bg-charcoal/[0.05]
-                "
-              />
-
-              <div
-                aria-hidden="true"
-                className="
-                  absolute
-                  left-0
-                  right-0
-                  top-[38%]
-                  h-px
-                  bg-charcoal/[0.04]
-                "
-              />
-
-              {/* =================================================
-                  CONTENT
-              ================================================== */}
-
+              {/* CONTENT — vertical guide lines removed */}
               <div className="relative z-10 flex h-svh w-full flex-col px-6 pb-7 pt-6 sm:px-10 sm:pb-10 sm:pt-8">
-                {/* =================================================
-                    TOP BAR
-                ================================================== */}
-
+                {/* TOP BAR */}
                 <div className="flex items-center justify-between">
                   {/* Brand */}
                   <div className="flex items-center gap-3">
-                    <div
-                      className="
-                        flex h-11 w-11
-                        items-center justify-center
-                        rounded-[12px]
-                        border border-white/80
-                        bg-white/50
-                        shadow-[0_8px_25px_rgba(40,20,40,0.08),inset_0_1px_0_rgba(255,255,255,0.95)]
-                        backdrop-blur-xl
-                      "
-                    >
+                    <div className="flex h-11 w-11 items-center justify-center rounded-[12px] border border-white/80 bg-white/50 shadow-[0_8px_25px_rgba(40,20,40,0.08),inset_0_1px_0_rgba(255,255,255,0.95)] backdrop-blur-xl">
                       <Image
                         src="/images/logos/cu-logo.png"
                         alt="University of Calcutta"
@@ -661,7 +390,6 @@ export function Navbar() {
                       <span className="font-display text-sm font-extrabold tracking-[-0.045em] text-charcoal sm:text-base">
                         HULT PRIZE
                       </span>
-
                       <span className="mt-1 font-body text-[7px] font-bold uppercase tracking-[0.18em] text-hult-pink sm:text-[8px]">
                         ONCAMPUS · 2026–27
                       </span>
@@ -673,22 +401,7 @@ export function Navbar() {
                     type="button"
                     onClick={closeMenu}
                     aria-label="Close navigation menu"
-                    className="
-                      group
-                      flex h-12 w-12
-                      items-center justify-center
-                      rounded-full
-                      border border-charcoal/10
-                      bg-white/55
-                      text-charcoal
-                      shadow-[0_8px_25px_rgba(40,20,40,0.08),inset_0_1px_0_rgba(255,255,255,0.95)]
-                      backdrop-blur-xl
-                      transition-all
-                      duration-300
-                      hover:border-hult-pink/40
-                      hover:bg-white/80
-                      hover:text-hult-pink
-                    "
+                    className="group flex h-12 w-12 items-center justify-center rounded-full border border-charcoal/10 bg-white/55 text-charcoal shadow-[0_8px_25px_rgba(40,20,40,0.08),inset_0_1px_0_rgba(255,255,255,0.95)] backdrop-blur-xl transition-all duration-300 hover:border-hult-pink/40 hover:bg-white/80 hover:text-hult-pink"
                   >
                     <X
                       size={21}
@@ -698,10 +411,7 @@ export function Navbar() {
                   </button>
                 </div>
 
-                {/* =================================================
-                    EDITORIAL LABEL
-                ================================================== */}
-
+                {/* EDITORIAL LABEL */}
                 <motion.div
                   initial={{ opacity: 0, y: 15 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -709,16 +419,12 @@ export function Navbar() {
                   className="mt-14 flex items-center gap-3 sm:mt-16"
                 >
                   <span className="h-px w-10 bg-hult-pink sm:w-14" />
-
                   <span className="font-body text-[9px] font-bold uppercase tracking-[0.3em] text-[#6a5364]">
                     Navigation
                   </span>
                 </motion.div>
 
-                {/* =================================================
-                    MAIN NAVIGATION
-                ================================================== */}
-
+                {/* MAIN NAVIGATION */}
                 <motion.nav
                   aria-label="Mobile navigation"
                   className="mt-5 sm:mt-6"
@@ -728,7 +434,7 @@ export function Navbar() {
                     hidden: {},
                     visible: {
                       transition: {
-                        staggerChildren: 0.1,
+                        staggerChildren: 0.08,
                         delayChildren: 0.22,
                       },
                     },
@@ -737,66 +443,36 @@ export function Navbar() {
                   {/* Home */}
                   <motion.div
                     variants={{
-                      hidden: {
-                        opacity: 0,
-                        x: 40,
-                      },
-                      visible: {
-                        opacity: 1,
-                        x: 0,
-                      },
+                      hidden: { opacity: 0, x: 30 },
+                      visible: { opacity: 1, x: 0 },
                     }}
-                    transition={{
-                      duration: 0.55,
-                      ease: [0.22, 1, 0.36, 1],
-                    }}
+                    transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
                   >
                     <Link
                       href="/"
                       onClick={closeMenu}
                       aria-current={pathname === "/" ? "page" : undefined}
-                      className="
-                        group
-                        flex
-                        items-center
-                        justify-between
-                        border-b
-                        border-charcoal/[0.08]
-                        py-5
-                        sm:py-6
-                      "
+                      className="group flex items-center justify-between border-b border-charcoal/[0.08] py-3.5 sm:py-4"
                     >
-                      <div className="flex items-center gap-4 sm:gap-5">
+                      <div className="flex items-center gap-3.5 sm:gap-4">
                         <span
-                          className={`font-body text-[10px] font-bold tracking-[0.2em] ${
-                            pathname === "/"
-                              ? "text-hult-pink"
-                              : "text-charcoal/35"
-                          }`}
+                          className={`font-body text-[9px] font-bold tracking-[0.18em] ${pathname === "/" ? "text-[#AB3C68]" : "text-charcoal/35"}`}
                         >
                           01
                         </span>
 
                         <span
-                          className={`font-display text-[clamp(2.2rem,8vw,3.6rem)] font-bold leading-none tracking-[-0.055em] transition-colors duration-300 ${
-                            pathname === "/"
-                              ? "text-hult-pink"
-                              : "text-charcoal group-hover:text-hult-pink"
-                          }`}
+                          className={`font-display text-[1.25rem] font-bold leading-none tracking-[-0.035em] transition-colors duration-300 sm:text-[1.4rem] ${pathname === "/" ? "text-[#AB3C68]" : "text-charcoal group-hover:text-[#AB3C68]"}`}
                         >
                           Home
                         </span>
                       </div>
 
                       <span
-                        className={`flex h-11 w-11 items-center justify-center rounded-full border transition-all duration-300 sm:h-12 sm:w-12 ${
-                          pathname === "/"
-                            ? "border-hult-pink/30 bg-hult-pink text-white"
-                            : "border-charcoal/10 bg-white/45 text-charcoal group-hover:border-hult-pink/30 group-hover:bg-hult-pink group-hover:text-white"
-                        }`}
+                        className={`flex h-9 w-9 items-center justify-center rounded-full border transition-all duration-300 sm:h-10 sm:w-10 ${pathname === "/" ? "border-[#AB3C68]/30 bg-[#AB3C68] text-white" : "border-charcoal/10 bg-white/45 text-charcoal group-hover:border-[#AB3C68]/30 group-hover:bg-[#AB3C68] group-hover:text-white"}`}
                       >
                         <ArrowUpRight
-                          size={19}
+                          size={17}
                           strokeWidth={1.8}
                           className="transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
                         />
@@ -807,19 +483,10 @@ export function Navbar() {
                   {/* Recruitment */}
                   <motion.div
                     variants={{
-                      hidden: {
-                        opacity: 0,
-                        x: 40,
-                      },
-                      visible: {
-                        opacity: 1,
-                        x: 0,
-                      },
+                      hidden: { opacity: 0, x: 30 },
+                      visible: { opacity: 1, x: 0 },
                     }}
-                    transition={{
-                      duration: 0.55,
-                      ease: [0.22, 1, 0.36, 1],
-                    }}
+                    transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
                   >
                     <Link
                       href="/committee-recruitment"
@@ -829,48 +496,126 @@ export function Navbar() {
                           ? "page"
                           : undefined
                       }
-                      className="
-                        group
-                        flex
-                        items-center
-                        justify-between
-                        border-b
-                        border-charcoal/[0.08]
-                        py-5
-                        sm:py-6
-                      "
+                      className="group flex items-center justify-between border-b border-charcoal/[0.08] py-3.5 sm:py-4"
                     >
-                      <div className="flex items-center gap-4 sm:gap-5">
+                      <div className="flex items-center gap-3.5 sm:gap-4">
                         <span
-                          className={`font-body text-[10px] font-bold tracking-[0.2em] ${
-                            pathname === "/committee-recruitment"
-                              ? "text-hult-pink"
-                              : "text-charcoal/35"
-                          }`}
+                          className={`font-body text-[9px] font-bold tracking-[0.18em] ${pathname === "/committee-recruitment" ? "text-[#AB3C68]" : "text-charcoal/35"}`}
                         >
                           02
                         </span>
 
                         <span
-                          className={`font-display text-[clamp(2.2rem,8vw,3.6rem)] font-bold leading-none tracking-[-0.055em] transition-colors duration-300 ${
-                            pathname === "/committee-recruitment"
-                              ? "text-hult-pink"
-                              : "text-charcoal group-hover:text-hult-pink"
-                          }`}
+                          className={`font-display text-[1.25rem] font-bold leading-none tracking-[-0.035em] transition-colors duration-300 sm:text-[1.4rem] ${pathname === "/committee-recruitment" ? "text-[#AB3C68]" : "text-charcoal group-hover:text-[#AB3C68]"}`}
                         >
                           Recruitment
                         </span>
                       </div>
 
                       <span
-                        className={`flex h-11 w-11 items-center justify-center rounded-full border transition-all duration-300 sm:h-12 sm:w-12 ${
-                          pathname === "/committee-recruitment"
-                            ? "border-hult-pink/30 bg-hult-pink text-white"
-                            : "border-charcoal/10 bg-white/45 text-charcoal group-hover:border-hult-pink/30 group-hover:bg-hult-pink group-hover:text-white"
-                        }`}
+                        className={`flex h-9 w-9 items-center justify-center rounded-full border transition-all duration-300 sm:h-10 sm:w-10 ${pathname === "/committee-recruitment" ? "border-[#AB3C68]/30 bg-[#AB3C68] text-white" : "border-charcoal/10 bg-white/45 text-charcoal group-hover:border-[#AB3C68]/30 group-hover:bg-[#AB3C68] group-hover:text-white"}`}
                       >
                         <ArrowUpRight
-                          size={19}
+                          size={17}
+                          strokeWidth={1.8}
+                          className="transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+                        />
+                      </span>
+                    </Link>
+                  </motion.div>
+
+                  {/* Technical Sponsors */}
+                  <motion.div
+                    variants={{
+                      hidden: { opacity: 0, x: 30 },
+                      visible: { opacity: 1, x: 0 },
+                    }}
+                    transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
+                  >
+                    <Link
+                      href="/#technical-sponsors"
+                      onClick={closeMenu}
+                      className="group flex items-center justify-between border-b border-charcoal/[0.08] py-3.5 sm:py-4"
+                    >
+                      <div className="flex items-center gap-3.5 sm:gap-4">
+                        <span className="font-body text-[9px] font-bold tracking-[0.18em] text-charcoal/35">
+                          03
+                        </span>
+
+                        <span className="font-display text-[1.25rem] font-bold leading-none tracking-[-0.035em] text-charcoal transition-colors duration-300 group-hover:text-[#AB3C68] sm:text-[1.4rem]">
+                          Technical Sponsors
+                        </span>
+                      </div>
+
+                      <span className="flex h-9 w-9 items-center justify-center rounded-full border border-charcoal/10 bg-white/45 text-charcoal transition-all duration-300 group-hover:border-[#AB3C68]/30 group-hover:bg-[#AB3C68] group-hover:text-white sm:h-10 sm:w-10">
+                        <ArrowUpRight
+                          size={17}
+                          strokeWidth={1.8}
+                          className="transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+                        />
+                      </span>
+                    </Link>
+                  </motion.div>
+
+                  {/* Contacts */}
+                  <motion.div
+                    variants={{
+                      hidden: { opacity: 0, x: 30 },
+                      visible: { opacity: 1, x: 0 },
+                    }}
+                    transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
+                  >
+                    <Link
+                      href="/#contact"
+                      onClick={closeMenu}
+                      className="group flex items-center justify-between border-b border-charcoal/[0.08] py-3.5 sm:py-4"
+                    >
+                      <div className="flex items-center gap-3.5 sm:gap-4">
+                        <span className="font-body text-[9px] font-bold tracking-[0.18em] text-charcoal/35">
+                          04
+                        </span>
+
+                        <span className="font-display text-[1.25rem] font-bold leading-none tracking-[-0.035em] text-charcoal transition-colors duration-300 group-hover:text-[#AB3C68] sm:text-[1.4rem]">
+                          Contacts
+                        </span>
+                      </div>
+
+                      <span className="flex h-9 w-9 items-center justify-center rounded-full border border-charcoal/10 bg-white/45 text-charcoal transition-all duration-300 group-hover:border-[#AB3C68]/30 group-hover:bg-[#AB3C68] group-hover:text-white sm:h-10 sm:w-10">
+                        <ArrowUpRight
+                          size={17}
+                          strokeWidth={1.8}
+                          className="transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+                        />
+                      </span>
+                    </Link>
+                  </motion.div>
+
+                  {/* Latest News and Announcements */}
+                  <motion.div
+                    variants={{
+                      hidden: { opacity: 0, x: 30 },
+                      visible: { opacity: 1, x: 0 },
+                    }}
+                    transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
+                  >
+                    <Link
+                      href="/#announcements"
+                      onClick={closeMenu}
+                      className="group flex items-center justify-between border-b border-charcoal/[0.08] py-3.5 sm:py-4"
+                    >
+                      <div className="flex items-center gap-3.5 sm:gap-4">
+                        <span className="font-body text-[9px] font-bold tracking-[0.18em] text-charcoal/35">
+                          05
+                        </span>
+
+                        <span className="max-w-[220px] font-display text-[1.25rem] font-bold leading-[1.15] tracking-[-0.035em] text-charcoal transition-colors duration-300 group-hover:text-[#AB3C68] sm:text-[1.4rem]">
+                          Latest News &amp; Announcements
+                        </span>
+                      </div>
+
+                      <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-charcoal/10 bg-white/45 text-charcoal transition-all duration-300 group-hover:border-[#AB3C68]/30 group-hover:bg-[#AB3C68] group-hover:text-white sm:h-10 sm:w-10">
+                        <ArrowUpRight
+                          size={17}
                           strokeWidth={1.8}
                           className="transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
                         />
@@ -903,14 +648,7 @@ export function Navbar() {
                     initial={{ opacity: 0, y: 15 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.68, duration: 0.45 }}
-                    className="
-                      flex
-                      items-end
-                      justify-between
-                      border-t
-                      border-charcoal/[0.08]
-                      pt-5
-                    "
+                    className="flex items-end justify-between border-t border-charcoal/[0.08] pt-5"
                   >
                     <div>
                       <p className="font-body text-[9px] font-bold uppercase tracking-[0.2em] text-charcoal/40">
@@ -929,20 +667,7 @@ export function Navbar() {
                         target="_blank"
                         rel="noopener noreferrer"
                         aria-label="Instagram"
-                        className="
-                          flex h-11 w-11
-                          items-center justify-center
-                          rounded-full
-                          border border-charcoal/10
-                          bg-white/45
-                          text-charcoal
-                          backdrop-blur-md
-                          transition-all
-                          duration-300
-                          hover:border-hult-pink/30
-                          hover:bg-hult-pink
-                          hover:text-white
-                        "
+                        className="flex h-11 w-11 items-center justify-center rounded-full border border-charcoal/10 bg-white/45 text-charcoal backdrop-blur-md transition-all duration-300 hover:border-[#AB3C68]/30 hover:bg-[#AB3C68] hover:text-white"
                       >
                         <svg
                           viewBox="0 0 24 24"
@@ -960,7 +685,6 @@ export function Navbar() {
                             stroke="currentColor"
                             strokeWidth="1.8"
                           />
-
                           <circle
                             cx="12"
                             cy="12"
@@ -968,7 +692,6 @@ export function Navbar() {
                             stroke="currentColor"
                             strokeWidth="1.8"
                           />
-
                           <circle
                             cx="17.5"
                             cy="6.5"
@@ -984,20 +707,7 @@ export function Navbar() {
                         target="_blank"
                         rel="noopener noreferrer"
                         aria-label="LinkedIn"
-                        className="
-                          flex h-11 w-11
-                          items-center justify-center
-                          rounded-full
-                          border border-charcoal/10
-                          bg-white/45
-                          text-charcoal
-                          backdrop-blur-md
-                          transition-all
-                          duration-300
-                          hover:border-hult-pink/30
-                          hover:bg-hult-pink
-                          hover:text-white
-                        "
+                        className="flex h-11 w-11 items-center justify-center rounded-full border border-charcoal/10 bg-white/45 text-charcoal backdrop-blur-md transition-all duration-300 hover:border-[#AB3C68]/30 hover:bg-[#AB3C68] hover:text-white"
                       >
                         <svg
                           viewBox="0 0 24 24"
@@ -1015,28 +725,19 @@ export function Navbar() {
                             stroke="currentColor"
                             strokeWidth="1.8"
                           />
-
                           <path
                             d="M8 10V16"
                             stroke="currentColor"
                             strokeWidth="1.8"
                             strokeLinecap="round"
                           />
-
-                          <circle
-                            cx="8"
-                            cy="7.5"
-                            r="1"
-                            fill="currentColor"
-                          />
-
+                          <circle cx="8" cy="7.5" r="1" fill="currentColor" />
                           <path
                             d="M12 16V12.8C12 11.25 13.05 10 14.5 10C15.95 10 17 11.25 17 12.8V16"
                             stroke="currentColor"
                             strokeWidth="1.8"
                             strokeLinecap="round"
                           />
-
                           <path
                             d="M12 13V16"
                             stroke="currentColor"

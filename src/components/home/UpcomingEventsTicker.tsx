@@ -70,8 +70,9 @@ export default function UpcomingEventsTicker() {
 
   return (
     <section
+      id="announcements"
       aria-label="Latest announcements"
-      className="relative overflow-hidden bg-[#0B1F3A]"
+      className="scroll-mt-50 relative overflow-hidden bg-[#0B1F3A]"
     >
       {/* Subtle background detail */}
       <div
