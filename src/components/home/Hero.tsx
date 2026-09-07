@@ -71,7 +71,7 @@ export function Hero() {
       ========================================================== */}
 
       <Container className="relative z-10">
-        <div className="flex min-h-[100svh] items-start justify-center pt-10 pb-16 sm:items-center sm:py-16 md:py-20 lg:py-24">
+        <div className="mt-10 flex min-h-[100svh] items-start justify-center pt-16 pb-16 sm:items-center sm:py-16 md:py-20 lg:py-24">
           <div className="flex w-full max-w-6xl flex-col items-center text-center">
             {/* Logos */}
             <Reveal delay={0.2} y={18}>
