@@ -250,14 +250,14 @@ export function HeroSection() {
       {/* HERO CONTENT                                                */}
       {/* ============================================================ */}
 
-      <div className="relative z-10 mx-auto flex min-h-[calc(100vh-80px)] max-w-[1400px] items-center px-5 pb-24 pt-16 sm:px-8 lg:px-10">
+      <div className="relative z-10 mx-auto flex min-h-[100vh] max-w-[1400px] mt-9 items-center px-5 pb-24 pt-16 sm:px-8 lg:px-10">
         <div className="mx-auto w-full max-w-[1000px] text-center">
           {/* ======================================================== */}
           {/* BRAND LINE                                               */}
           {/* ======================================================== */}
 
           <Reveal delay={0.05} duration={0.65} y={18}>
-            <div className="mb-8 flex items-center justify-center gap-4 sm:mb-9">
+            <div className="mb-8 mt-7 flex items-center justify-center gap-4 sm:mb-9">
               <span className="h-px w-10 bg-charcoal/20 sm:w-14" />
 
               <p className="text-[9px] font-bold uppercase tracking-[0.34em] text-black sm:text-[10px]">

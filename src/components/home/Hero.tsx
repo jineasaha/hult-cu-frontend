@@ -65,9 +65,13 @@ export function Hero() {
         }}
       />
 
-      {/* Hero content */}
+      {/* =========================================================
+          HERO CONTENT
+          Navbar floats above this section.
+      ========================================================== */}
+
       <Container className="relative z-10">
-        <div className="flex min-h-[100svh] items-center justify-center py-12 sm:py-16 md:py-20 lg:py-24">
+        <div className="flex min-h-[100svh] items-center justify-center px-2 pb-10 pt-28 mt-5 sm:px-0 sm:pb-12 sm:pt-32 md:pt-36 lg:pb-16 lg:pt-32">
           <div className="flex w-full max-w-6xl flex-col items-center text-center">
             {/* Logos */}
             <Reveal delay={0.2} y={18}>
