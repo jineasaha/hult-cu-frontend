@@ -4,7 +4,7 @@ import { PeopleSection } from "@/components/judges-investors/PeopleSection";
 import { currentJudges, people } from "@/data/judges-investors";
 
 export const metadata = {
-  title: "People | Hult Prize University of Calcutta",
+  title: "People",
   description:
     "Meet the people who have contributed to the Hult Prize journey at the University of Calcutta.",
 };
