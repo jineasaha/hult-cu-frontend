@@ -22,7 +22,7 @@ const dmSans = DM_Sans({
 export const metadata: Metadata = {
   title: {
     default: "Hult Prize | University of Calcutta",
-    template: "%s | Hult Prize UC",
+    template: "%s | Hult Prize CU",
   },
   description:
     "Hult Prize at the University of Calcutta — empowering students to build innovative solutions for a better world.",
