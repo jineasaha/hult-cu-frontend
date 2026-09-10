@@ -10,12 +10,35 @@
   --hult-pink-light: #ffb3d1;
   --hult-pink-pale: #ffe6f1;
 
+  /* Additional Hult / campaign pinks */
+  --hult-pink-base: #d6318c;
+  --hult-pink-mid: #d83d91;
+  --hult-pink-active: #ab3c68;
+  --hult-pink-deep: #861f65;
+  --hult-pink-purple: #7b348f;
+  --hult-pink-wine: #741e3f;
+
+  /* ─────────────────────────────
+     PREMIUM MAROON
+  ───────────────────────────── */
+
+  --maroon: #7a1f3d;
+  --maroon-light: #9a4964;
+  --maroon-pale: #f3e8ec;
+
   /* ─────────────────────────────
      NEUTRALS
   ───────────────────────────── */
 
   --charcoal: #0f0f0f;
+  --black: #000000;
   --gray: #4b4b4b;
+  --gray-dark: #3f4148;
+  --gray-medium: #55535a;
+  --gray-muted: #666268;
+  --gray-soft: #777278;
+  --gray-light: #8793a0;
+  --gray-pale: #999999;
   --light-gray: #f4f4f6;
   --white: #ffffff;
 
@@ -35,6 +58,34 @@
   --gold: #f4b400;
 
   /* ─────────────────────────────
+     SOFT BLUE PALETTE
+  ───────────────────────────── */
+
+  --blue: #2563eb;
+  --blue-soft: #b9ddec;
+  --blue-pale: #eaf6fb;
+  --blue-wash: #e7f5fb;
+
+  /* ─────────────────────────────
+     SOFT PINK / BLUSH PALETTE
+  ───────────────────────────── */
+
+  --blush: #f2a8c9;
+  --blush-light: #fff0f7;
+  --blush-pale: #fff4f8;
+
+  /* ─────────────────────────────
+     WARM NEUTRAL SURFACES
+  ───────────────────────────── */
+
+  --peach: #fff4f0;
+  --peach-light: #fff5f3;
+  --ivory: #f4f0f1;
+  --soft-gray: #f5f4f5;
+  --surface-gray: #e9e5e7;
+  --cream: #fff9e8;
+
+  /* ─────────────────────────────
      SEMANTIC
   ───────────────────────────── */
 
@@ -44,14 +95,21 @@
   --info: #2563eb;
 
   /* ─────────────────────────────
-     SURFACES
+     EXTRA UI STATES
   ───────────────────────────── */
+
+  --border: #e7e7eb;
+  --border-light: #ededf0;
+  --border-medium: #d9d8dc;
+  --border-dark: #d2d0d5;
+
+  --surface: #ffffff;
+  --surface-muted: #f4f4f6;
+  --surface-soft: #faf9f9;
+  --surface-warm: #f8f4f5;
 
   --background: #ffffff;
   --foreground: #0f0f0f;
-  --surface: #ffffff;
-  --surface-muted: #f4f4f6;
-  --border: #e7e7eb;
 
   /* ─────────────────────────────
      RADIUS
@@ -61,39 +119,89 @@
   --radius-md: 12px;
   --radius-lg: 20px;
   --radius-xl: 28px;
+  --radius-2xl: 32px;
 }
 
 /* Tailwind CSS v4 directive; suppress generic CSS-linter warnings. */
 /* stylelint-disable-next-line at-rule-no-unknown */
 @theme inline {
+  /* Hult Brand */
   --color-hult-pink: var(--hult-pink);
   --color-hult-pink-dark: var(--hult-pink-dark);
   --color-hult-pink-light: var(--hult-pink-light);
   --color-hult-pink-pale: var(--hult-pink-pale);
+  --color-hult-pink-base: var(--hult-pink-base);
+  --color-hult-pink-mid: var(--hult-pink-mid);
+  --color-hult-pink-active: var(--hult-pink-active);
+  --color-hult-pink-deep: var(--hult-pink-deep);
+  --color-hult-pink-purple: var(--hult-pink-purple);
+  --color-hult-pink-wine: var(--hult-pink-wine);
 
+  /* Maroon */
+  --color-maroon: var(--maroon);
+  --color-maroon-light: var(--maroon-light);
+  --color-maroon-pale: var(--maroon-pale);
+
+  /* Neutrals */
+  --color-black: var(--black);
   --color-charcoal: var(--charcoal);
   --color-gray: var(--gray);
+  --color-gray-dark: var(--gray-dark);
+  --color-gray-medium: var(--gray-medium);
+  --color-gray-muted: var(--gray-muted);
+  --color-gray-soft: var(--gray-soft);
+  --color-gray-light: var(--gray-light);
+  --color-gray-pale: var(--gray-pale);
   --color-light-gray: var(--light-gray);
   --color-white: var(--white);
 
+  /* Premium Accent */
   --color-navy: var(--navy);
 
+  /* Secondary Accents */
   --color-purple: var(--purple);
   --color-coral: var(--coral);
   --color-teal: var(--teal);
   --color-gold: var(--gold);
 
+  /* Blue */
+  --color-blue: var(--blue);
+  --color-blue-soft: var(--blue-soft);
+  --color-blue-pale: var(--blue-pale);
+  --color-blue-wash: var(--blue-wash);
+
+  /* Blush / Pink */
+  --color-blush: var(--blush);
+  --color-blush-light: var(--blush-light);
+  --color-blush-pale: var(--blush-pale);
+
+  /* Warm Surfaces */
+  --color-peach: var(--peach);
+  --color-peach-light: var(--peach-light);
+  --color-ivory: var(--ivory);
+  --color-soft-gray: var(--soft-gray);
+  --color-surface-gray: var(--surface-gray);
+  --color-cream: var(--cream);
+
+  /* Semantic */
   --color-success: var(--success);
   --color-warning: var(--warning);
   --color-error: var(--error);
   --color-info: var(--info);
 
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
+  /* UI */
+  --color-border: var(--border);
+  --color-border-light: var(--border-light);
+  --color-border-medium: var(--border-medium);
+  --color-border-dark: var(--border-dark);
   --color-surface: var(--surface);
   --color-surface-muted: var(--surface-muted);
-  --color-border: var(--border);
+  --color-surface-soft: var(--surface-soft);
+  --color-surface-warm: var(--surface-warm);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
 
+  /* Typography */
   --font-display: var(--font-manrope);
   --font-body: var(--font-dm-sans);
 }
