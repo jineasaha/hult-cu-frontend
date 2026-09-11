@@ -17,6 +17,36 @@ export function Navbar() {
     setIsMenuOpen(false);
   };
 
+  const isJudgesInvestors = pathname === "/judges-investors";
+  const isRecruitment = pathname === "/committee-recruitment";
+
+  const scrollToAnnouncements = (
+    event: React.MouseEvent<HTMLAnchorElement>,
+  ) => {
+    if (pathname !== "/") {
+      return;
+    }
+
+    event.preventDefault();
+
+    const element = document.getElementById("announcements");
+
+    if (!element) {
+      return;
+    }
+
+    const elementTop = element.getBoundingClientRect().top + window.scrollY;
+    const elementHeight = element.offsetHeight;
+
+    const targetPosition =
+      elementTop - (window.innerHeight - elementHeight) / 2;
+
+    window.scrollTo({
+      top: Math.max(0, targetPosition),
+      behavior: "smooth",
+    });
+  };
+
   return (
     <header className="pointer-events-none fixed inset-x-0 top-0 z-50 px-2 pt-3 sm:px-4 sm:pt-4 lg:px-5 lg:pt-5">
       <Container className="pointer-events-auto relative mx-auto flex h-[72px] w-full max-w-[1480px] items-center sm:h-[76px] lg:h-[84px]">
@@ -104,7 +134,7 @@ export function Navbar() {
           </div>
 
           {/* DESKTOP — INDIVIDUAL LARGER FROSTED GLASS LOGO TILES */}
-          <div className="hidden shrink-0 items-center gap-2.5 lg:flex">
+          <div className="hidden shrink-0 items-center gap-2 lg:flex">
             {/* University of Calcutta */}
             <div className="flex h-[64px] w-[64px] shrink-0 items-center justify-center rounded-[14px] border border-white/65 bg-white/[0.28] shadow-[inset_0_1px_0_rgba(255,255,255,0.8),0_4px_14px_rgba(15,15,15,0.05)] backdrop-blur-xl backdrop-saturate-150">
               <Image
@@ -153,7 +183,7 @@ export function Navbar() {
           {/* Divider */}
           <span
             aria-hidden="true"
-            className="mx-2 hidden h-9 w-px bg-charcoal/10 sm:mx-3 sm:block lg:mx-4 lg:h-11"
+            className="mx-2 hidden h-9 w-px bg-charcoal/10 sm:mx-3 sm:block lg:mx-3 lg:h-11"
           />
 
           {/* Desktop / Tablet Brand */}
@@ -161,9 +191,11 @@ export function Navbar() {
             <span className="font-display text-[15px] font-extrabold tracking-[-0.045em] text-charcoal md:text-lg">
               HULT PRIZE
             </span>
+
             <span className="mt-1 font-body text-[8px] font-bold uppercase tracking-[0.14em] text-hult-pink md:text-[9px]">
               ONCAMPUS
             </span>
+
             <span className="mt-1 font-body text-[8px] font-bold uppercase tracking-[0.14em] text-gray md:text-[9px]">
               2026–27
             </span>
@@ -174,9 +206,11 @@ export function Navbar() {
             <span className="font-display text-[11px] font-extrabold tracking-[-0.045em] text-charcoal">
               HULT PRIZE
             </span>
+
             <span className="mt-0.5 font-body text-[6px] font-bold uppercase tracking-[0.12em] text-hult-pink">
               ONCAMPUS
             </span>
+
             <span className="mt-0.5 font-body text-[6px] font-bold uppercase tracking-[0.12em] text-gray">
               2026–27
             </span>
@@ -189,38 +223,78 @@ export function Navbar() {
 
         <nav
           aria-label="Main navigation"
-          className="absolute left-1/2 z-10 hidden -translate-x-1/2 items-center gap-1 lg:flex"
+          className="relative z-10 ml-auto mr-auto hidden items-center gap-0.5 lg:flex xl:gap-1"
         >
+          {/* Home */}
           <Link
             href="/"
-            className={`group relative rounded-full px-5 py-3 font-body text-sm font-semibold transition-all duration-200 hover:text-hult-pink ${pathname === "/" ? "text-hult-pink" : "text-charcoal"}`}
+            className={`group relative whitespace-nowrap rounded-full px-3 py-3 font-body text-[13px] font-semibold transition-all duration-200 xl:px-3.5 xl:text-sm ${pathname === "/" ? "text-hult-pink" : "text-charcoal hover:text-hult-pink"}`}
           >
             Home
             <span
               aria-hidden="true"
-              className={`absolute bottom-1.5 left-5 right-5 h-0.5 origin-left rounded-full bg-hult-pink transition-transform duration-200 ${pathname === "/" ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"}`}
+              className={`absolute bottom-1.5 left-3 right-3 h-0.5 origin-left rounded-full bg-hult-pink transition-transform duration-200 xl:left-3.5 xl:right-3.5 ${pathname === "/" ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"}`}
             />
           </Link>
 
+          {/* Recruitment */}
           <Link
             href="/committee-recruitment"
-            className={`group relative rounded-full px-5 py-3 font-body text-sm font-semibold transition-all duration-200 hover:text-hult-pink ${pathname === "/committee-recruitment" ? "text-hult-pink" : "text-charcoal"}`}
+            className={`group relative whitespace-nowrap rounded-full px-3 py-3 font-body text-[13px] font-semibold transition-all duration-200 xl:px-3.5 xl:text-sm ${isRecruitment ? "text-hult-pink" : "text-charcoal hover:text-hult-pink"}`}
           >
             Recruitment
             <span
               aria-hidden="true"
-              className={`absolute bottom-1.5 left-5 right-5 h-0.5 origin-left rounded-full bg-hult-pink transition-transform duration-200 ${pathname === "/committee-recruitment" ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"}`}
+              className={`absolute bottom-1.5 left-3 right-3 h-0.5 origin-left rounded-full bg-hult-pink transition-transform duration-200 xl:left-3.5 xl:right-3.5 ${isRecruitment ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"}`}
             />
           </Link>
 
+          {/* Judges & Investors */}
           <Link
             href="/judges-investors"
-            className={`group relative rounded-full px-5 py-3 font-body text-sm font-semibold transition-all duration-200 hover:text-hult-pink ${pathname === "/judges-investors" ? "text-hult-pink" : "text-charcoal"}`}
+            className={`group relative whitespace-nowrap rounded-full px-3 py-3 font-body text-[13px] font-semibold transition-all duration-200 xl:px-3.5 xl:text-sm ${isJudgesInvestors ? "text-hult-pink" : "text-charcoal hover:text-hult-pink"}`}
           >
             Judges & Investors
             <span
               aria-hidden="true"
-              className={`absolute bottom-1.5 left-5 right-5 h-0.5 origin-left rounded-full bg-hult-pink transition-transform duration-200 ${pathname === "/judges-investors" ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"}`}
+              className={`absolute bottom-1.5 left-3 right-3 h-0.5 origin-left rounded-full bg-hult-pink transition-transform duration-200 xl:left-3.5 xl:right-3.5 ${isJudgesInvestors ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"}`}
+            />
+          </Link>
+
+          {/* Technical Sponsors */}
+          <Link
+            href="/#technical-sponsors"
+            className="group relative whitespace-nowrap rounded-full px-3 py-3 font-body text-[13px] font-semibold text-charcoal transition-all duration-200 hover:text-hult-pink xl:px-3.5 xl:text-sm"
+          >
+            Technical Sponsors
+            <span
+              aria-hidden="true"
+              className="absolute bottom-1.5 left-3 right-3 h-0.5 origin-left scale-x-0 rounded-full bg-hult-pink transition-transform duration-200 group-hover:scale-x-100 xl:left-3.5 xl:right-3.5"
+            />
+          </Link>
+
+          {/* Contacts */}
+          <Link
+            href="/#contact"
+            className="group relative whitespace-nowrap rounded-full px-3 py-3 font-body text-[13px] font-semibold text-charcoal transition-all duration-200 hover:text-hult-pink xl:px-3.5 xl:text-sm"
+          >
+            Contacts
+            <span
+              aria-hidden="true"
+              className="absolute bottom-1.5 left-3 right-3 h-0.5 origin-left scale-x-0 rounded-full bg-hult-pink transition-transform duration-200 group-hover:scale-x-100 xl:left-3.5 xl:right-3.5"
+            />
+          </Link>
+
+          {/* Latest News & Announcements */}
+          <Link
+            href="/#announcements"
+            onClick={scrollToAnnouncements}
+            className="group relative whitespace-nowrap rounded-full px-3 py-3 font-body text-[13px] font-semibold text-charcoal transition-all duration-200 hover:text-hult-pink xl:px-3.5 xl:text-sm"
+          >
+            Latest News
+            <span
+              aria-hidden="true"
+              className="absolute bottom-1.5 left-3 right-3 h-0.5 origin-left scale-x-0 rounded-full bg-hult-pink transition-transform duration-200 group-hover:scale-x-100 xl:left-3.5 xl:right-3.5"
             />
           </Link>
         </nav>
@@ -372,16 +446,18 @@ export function Navbar() {
                 aria-hidden="true"
                 className="absolute -left-32 -top-32 h-[420px] w-[420px] rounded-full bg-hult-pink/10 blur-[90px]"
               />
+
               <div
                 aria-hidden="true"
                 className="absolute -right-32 top-[18%] h-[460px] w-[460px] rounded-full bg-[#aabce8]/20 blur-[100px]"
               />
+
               <div
                 aria-hidden="true"
                 className="absolute -bottom-40 left-[15%] h-[420px] w-[620px] rounded-full bg-hult-pink/10 blur-[110px]"
               />
 
-              {/* CONTENT — vertical guide lines removed */}
+              {/* CONTENT */}
               <div className="relative z-10 flex h-svh w-full flex-col px-6 pb-7 pt-6 sm:px-10 sm:pb-10 sm:pt-8">
                 {/* TOP BAR */}
                 <div className="flex items-center justify-between">
@@ -401,6 +477,7 @@ export function Navbar() {
                       <span className="font-display text-sm font-extrabold tracking-[-0.045em] text-charcoal sm:text-base">
                         HULT PRIZE
                       </span>
+
                       <span className="mt-1 font-body text-[7px] font-bold uppercase tracking-[0.18em] text-hult-pink sm:text-[8px]">
                         ONCAMPUS · 2026–27
                       </span>
@@ -430,6 +507,7 @@ export function Navbar() {
                   className="mt-14 flex items-center gap-3 sm:mt-16"
                 >
                   <span className="h-px w-10 bg-hult-pink sm:w-14" />
+
                   <span className="font-body text-[9px] font-bold uppercase tracking-[0.3em] text-[#6a5364]">
                     Navigation
                   </span>
@@ -502,29 +580,65 @@ export function Navbar() {
                     <Link
                       href="/committee-recruitment"
                       onClick={closeMenu}
-                      aria-current={
-                        pathname === "/committee-recruitment"
-                          ? "page"
-                          : undefined
-                      }
+                      aria-current={isRecruitment ? "page" : undefined}
                       className="group flex items-center justify-between border-b border-charcoal/[0.08] py-3.5 sm:py-4"
                     >
                       <div className="flex items-center gap-3.5 sm:gap-4">
                         <span
-                          className={`font-body text-[9px] font-bold tracking-[0.18em] ${pathname === "/committee-recruitment" ? "text-[#AB3C68]" : "text-charcoal/35"}`}
+                          className={`font-body text-[9px] font-bold tracking-[0.18em] ${isRecruitment ? "text-[#AB3C68]" : "text-charcoal/35"}`}
                         >
                           02
                         </span>
 
                         <span
-                          className={`font-display text-[1.25rem] font-bold leading-none tracking-[-0.035em] transition-colors duration-300 sm:text-[1.4rem] ${pathname === "/committee-recruitment" ? "text-[#AB3C68]" : "text-charcoal group-hover:text-[#AB3C68]"}`}
+                          className={`font-display text-[1.25rem] font-bold leading-none tracking-[-0.035em] transition-colors duration-300 sm:text-[1.4rem] ${isRecruitment ? "text-[#AB3C68]" : "text-charcoal group-hover:text-[#AB3C68]"}`}
                         >
                           Recruitment
                         </span>
                       </div>
 
                       <span
-                        className={`flex h-9 w-9 items-center justify-center rounded-full border transition-all duration-300 sm:h-10 sm:w-10 ${pathname === "/committee-recruitment" ? "border-[#AB3C68]/30 bg-[#AB3C68] text-white" : "border-charcoal/10 bg-white/45 text-charcoal group-hover:border-[#AB3C68]/30 group-hover:bg-[#AB3C68] group-hover:text-white"}`}
+                        className={`flex h-9 w-9 items-center justify-center rounded-full border transition-all duration-300 sm:h-10 sm:w-10 ${isRecruitment ? "border-[#AB3C68]/30 bg-[#AB3C68] text-white" : "border-charcoal/10 bg-white/45 text-charcoal group-hover:border-[#AB3C68]/30 group-hover:bg-[#AB3C68] group-hover:text-white"}`}
+                      >
+                        <ArrowUpRight
+                          size={17}
+                          strokeWidth={1.8}
+                          className="transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+                        />
+                      </span>
+                    </Link>
+                  </motion.div>
+
+                  {/* Judges & Investors */}
+                  <motion.div
+                    variants={{
+                      hidden: { opacity: 0, x: 30 },
+                      visible: { opacity: 1, x: 0 },
+                    }}
+                    transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
+                  >
+                    <Link
+                      href="/judges-investors"
+                      onClick={closeMenu}
+                      aria-current={isJudgesInvestors ? "page" : undefined}
+                      className="group flex items-center justify-between border-b border-charcoal/[0.08] py-3.5 sm:py-4"
+                    >
+                      <div className="flex items-center gap-3.5 sm:gap-4">
+                        <span
+                          className={`font-body text-[9px] font-bold tracking-[0.18em] ${isJudgesInvestors ? "text-[#AB3C68]" : "text-charcoal/35"}`}
+                        >
+                          03
+                        </span>
+
+                        <span
+                          className={`font-display text-[1.25rem] font-bold leading-none tracking-[-0.035em] transition-colors duration-300 sm:text-[1.4rem] ${isJudgesInvestors ? "text-[#AB3C68]" : "text-charcoal group-hover:text-[#AB3C68]"}`}
+                        >
+                          Judges & Investors
+                        </span>
+                      </div>
+
+                      <span
+                        className={`flex h-9 w-9 items-center justify-center rounded-full border transition-all duration-300 sm:h-10 sm:w-10 ${isJudgesInvestors ? "border-[#AB3C68]/30 bg-[#AB3C68] text-white" : "border-charcoal/10 bg-white/45 text-charcoal group-hover:border-[#AB3C68]/30 group-hover:bg-[#AB3C68] group-hover:text-white"}`}
                       >
                         <ArrowUpRight
                           size={17}
@@ -550,7 +664,7 @@ export function Navbar() {
                     >
                       <div className="flex items-center gap-3.5 sm:gap-4">
                         <span className="font-body text-[9px] font-bold tracking-[0.18em] text-charcoal/35">
-                          03
+                          04
                         </span>
 
                         <span className="font-display text-[1.25rem] font-bold leading-none tracking-[-0.035em] text-charcoal transition-colors duration-300 group-hover:text-[#AB3C68] sm:text-[1.4rem]">
@@ -583,7 +697,7 @@ export function Navbar() {
                     >
                       <div className="flex items-center gap-3.5 sm:gap-4">
                         <span className="font-body text-[9px] font-bold tracking-[0.18em] text-charcoal/35">
-                          04
+                          05
                         </span>
 
                         <span className="font-display text-[1.25rem] font-bold leading-none tracking-[-0.035em] text-charcoal transition-colors duration-300 group-hover:text-[#AB3C68] sm:text-[1.4rem]">
@@ -611,16 +725,19 @@ export function Navbar() {
                   >
                     <Link
                       href="/#announcements"
-                      onClick={closeMenu}
+                      onClick={(event) => {
+                        closeMenu();
+                        scrollToAnnouncements(event);
+                      }}
                       className="group flex items-center justify-between border-b border-charcoal/[0.08] py-3.5 sm:py-4"
                     >
                       <div className="flex items-center gap-3.5 sm:gap-4">
                         <span className="font-body text-[9px] font-bold tracking-[0.18em] text-charcoal/35">
-                          05
+                          06
                         </span>
 
-                        <span className="max-w-[220px] font-display text-[1.25rem] font-bold leading-[1.15] tracking-[-0.035em] text-charcoal transition-colors duration-300 group-hover:text-[#AB3C68] sm:text-[1.4rem]">
-                          Latest News &amp; Announcements
+                        <span className="font-display text-[1.25rem] font-bold leading-none tracking-[-0.035em] text-charcoal transition-colors duration-300 group-hover:text-[#AB3C68] sm:text-[1.4rem]">
+                          Latest News
                         </span>
                       </div>
 
