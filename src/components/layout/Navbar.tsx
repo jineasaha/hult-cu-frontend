@@ -297,6 +297,17 @@ export function Navbar() {
               className="absolute bottom-1.5 left-3 right-3 h-0.5 origin-left scale-x-0 rounded-full bg-hult-pink transition-transform duration-200 group-hover:scale-x-100 xl:left-3.5 xl:right-3.5"
             />
           </Link>
+
+          <Link
+            href="/judges-investors"
+            className={`group relative rounded-full px-5 py-3 font-body text-sm font-semibold transition-all duration-200 hover:text-hult-pink ${pathname === "/judges-investors" ? "text-hult-pink" : "text-charcoal"}`}
+          >
+            Judges & Investors
+            <span
+              aria-hidden="true"
+              className={`absolute bottom-1.5 left-5 right-5 h-0.5 origin-left rounded-full bg-hult-pink transition-transform duration-200 ${pathname === "/judges-investors" ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"}`}
+            />
+          </Link>
         </nav>
 
         {/* =========================================================
