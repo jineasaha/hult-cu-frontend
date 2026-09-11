@@ -18,7 +18,7 @@ export const people: Person[] = [
     role: "CSM - Asia Pacific",
     organization: "Wiley",
     education: ["IIM Calcutta", "Michigan University", "CU"],
-    image: "/images/judges-investors/rahul-dasgupta.png",
+    image: "/images/judges-investors/rahul-dasgupta.jpg",
     linkedin: "",
   },
 
@@ -49,7 +49,7 @@ export const people: Person[] = [
     role: "Growth Strategy & Business Analytics Leader",
     organization: "Former CEO | Startup & SME Advisor",
     education: [],
-    image: "/images/judges-investors/bhaskar-mukherjee.png",
+    image: "/images/judges-investors/bhaskar-mukherjee.jpg",
     linkedin: "",
   },
 
