@@ -307,14 +307,13 @@ export function HeroSection() {
           <Reveal delay={0.38} duration={0.7} y={20}>
             <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:mt-9 sm:flex-row">
               <Link
-                href="#apply"
-                className="group inline-flex h-12 items-center justify-center gap-3 rounded-full bg-[#E6007E] px-7 text-sm font-bold text-white shadow-[0_10px_25px_rgba(184,34,119,0.20)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#C2186B] hover:shadow-[0_14px_30px_rgba(184,34,119,0.25)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
-              >
-                Apply Now
-
-                <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
-
-              </Link>
+              href="#"
+              aria-disabled="true"
+              onClick={(e) => e.preventDefault()}
+              className="inline-flex h-12 items-center justify-center gap-3 rounded-full bg-[#E6007E] px-7 text-sm font-bold text-white cursor-not-allowed opacity-60"
+            >
+              Applications closed
+            </Link>
 
               <Link
                 href="#roles"

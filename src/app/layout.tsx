@@ -3,7 +3,7 @@ import { DM_Sans, Manrope } from "next/font/google";
 
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
-import { AnnouncementModal } from "@/components/ui/AnnouncementModal";
+// import { AnnouncementModal } from "@/components/ui/AnnouncementModal";
 
 import "./globals.css";
 
@@ -39,7 +39,6 @@ export default function RootLayout({
         className={`${manrope.variable} ${dmSans.variable}`}
       >
         <Navbar />
-        <AnnouncementModal />
 
         <main>{children}</main>
 

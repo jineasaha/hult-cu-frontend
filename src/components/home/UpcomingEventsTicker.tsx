@@ -22,6 +22,12 @@ const MAROON = "#7A1F3D";
 
 const announcements: Announcement[] = [
   {
+    title: "Positions Open for Faculty Contact Points",
+    description:
+      "Faculty contact points are being welcomed across university campuses.",
+    href: "#contact",
+  },
+  {
     title: "Student Coordinator Applications — Closed",
     description: "Applications are now closed.",
     href: "https://forms.gle/hWEgo2jzzHXt2PHr6",
@@ -30,17 +36,12 @@ const announcements: Announcement[] = [
     closed: true,
   },
   {
-    title: "Committee Recruitment is Ongoing",
+    title: "Committee Recruitment is now CLOSED",
     description:
       "Join the Hult Prize journey and become part of the team shaping this year's campus experience.",
     href: "/committee-recruitment",
   },
-  {
-    title: "Positions Open for Faculty Contact Points",
-    description:
-      "Faculty contact points are being welcomed across university campuses.",
-    href: "#contact",
-  },
+  
 ];
 
 export default function UpcomingEventsTicker() {
