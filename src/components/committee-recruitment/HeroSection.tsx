@@ -3,6 +3,7 @@
 import { ArrowUpRight } from "lucide-react";
 import Link from "next/link";
 import { Reveal } from "../ui/Reveal";
+import { Button } from "../ui/Button";
 
 export function HeroSection() {
   return (
@@ -306,14 +307,16 @@ export function HeroSection() {
 
           <Reveal delay={0.38} duration={0.7} y={20}>
             <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:mt-9 sm:flex-row">
-              <Link
-              href="#"
-              aria-disabled="true"
-              onClick={(e) => e.preventDefault()}
-              className="inline-flex h-12 items-center justify-center gap-3 rounded-full bg-[#E6007E] px-7 text-sm font-bold text-white cursor-not-allowed opacity-60"
+            
+            <Button
+              href="/docs/Final_Committee_List.pdf"
+              target="_blank"
+              size="lg"
+              variant="primary"
+              className="inline-flex h-12 items-center justify-center gap-3 rounded-full bg-[#E6007E] px-7 text-sm font-semibold text-white shrink-0 whitespace-nowrap px-4 py-2.5 hover:bg-[#CC2171] text-sm sm:px-5 sm:py-2.5 sm:text-sm lg:px-6 lg:py-3 lg:text-base"
             >
-              Applications closed
-            </Link>
+              Committee Recruitment Results
+            </Button>
 
               <Link
                 href="#roles"

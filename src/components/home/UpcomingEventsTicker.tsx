@@ -1,3 +1,4 @@
+
 "use client";
 
 import {
@@ -22,26 +23,19 @@ const MAROON = "#7A1F3D";
 
 const announcements: Announcement[] = [
   {
+    title: "Committee Selection Announced",
+    description:
+      "The final selected committee list for Hult Prize OnCampus 2026–27, University of Calcutta, is now available.",
+    href: "#committee-selection",
+    brochureHref: "/docs/Final_Committee_List.pdf",
+    featured: true,
+  },
+  {
     title: "Positions Open for Faculty Contact Points",
     description:
       "Faculty contact points are being welcomed across university campuses.",
     href: "#contact",
   },
-  {
-    title: "Student Coordinator Applications — Closed",
-    description: "Applications are now closed.",
-    href: "https://forms.gle/hWEgo2jzzHXt2PHr6",
-    brochureHref: "/brochure/Student_coordinator_Recrutiment_Brochure.pdf",
-    featured: true,
-    closed: true,
-  },
-  {
-    title: "Committee Recruitment is now CLOSED",
-    description:
-      "Join the Hult Prize journey and become part of the team shaping this year's campus experience.",
-    href: "/committee-recruitment",
-  },
-  
 ];
 
 export default function UpcomingEventsTicker() {
@@ -49,7 +43,9 @@ export default function UpcomingEventsTicker() {
   const [animate, setAnimate] = useState(true);
   const [showAll, setShowAll] = useState(false);
 
-  const transitionTimeout = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const transitionTimeout = useRef<ReturnType<typeof setTimeout> | null>(
+    null
+  );
 
   const changeAnnouncement = (direction: "next" | "prev") => {
     if (transitionTimeout.current) {
@@ -64,7 +60,9 @@ export default function UpcomingEventsTicker() {
           return (previous + 1) % announcements.length;
         }
 
-        return previous === 0 ? announcements.length - 1 : previous - 1;
+        return previous === 0
+          ? announcements.length - 1
+          : previous - 1;
       });
 
       setAnimate(true);
@@ -79,13 +77,6 @@ export default function UpcomingEventsTicker() {
     changeAnnouncement("prev");
   };
 
-  /*
-   * The timer is intentionally based on `current`.
-   *
-   * Whenever the user manually changes the announcement,
-   * `current` changes and this effect starts a completely
-   * fresh 3-second timer.
-   */
   useEffect(() => {
     if (showAll) {
       return;
@@ -127,6 +118,21 @@ export default function UpcomingEventsTicker() {
         className="pointer-events-none absolute -bottom-36 left-[35%] h-72 w-72 rounded-full border-[45px] border-[#7A1F3D]/[0.06]"
       />
 
+      {/* Featured announcement glow */}
+      {announcement.featured && (
+        <>
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute -left-24 top-1/2 h-72 w-72 -translate-y-1/2 rounded-full bg-[#E6007E]/[0.09] blur-[100px]"
+          />
+
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute right-[18%] top-1/2 h-64 w-64 -translate-y-1/2 rounded-full bg-[#7A1F3D]/20 blur-[100px]"
+          />
+        </>
+      )}
+
       {/* Main ticker */}
       <div className="relative mx-auto flex max-w-[1600px] flex-col md:flex-row">
         {/* Hult Prize label */}
@@ -148,66 +154,92 @@ export default function UpcomingEventsTicker() {
         </div>
 
         {/* Announcement content */}
-        <div className="flex min-h-[118px] min-w-0 flex-1 items-center px-5 py-4 sm:px-8 md:px-9">
+        <div
+          className={`relative flex min-h-[118px] min-w-0 flex-1 items-center overflow-hidden px-5 py-5 sm:px-8 md:px-9 ${
+            announcement.featured
+              ? "bg-gradient-to-r from-[#7A1F3D]/35 via-[#E6007E]/[0.08] to-transparent"
+              : ""
+          }`}
+        >
+          {/* Featured left accent */}
+          {announcement.featured && (
+            <div
+              aria-hidden="true"
+              className="absolute bottom-0 left-0 top-0 w-[3px] bg-gradient-to-b from-[#FFB3D1] via-[#E6007E] to-[#7A1F3D]"
+            />
+          )}
+
           <div
-            className={`w-full transform transition-[opacity,transform] duration-500 ease-out ${
-              animate ? "translate-x-0 opacity-100" : "-translate-x-3 opacity-0"
+            className={`relative z-10 w-full transform transition-[opacity,transform] duration-500 ease-out ${
+              animate
+                ? "translate-x-0 opacity-100"
+                : "-translate-x-3 opacity-0"
             }`}
           >
-            <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
+            <div className="flex flex-col gap-5 lg:flex-row lg:items-center lg:justify-between">
               <div className="min-w-0">
                 {/* Status */}
-                <div className="mb-2.5 flex flex-wrap items-center gap-2.5">
+                <div className="mb-3 flex flex-wrap items-center gap-2.5">
+                  {announcement.featured && (
+                    <span className="inline-flex items-center gap-2 rounded-full border border-[#FFB3D1]/30 bg-[#E6007E]/[0.13] px-3.5 py-1.5 text-[9px] font-bold uppercase tracking-[0.18em] text-[#FFB3D1] shadow-[0_0_22px_rgba(230,0,126,0.12)]">
+                      <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-[#FFB3D1]" />
+                      Official Announcement
+                    </span>
+                  )}
+
                   {announcement.closed && (
                     <span className="inline-flex items-center gap-2 rounded-full border border-hult-pink/30 bg-hult-pink/[0.08] px-3 py-1 text-[9px] font-bold uppercase tracking-[0.16em] text-hult-pink-light">
                       <span className="h-1.5 w-1.5 rounded-full bg-hult-pink-light" />
                       Applications Closed
                     </span>
                   )}
-
-                  {announcement.featured && !announcement.closed && (
-                    <span className="inline-flex items-center rounded-full border border-white/15 bg-white/[0.05] px-3 py-1 text-[9px] font-bold uppercase tracking-[0.16em] text-white/55">
-                      Featured
-                    </span>
-                  )}
                 </div>
 
-                <h3 className="max-w-3xl font-display text-lg font-bold leading-tight tracking-[-0.025em] text-white sm:text-xl md:text-[21px]">
-                  {announcement.title}
-                </h3>
+                {/* Title */}
+                <h3 className="max-w-3xl font-display text-lg font-bold leading-tight tracking-[-0.025em] text-white sm:text-xl md:text-[31px]">
+  {announcement.title}
+</h3>
 
-                <p className="mt-1.5 max-w-2xl font-sans text-[13px] leading-5 text-white/70 sm:text-sm">
+                {/* Description */}
+                <p
+                  className={`mt-2 max-w-2xl font-sans leading-5 ${
+                    announcement.featured
+                      ? "text-[13px] text-white/80 sm:text-sm"
+                      : "text-[13px] text-white/70 sm:text-sm"
+                  }`}
+                >
                   {announcement.description}
                 </p>
               </div>
 
               {/* Announcement actions */}
               <div className="flex shrink-0 flex-wrap items-center gap-2.5 lg:ml-8">
-                {announcement.closed ? (
-                  <>
-                    <span className="inline-flex min-h-[42px] cursor-default items-center justify-center rounded-full border border-white/10 bg-white/[0.04] px-6 py-2.5 font-sans text-sm font-bold text-white/40">
-                      Applications Closed
-                    </span>
+                {announcement.brochureHref ? (
+                  <a
+                    href={announcement.brochureHref}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`group inline-flex min-h-[44px] items-center justify-center gap-2 rounded-full px-6 py-2.5 font-sans text-sm font-bold !text-white transition-all duration-300 hover:-translate-y-0.5 ${
+                      announcement.featured
+                        ? "border border-[#FFB3D1]/40 bg-[#7A1F3D] shadow-[0_0_24px_rgba(230,0,126,0.18)] hover:border-[#FFB3D1]/70 hover:shadow-[0_0_32px_rgba(230,0,126,0.28)]"
+                        : "border border-white/25 bg-white/[0.04] hover:border-white/50 hover:bg-white/[0.08]"
+                    }`}
+                  >
+                    View Final Committee List
 
-                    {announcement.brochureHref && (
-                      <a
-                        href={announcement.brochureHref}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex min-h-[42px] items-center justify-center gap-2 rounded-full border border-white/25 bg-white/[0.04] px-6 py-2.5 font-sans text-sm font-bold !text-white transition-all duration-300 hover:-translate-y-0.5 hover:border-white/50 hover:bg-white/[0.08] hover:!text-white"
-                      >
-                        View Brochure
-                        <ExternalLink className="h-4 w-4 text-white" />
-                      </a>
-                    )}
-                  </>
+                    <ExternalLink className="h-4 w-4 text-white transition-transform duration-300 group-hover:translate-x-0.5" />
+                  </a>
                 ) : (
                   <a
                     href={announcement.href}
                     className="group inline-flex min-h-[42px] items-center justify-center gap-2 rounded-full px-6 py-2.5 font-sans text-sm font-bold text-white transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg"
-                    style={{ backgroundColor: MAROON, color: "#FFFFFF" }}
+                    style={{
+                      backgroundColor: MAROON,
+                      color: "#FFFFFF",
+                    }}
                   >
                     Learn More
+
                     <span className="text-base transition-transform duration-300 group-hover:translate-x-1">
                       →
                     </span>
@@ -235,7 +267,7 @@ export default function UpcomingEventsTicker() {
             type="button"
             onClick={() => setShowAll((previous) => !previous)}
             aria-expanded={showAll}
-            className="group flex h-12 min-w-0 flex-1 items-center justify-center gap-2 px-4 border-r border-white/10 text-[9px] font-bold uppercase tracking-[0.2em] text-white/45 transition-all duration-300 hover:bg-white/[0.025] hover:text-white sm:text-[10px] md:h-auto md:w-[145px] md:flex-none md:px-3"
+            className="group flex h-12 min-w-0 flex-1 items-center justify-center gap-2 border-r border-white/10 px-4 text-[9px] font-bold uppercase tracking-[0.2em] text-white/45 transition-all duration-300 hover:bg-white/[0.025] hover:text-white sm:text-[10px] md:h-auto md:w-[145px] md:flex-none md:px-3"
           >
             <span className="whitespace-nowrap">
               {showAll ? "Close" : "View All"}
@@ -291,23 +323,29 @@ export default function UpcomingEventsTicker() {
                 {announcements.map((item, index) => (
                   <article
                     key={`${item.title}-${index}`}
-                    className="group flex flex-col gap-4 py-6 first:pt-0 last:pb-0 lg:flex-row lg:items-center lg:justify-between"
+                    className={`group relative flex flex-col gap-4 py-6 first:pt-0 last:pb-0 lg:flex-row lg:items-center lg:justify-between ${
+                      item.featured
+                        ? "rounded-2xl border border-[#E6007E]/20 bg-gradient-to-r from-[#7A1F3D]/20 to-transparent px-5 sm:px-6"
+                        : ""
+                    }`}
                   >
+                    {item.featured && (
+                      <div
+                        aria-hidden="true"
+                        className="absolute bottom-4 left-0 top-4 w-[3px] rounded-full bg-[#E6007E]"
+                      />
+                    )}
+
                     <div className="min-w-0">
-                      <div className="mb-3 flex flex-wrap items-center gap-3">
-                        <span className="text-xs font-bold uppercase tracking-[0.22em] text-white/25">
-                          {String(index + 1).padStart(2, "0")}
-                        </span>
+                      
 
-                        {item.closed && (
-                          <span className="inline-flex items-center gap-2 rounded-full border border-hult-pink/25 bg-hult-pink/[0.06] px-3 py-1.5 text-[9px] font-bold uppercase tracking-[0.15em] text-hult-pink-light">
-                            <span className="h-1.5 w-1.5 rounded-full bg-hult-pink-light" />
-                            Applications Closed
-                          </span>
-                        )}
-                      </div>
-
-                      <h4 className="font-display text-lg font-bold tracking-[-0.025em] text-white transition-colors duration-300 group-hover:text-hult-pink-light sm:text-xl lg:text-[22px]">
+                      <h4
+                        className={`font-display font-bold mt-5 tracking-[-0.025em] transition-colors duration-300 group-hover:text-hult-pink-light ${
+                          item.featured
+                            ? "text-xl text-white sm:text-2xl"
+                            : "text-lg text-white sm:text-xl lg:text-[22px]"
+                        }`}
+                      >
                         {item.title}
                       </h4>
 
@@ -318,24 +356,21 @@ export default function UpcomingEventsTicker() {
 
                     {/* Expanded actions */}
                     <div className="flex shrink-0 flex-wrap items-center gap-2.5">
-                      {item.closed ? (
-                        <>
-                          <span className="inline-flex min-h-[42px] items-center rounded-full border border-white/10 bg-white/[0.025] px-5 text-sm font-semibold text-white/30">
-                            Closed
-                          </span>
+                      {item.brochureHref ? (
+                        <a
+                          href={item.brochureHref}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className={`group inline-flex min-h-[42px] items-center gap-2 rounded-full px-6 text-sm font-semibold !text-white transition-all duration-300 hover:-translate-y-0.5 ${
+                            item.featured
+                              ? "border border-[#FFB3D1]/35 bg-[#7A1F3D] shadow-[0_0_20px_rgba(230,0,126,0.15)] hover:border-[#FFB3D1]/60"
+                              : "border border-white/20 hover:border-hult-pink/40 hover:bg-hult-pink/[0.08] hover:!text-hult-pink-light"
+                          }`}
+                        >
+                          View Final Committee List
 
-                          {item.brochureHref && (
-                            <a
-                              href={item.brochureHref}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="inline-flex min-h-[42px] items-center gap-2 rounded-full border border-white/20 px-6 text-sm font-semibold !text-white transition-all duration-300 hover:-translate-y-0.5 hover:border-hult-pink/40 hover:bg-hult-pink/[0.08] hover:!text-hult-pink-light"
-                            >
-                              View Brochure
-                              <ExternalLink className="h-4 w-4" />
-                            </a>
-                          )}
-                        </>
+                          <ExternalLink className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5" />
+                        </a>
                       ) : (
                         <a
                           href={item.href}
@@ -346,6 +381,7 @@ export default function UpcomingEventsTicker() {
                           }}
                         >
                           View Update
+
                           <span className="text-base transition-transform duration-300 group-hover:translate-x-1">
                             →
                           </span>

@@ -197,12 +197,13 @@ export function Hero() {
             <Reveal delay={0.98}>
               <div className="mt-5 flex w-full flex-row flex-wrap items-center justify-center gap-2.5 sm:mt-8 sm:gap-3">
                 <Button
-                  href="/committee-recruitment"
+                  href="/docs/Final_Committee_List.pdf"
+                  target="_blank"
                   size="lg"
                   variant="primary"
                   className="shrink-0 whitespace-nowrap px-4 py-2.5 text-sm sm:px-5 sm:py-2.5 sm:text-sm lg:px-6 lg:py-3 lg:text-base"
                 >
-                  Join the Movement
+                  Committee Recruitment Results
                 </Button>
 
                 <Button
