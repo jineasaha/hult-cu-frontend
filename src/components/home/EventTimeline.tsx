@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { Container } from "@/components/ui/Container";
 import { Reveal } from "@/components/ui/Reveal";
 import { Section } from "@/components/ui/Section";
@@ -25,7 +25,7 @@ const phases = [
   {
     number: "01",
     title: "Core Committee Recruitment",
-    status: "active" as PhaseStatus,
+    status: "closed" as PhaseStatus,
     description:
       "Building the operational backbone of the movement. We select dedicated student leaders across logistics, marketing, sponsorship, and participant engagement to organize and drive the campus edition seamlessly.",
   },
@@ -81,17 +81,17 @@ const STATUS_CONFIG: Record<
 };
 
 export function EventTimeline() {
-  const timelineRef = useRef<HTMLDivElement>(null);
-
-  const desktopNodeRefs = useRef<(HTMLDivElement | null)[]>([]);
-  const mobileNodeRefs = useRef<(HTMLDivElement | null)[]>([]);
-
-  const desktopEndRef = useRef<HTMLDivElement | null>(null);
-  const mobileEndRef = useRef<HTMLDivElement | null>(null);
-
-  const [progress, setProgress] = useState(0);
-  const [activePhase, setActivePhase] = useState(-1);
   const [isMobile, setIsMobile] = useState(false);
+
+  const activeIndex = phases.findIndex((phase) => phase.status === "active");
+
+  const lastClosedIndex = phases.reduce(
+    (lastIndex, phase, index) =>
+      phase.status === "closed" ? index : lastIndex,
+    -1,
+  );
+
+  const progressIndex = activeIndex !== -1 ? activeIndex : lastClosedIndex;
 
   useEffect(() => {
     const checkScreen = () => {
@@ -106,72 +106,6 @@ export function EventTimeline() {
       window.removeEventListener("resize", checkScreen);
     };
   }, []);
-
-  useEffect(() => {
-    const updateTimeline = () => {
-      const timeline = timelineRef.current;
-
-      if (!timeline) return;
-
-      const timelineRect = timeline.getBoundingClientRect();
-
-      const nodes = isMobile ? mobileNodeRefs.current : desktopNodeRefs.current;
-
-      const endNode = isMobile ? mobileEndRef.current : desktopEndRef.current;
-
-      if (!endNode) return;
-
-      const lineStart = 32;
-
-      const endRect = endNode.getBoundingClientRect();
-
-      const endCenter = endRect.top - timelineRect.top + endRect.height / 2;
-
-      const triggerPoint = window.innerHeight * 0.35;
-
-      const currentLinePosition = triggerPoint - timelineRect.top;
-
-      const clampedPosition = Math.max(
-        lineStart,
-        Math.min(currentLinePosition, endCenter),
-      );
-
-      const progressHeight = clampedPosition - lineStart;
-
-      setProgress(progressHeight);
-
-      let nextActivePhase = -1;
-
-      nodes.forEach((node, index) => {
-        if (!node) return;
-
-        const nodeRect = node.getBoundingClientRect();
-
-        const nodeCenter =
-          nodeRect.top - timelineRect.top + nodeRect.height / 2;
-
-        if (clampedPosition >= nodeCenter) {
-          nextActivePhase = index;
-        }
-      });
-
-      setActivePhase(nextActivePhase);
-    };
-
-    const frame = requestAnimationFrame(updateTimeline);
-
-    window.addEventListener("scroll", updateTimeline, {
-      passive: true,
-    });
-
-    window.addEventListener("resize", updateTimeline);
-
-    return () => {
-      cancelAnimationFrame(frame);
-      window.removeEventListener("scroll", updateTimeline);
-      window.removeEventListener("resize", updateTimeline);
-    };
-  }, [isMobile]);
 
   return (
     <Section
@@ -233,10 +167,7 @@ export function EventTimeline() {
 
         {/* TIMELINE CARD */}
 
-        <div
-          ref={timelineRef}
-          className="relative mx-auto max-w-6xl overflow-hidden rounded-[28px] border border-white/80 bg-white px-5 py-8 shadow-[0_25px_80px_rgba(15,15,15,0.10)] sm:px-8 sm:py-9 lg:px-12 lg:py-10"
-        >
+        <div className="relative mx-auto max-w-6xl overflow-hidden rounded-[28px] border border-white/80 bg-white px-5 py-8 shadow-[0_25px_80px_rgba(15,15,15,0.10)] sm:px-8 sm:py-9 lg:px-12 lg:py-10">
           <div
             aria-hidden="true"
             className="absolute left-0 right-0 top-0 h-[4px]"
@@ -248,31 +179,31 @@ export function EventTimeline() {
             className="pointer-events-none absolute -right-24 top-16 h-56 w-56 rounded-full border-[28px] border-[#FFE9E5]"
           />
 
-          {/* DESKTOP */}
+          {/* =========================================================
+              DESKTOP
+          ========================================================= */}
 
           <div className="relative hidden lg:block">
+            {/* BASE LINE */}
+
             <div
               aria-hidden="true"
               className="absolute left-1/2 top-8 z-0 w-[4px] -translate-x-1/2 rounded-full bg-[#F1F1F3]"
               style={{ height: "calc(100% - 40px)" }}
             />
 
-            <div
-              aria-hidden="true"
-              className="absolute left-1/2 top-8 z-10 w-[4px] -translate-x-1/2 rounded-full transition-[height] duration-200 ease-out"
-              style={{
-                height: `${progress}px`,
-                backgroundColor: TIMELINE_COLOR,
-              }}
-            />
-
             <div className="relative space-y-2">
               {phases.map((phase, index) => {
                 const isRight = index % 2 === 0;
 
+                const showProgressBefore = index <= progressIndex;
+                const showProgressAfter = index < progressIndex;
+
                 return (
                   <Reveal key={phase.number} delay={index * 0.05}>
                     <div className="relative grid min-h-[145px] grid-cols-[1fr_64px_1fr] items-center">
+                      {/* LEFT CONTENT */}
+
                       <div className="pr-14">
                         {!isRight && (
                           <TimelineContent
@@ -283,18 +214,17 @@ export function EventTimeline() {
                         )}
                       </div>
 
-                      <div
-                        ref={(element) => {
-                          desktopNodeRefs.current[index] = element;
-                        }}
-                        className="relative z-40 flex justify-center"
-                      >
+                      {/* NODE */}
+
+                      <div className="relative z-40 flex justify-center">
                         <TimelineNode
                           number={phase.number}
                           status={phase.status}
-                          scrollActive={index <= activePhase}
+                          completed={index <= progressIndex}
                         />
                       </div>
+
+                      {/* RIGHT CONTENT */}
 
                       <div className="pl-14">
                         {isRight && (
@@ -302,11 +232,46 @@ export function EventTimeline() {
                         )}
                       </div>
 
+                      {/* HORIZONTAL CONNECTOR */}
+
                       <div
                         aria-hidden="true"
-                        className={`absolute top-1/2 z-20 h-[2px] w-12 -translate-y-1/2 ${isRight ? "left-[calc(50%+32px)]" : "right-[calc(50%+32px)]"}`}
-                        style={{ backgroundColor: TIMELINE_COLOR }}
+                        className={`absolute top-1/2 z-20 h-[2px] w-12 -translate-y-1/2 ${
+                          isRight
+                            ? "left-[calc(50%+32px)]"
+                            : "right-[calc(50%+32px)]"
+                        }`}
+                        style={{
+                          backgroundColor: TIMELINE_COLOR,
+                        }}
                       />
+
+                      {/* PINK PROGRESS — FROM TIMELINE START TO NODE */}
+
+                      {showProgressBefore && (
+                        <div
+                          aria-hidden="true"
+                          className="absolute left-1/2 z-10 w-[4px] -translate-x-1/2 rounded-full"
+                          style={{
+                            top: index === 0 ? "8px" : "0",
+                            height: index === 0 ? "calc(50% - 8px)" : "50%",
+                            backgroundColor: TIMELINE_COLOR,
+                          }}
+                        />
+                      )}
+
+                      {/* PINK PROGRESS — FROM NODE TO NEXT NODE */}
+
+                      {showProgressAfter && (
+                        <div
+                          aria-hidden="true"
+                          className="absolute left-1/2 top-1/2 z-10 w-[4px] -translate-x-1/2 rounded-full"
+                          style={{
+                            height: "calc(50% + 8px)",
+                            backgroundColor: TIMELINE_COLOR,
+                          }}
+                        />
+                      )}
                     </div>
                   </Reveal>
                 );
@@ -317,10 +282,7 @@ export function EventTimeline() {
 
             <Reveal delay={0.3}>
               <div className="relative mt-5 flex flex-col items-center text-center">
-                <div
-                  ref={desktopEndRef}
-                  className="relative z-40 mb-5 h-9 w-9 rounded-full border-[4px] border-white bg-[#0B1F3A] shadow-[0_0_0_2px_#0B1F3A]"
-                />
+                <div className="relative z-40 mb-5 h-9 w-9 rounded-full border-[4px] border-white bg-[#0B1F3A] shadow-[0_0_0_2px_#0B1F3A]" />
 
                 <span
                   className="font-sans text-[10px] font-bold uppercase tracking-[0.3em]"
@@ -341,55 +303,63 @@ export function EventTimeline() {
             </Reveal>
           </div>
 
-          {/* MOBILE */}
+          {/* =========================================================
+              MOBILE
+          ========================================================= */}
 
           <div className="relative lg:hidden">
+            {/* BASE LINE */}
+
             <div
               aria-hidden="true"
               className="absolute left-[17px] top-7 z-0 w-[3px] rounded-full bg-[#F1F1F3]"
               style={{ height: "calc(100% - 40px)" }}
             />
 
-            <div
-              aria-hidden="true"
-              className="absolute left-[17px] top-7 z-10 w-[3px] rounded-full transition-[height] duration-200 ease-out"
-              style={{
-                height: `${progress}px`,
-                backgroundColor: TIMELINE_COLOR,
-              }}
-            />
-
             <div className="relative space-y-9">
-              {phases.map((phase, index) => (
-                <Reveal key={phase.number} delay={index * 0.05}>
-                  <div className="relative grid grid-cols-[36px_1fr] gap-5">
-                    <div
-                      ref={(element) => {
-                        mobileNodeRefs.current[index] = element;
-                      }}
-                      className="relative z-40 flex justify-center"
-                    >
-                      <MobileNode
-                        number={phase.number}
-                        status={phase.status}
-                        scrollActive={index <= activePhase}
-                      />
-                    </div>
+              {phases.map((phase, index) => {
+                const showProgressAfter = index < progressIndex;
 
-                    <TimelineContent phase={phase} align="left" />
-                  </div>
-                </Reveal>
-              ))}
+                return (
+                  <Reveal key={phase.number} delay={index * 0.05}>
+                    <div className="relative grid grid-cols-[36px_1fr] gap-5">
+                      {/* NODE */}
+
+                      <div className="relative z-40 flex justify-center">
+                        <MobileNode
+                          number={phase.number}
+                          status={phase.status}
+                          completed={index <= progressIndex}
+                        />
+                      </div>
+
+                      {/* CONTENT */}
+
+                      <TimelineContent phase={phase} align="left" />
+
+                      {/* FIXED PINK VERTICAL SEGMENT */}
+
+                      {showProgressAfter && (
+                        <div
+                          aria-hidden="true"
+                          className="absolute left-[17px] top-[25px] z-10 w-[3px] rounded-full"
+                          style={{
+                            height: "calc(100% + 36px)",
+                            backgroundColor: TIMELINE_COLOR,
+                          }}
+                        />
+                      )}
+                    </div>
+                  </Reveal>
+                );
+              })}
             </div>
 
             {/* MOBILE GLOBAL SUMMIT */}
 
             <Reveal delay={0.25}>
               <div className="relative mt-10 ml-[36px]">
-                <div
-                  ref={mobileEndRef}
-                  className="mb-5 ml-[-36px] flex h-9 w-9 items-center justify-center rounded-full border-[4px] border-white bg-[#0B1F3A] shadow-[0_0_0_2px_#0B1F3A]"
-                />
+                <div className="mb-5 ml-[-36px] flex h-9 w-9 items-center justify-center rounded-full border-[4px] border-white bg-[#0B1F3A] shadow-[0_0_0_2px_#0B1F3A]" />
 
                 <div className="rounded-2xl bg-[#0B1F3A] px-6 py-5 shadow-[0_15px_35px_rgba(11,31,58,0.15)]">
                   <span
@@ -439,10 +409,14 @@ function TimelineContent({
 
   return (
     <div
-      className={`max-w-[410px] ${isRight ? "ml-auto text-right" : "text-left"}`}
+      className={`max-w-[410px] ${
+        isRight ? "ml-auto text-right" : "text-left"
+      }`}
     >
       <div
-        className={`mb-2.5 flex items-center gap-2 ${isRight ? "justify-end" : "justify-start"}`}
+        className={`mb-2.5 flex items-center gap-2 ${
+          isRight ? "justify-end" : "justify-start"
+        }`}
       >
         <span
           className="font-sans text-[10px] font-extrabold uppercase tracking-[0.26em]"
@@ -484,6 +458,7 @@ function StatusBadge({ status }: { status: PhaseStatus }) {
           <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#0F9D8A] opacity-60" />
           <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-[#0F9D8A]" />
         </span>
+
         {config.shortLabel}
       </span>
     );
@@ -512,28 +487,31 @@ function StatusBadge({ status }: { status: PhaseStatus }) {
 function TimelineNode({
   number,
   status,
-  scrollActive,
+  completed,
 }: {
   number: string;
   status: PhaseStatus;
-  scrollActive: boolean;
+  completed: boolean;
 }) {
   const isActive = status === "active";
   const isClosed = status === "closed";
 
   return (
     <div
-      className={`relative flex h-11 w-11 items-center justify-center rounded-full border-[4px] border-white transition-all duration-500 ${isActive ? "animate-[pulse_2.5s_ease-in-out_infinite]" : ""}`}
+      className={`relative flex h-11 w-11 items-center justify-center rounded-full border-[4px] border-white transition-all duration-300 ${
+        isActive ? "animate-[pulse_2.5s_ease-in-out_infinite]" : ""
+      }`}
       style={{
         backgroundColor: isActive
           ? TIMELINE_COLOR
           : isClosed
             ? "#E5E5E8"
             : "#FFFFFF",
+
         boxShadow: isActive
           ? `0 0 0 3px ${TIMELINE_COLOR}, 0 0 30px rgba(191,42,125,0.45)`
-          : scrollActive
-            ? "0 0 0 2px #BFBFC4"
+          : completed
+            ? "0 0 0 2px #BF2A7D"
             : "0 0 0 2px #D9D9DD",
       }}
     >
@@ -554,7 +532,9 @@ function TimelineNode({
         </svg>
       ) : (
         <span
-          className={`relative z-10 font-sans text-[9px] font-bold ${isActive ? "text-white" : "text-[#777777]"}`}
+          className={`relative z-10 font-sans text-[9px] font-bold ${
+            isActive ? "text-white" : "text-[#777777]"
+          }`}
         >
           {number}
         </span>
@@ -570,28 +550,31 @@ function TimelineNode({
 function MobileNode({
   number,
   status,
-  scrollActive,
+  completed,
 }: {
   number: string;
   status: PhaseStatus;
-  scrollActive: boolean;
+  completed: boolean;
 }) {
   const isActive = status === "active";
   const isClosed = status === "closed";
 
   return (
     <div
-      className={`relative mt-1 flex h-9 w-9 items-center justify-center rounded-full border-[4px] border-white transition-all duration-500 ${isActive ? "animate-[pulse_2.5s_ease-in-out_infinite]" : ""}`}
+      className={`relative mt-1 flex h-9 w-9 items-center justify-center rounded-full border-[4px] border-white transition-all duration-300 ${
+        isActive ? "animate-[pulse_2.5s_ease-in-out_infinite]" : ""
+      }`}
       style={{
         backgroundColor: isActive
           ? TIMELINE_COLOR
           : isClosed
             ? "#E5E5E8"
             : "#FFFFFF",
+
         boxShadow: isActive
           ? `0 0 0 2px ${TIMELINE_COLOR}, 0 0 22px rgba(191,42,125,0.4)`
-          : scrollActive
-            ? "0 0 0 1.5px #BFBFC4"
+          : completed
+            ? "0 0 0 1.5px #BF2A7D"
             : "0 0 0 1.5px #D9D9DD",
       }}
     >
@@ -612,7 +595,9 @@ function MobileNode({
         </svg>
       ) : (
         <span
-          className={`relative z-10 font-sans text-[8px] font-bold ${isActive ? "text-white" : "text-[#777777]"}`}
+          className={`relative z-10 font-sans text-[8px] font-bold ${
+            isActive ? "text-white" : "text-[#777777]"
+          }`}
         >
           {number}
         </span>
