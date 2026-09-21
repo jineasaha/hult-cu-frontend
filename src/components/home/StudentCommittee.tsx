@@ -436,7 +436,7 @@ function DirectorateCard({ person }: { person: Person }) {
 
 function TeamCard({ team }: { team: Team }) {
   return (
-    <article className="group relative h-[430px] overflow-hidden rounded-[26px] border border-[#E5E2E5] bg-white p-6 shadow-[0_8px_30px_rgba(15,15,15,0.045)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_18px_45px_rgba(15,15,15,0.09)] sm:p-7">
+    <article className="group relative min-h-[430px] h-auto overflow-hidden rounded-[26px] border border-[#E5E2E5] bg-white p-6 shadow-[0_8px_30px_rgba(15,15,15,0.045)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_18px_45px_rgba(15,15,15,0.09)] sm:p-7">
       {/* Pink left accent */}
       <div
         aria-hidden="true"
@@ -484,14 +484,14 @@ function TeamMemberCard({
   return (
     <article
       className={`group/member overflow-hidden rounded-2xl border border-[#E8E6E9] bg-[#FAF9FA] transition-all duration-300 hover:border-[#FFD2E5] hover:bg-white hover:shadow-[0_10px_25px_rgba(15,15,15,0.07)]
-  ${
-    memberCount === 4
-      ? "w-[calc(23%)]"
-      : memberCount === 3
-        ? "w-[calc(33.33%-11px)]"
-        : "w-[calc(50%-8px)]"
-  }
-`}
+        ${
+          memberCount === 4
+            ? "w-full sm:w-[calc(23%)]"
+            : memberCount === 3
+              ? "w-full sm:w-[calc(33.33%-11px)]"
+              : "w-full sm:w-[calc(50%-8px)]"
+        }
+      `}
     >
       {/* Photo */}
       <div
@@ -519,7 +519,6 @@ function TeamMemberCard({
           </div>
         )}
 
-        {/* Pink divider */}
         <div
           aria-hidden="true"
           className="absolute bottom-0 left-0 right-0 h-1"
