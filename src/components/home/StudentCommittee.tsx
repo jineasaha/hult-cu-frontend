@@ -50,7 +50,7 @@ const directorate: Person[] = [
 
 const teams: Team[] = [
   {
-    name: "Technical & Website Building",
+    name: "Technical & Web Team",
     shortName: "Technology",
     description:
       "Driving the digital presence of Hult Prize OnCampus, University of Calcutta",
@@ -58,7 +58,7 @@ const teams: Team[] = [
       {
         name: "Jinea Saha",
         department: "Computer Science and Engineering",
-        image: "/images/committee/jinea.jpg",
+        image: "/images/committee/Jinea Saha.jpeg",
       },
       {
         name: "Rajdeep Sarkar",
