@@ -492,7 +492,9 @@ function TeamMemberCard({
       {/* Photo */}
       <div
         className={`relative overflow-hidden bg-[#F0EFF2] ${
-          memberCount === 3 ? "aspect-[4/4.5]" : "h-[210px]"
+          memberCount === 3
+            ? "h-[210px] sm:aspect-[4/4.5] sm:h-auto"
+            : "h-[210px]"
         }`}
       >
         {person.image ? (
