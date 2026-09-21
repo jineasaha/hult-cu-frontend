@@ -63,7 +63,7 @@ const teams: Team[] = [
       {
         name: "Rajdeep Sarkar",
         department: "Computer Science and Engineering",
-        image: "/images/committee/rajdeep.jpg",
+        image: "/images/committee/Rajdeep Sarkar.png",
       },
     ],
   },
@@ -77,12 +77,12 @@ const teams: Team[] = [
       {
         name: "Toufik Jamal Mondal",
         department: "DEPARTMENT",
-        image: "/images/committee/toufik.jpg",
+        image: "/images/committee/Toufik Jamal Mondal.jpg",
       },
       {
         name: "Shreya Gupta",
         department: "DEPARTMENT",
-        image: "/images/committee/shreya.jpg",
+        image: "/images/committee/Shreya Gupta.jpg",
       },
     ],
   },
@@ -96,7 +96,7 @@ const teams: Team[] = [
       {
         name: "Bazilur Rahman Bazigh",
         department: "DEPARTMENT",
-        image: "/images/committee/bazilur.jpg",
+        image: "/images/committee/Bazilur Rahman Bazigh.jpeg",
       },
     ],
   },
@@ -110,7 +110,7 @@ const teams: Team[] = [
       {
         name: "Saheli Chatterjee",
         department: "DEPARTMENT",
-        image: "/images/committee/saheli.jpg",
+        image: "/images/committee/Saheli Chatterjee_.jpg",
       },
     ],
   },
@@ -124,17 +124,17 @@ const teams: Team[] = [
       {
         name: "Bhavita Rai",
         department: "DEPARTMENT",
-        image: "/images/committee/bhavita.jpg",
+        image: "/images/committee/Bhavita Rai.jpg",
       },
       {
         name: "Angellena Basu",
         department: "DEPARTMENT",
-        image: "/images/committee/angellena.jpg",
+        image: "/images/committee/Angellena Basu_.jpg",
       },
       {
         name: "Suvam Kar",
         department: "DEPARTMENT",
-        image: "/images/committee/suvam.jpg",
+        image: "/images/committee/Suvam Kar.png",
       },
     ],
   },
@@ -148,17 +148,17 @@ const teams: Team[] = [
       {
         name: "Siddhi Kumari",
         department: "DEPARTMENT",
-        image: "/images/committee/siddhi.jpg",
+        image: "/images/committee/Siddhi kumari.jpg",
       },
       {
         name: "Mrittika Rudra",
         department: "DEPARTMENT",
-        image: "/images/committee/mrittika.jpg",
+        image: "/images/committee/Mrittika Rudra_.jpg",
       },
       {
         name: "Shivani Singh",
         department: "DEPARTMENT",
-        image: "/images/committee/shivani.jpg",
+        image: "/images/committee/Shivani Singh.jpg",
       },
     ],
   },
@@ -172,22 +172,22 @@ const teams: Team[] = [
       {
         name: "Anukta Goswami",
         department: "DEPARTMENT",
-        image: "/images/committee/anukta.jpg",
+        image: "/images/default/man.png",
       },
       {
         name: "Soham Ray",
         department: "DEPARTMENT",
-        image: "/images/committee/soham.jpg",
+        image: "/images/committee/Soham Ray.png",
       },
       {
         name: "Shreyashi Bera",
         department: "DEPARTMENT",
-        image: "/images/committee/shreyashi.jpg",
+        image: "/images/committee/ShreyashiBera.jpg",
       },
       {
         name: "Pritam Dey",
         department: "DEPARTMENT",
-        image: "/images/committee/pritam.jpg",
+        image: "/images/committee/Pritam Dey.png",
       },
     ],
   },
@@ -212,8 +212,8 @@ export function StudentCommittee() {
 
       <Container className="relative z-10">
         {/* ======================================================
-                SECTION HEADER
-            ====================================================== */}
+            SECTION HEADER
+        ====================================================== */}
 
         <Reveal>
           <div className="mx-auto mb-14 max-w-2xl text-center sm:mb-16">
@@ -249,8 +249,8 @@ export function StudentCommittee() {
         </Reveal>
 
         {/* ======================================================
-                CAMPUS DIRECTORATE
-            ====================================================== */}
+            CAMPUS DIRECTORATE
+        ====================================================== */}
 
         <Reveal>
           <SectionHeading
@@ -268,8 +268,8 @@ export function StudentCommittee() {
         </Reveal>
 
         {/* ======================================================
-                STUDENT TEAMS
-            ====================================================== */}
+            STUDENT TEAMS
+        ====================================================== */}
 
         <Divider />
 
@@ -297,8 +297,8 @@ export function StudentCommittee() {
 }
 
 /* ============================================================
-    SECTION HEADING
-    ============================================================ */
+   SECTION HEADING
+============================================================ */
 
 function SectionHeading({
   eyebrow,
@@ -329,8 +329,8 @@ function SectionHeading({
 }
 
 /* ============================================================
-    DIVIDER
-    ============================================================ */
+   DIVIDER
+============================================================ */
 
 function Divider() {
   return (
@@ -348,8 +348,8 @@ function Divider() {
 }
 
 /* ============================================================
-    DIRECTORATE CARD
-    ============================================================ */
+   DIRECTORATE CARD
+============================================================ */
 
 function DirectorateCard({ person }: { person: Person }) {
   return (
@@ -416,7 +416,7 @@ function DirectorateCard({ person }: { person: Person }) {
               “
             </span>
 
-            <p className="font-sans text-sm font-medium leading-6 text-[#8A234D]">
+            <p className="font-sans text-m font-medium leading-6 text-[#8A234D]">
               {person.tagline}
             </p>
           </div>
@@ -427,11 +427,7 @@ function DirectorateCard({ person }: { person: Person }) {
 }
 
 /* ============================================================
-    TEAM CARD
-    ============================================================ */
-
-/* ============================================================
-    TEAM CARD
+   TEAM CARD
 ============================================================ */
 
 function TeamCard({ team }: { team: Team }) {
@@ -471,8 +467,8 @@ function TeamCard({ team }: { team: Team }) {
 }
 
 /* ============================================================
-    TEAM MEMBER
-    ============================================================ */
+   TEAM MEMBER
+============================================================ */
 
 function TeamMemberCard({
   person,
@@ -541,11 +537,13 @@ function TeamMemberCard({
           </p>
         )}
 
+        {/*
         {person.department && (
           <p className="mt-1.5 font-sans text-[11px] font-medium leading-4 text-[#666268]">
             {person.department}
           </p>
         )}
+        */}
       </div>
     </article>
   );
