@@ -273,24 +273,22 @@ export function StudentCommittee() {
 
         <Divider />
 
-        <Reveal>
-          <SectionHeading
-            eyebrow="Our Committees"
-            title="One Team. One Vision."
-          />
+        <SectionHeading
+  eyebrow="Our Committees"
+  title="One Team. One Vision."
+/>
 
-          <div className="mt-10 grid grid-cols-1 gap-8 lg:grid-cols-2">
-            {teams.map((team, index) => (
-              <Reveal
-                key={team.name}
-                delay={index * 0.06}
-                className={index === teams.length - 1 ? "lg:col-span-2" : ""}
-              >
-                <TeamCard team={team} />
-              </Reveal>
-            ))}
-          </div>
-        </Reveal>
+<div className="mt-10 grid grid-cols-1 gap-8 lg:grid-cols-2">
+  {teams.map((team, index) => (
+    <Reveal
+      key={team.name}
+      delay={index * 0.06}
+      className={index === teams.length - 1 ? "lg:col-span-2" : ""}
+    >
+      <TeamCard team={team} />
+    </Reveal>
+  ))}
+</div>
       </Container>
     </Section>
   );
