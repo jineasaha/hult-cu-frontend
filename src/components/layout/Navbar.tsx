@@ -9,6 +9,62 @@ import { usePathname } from "next/navigation";
 
 import { Container } from "@/components/ui/Container";
 
+type NavItem = {
+  label: string;
+  href: string;
+  route?: string;
+  section?: string;
+};
+
+const NAV_ITEMS: NavItem[] = [
+  {
+    label: "Home",
+    href: "/",
+    route: "/",
+  },
+  {
+    label: "Recruitment",
+    href: "/committee-recruitment",
+    route: "/committee-recruitment",
+  },
+  {
+    label: "Judges & Investors",
+    href: "/judges-investors",
+    route: "/judges-investors",
+  },
+  {
+    label: "University Network",
+    href: "/university-network",
+    route: "/university-network",
+  },
+  {
+    label: "Technical Sponsors",
+    href: "/#technical-sponsors",
+    section: "technical-sponsors",
+  },
+  {
+    label: "Contacts",
+    href: "/#contact",
+    section: "contact",
+  },
+  {
+    label: "Latest News",
+    href: "/#announcements",
+    section: "announcements",
+  },
+];
+
+const SOCIAL_LINKS = [
+  {
+    label: "Instagram",
+    href: "https://www.instagram.com/hultprizecaluniv?igsi=aGw3Y2JueG01ZXgw",
+  },
+  {
+    label: "LinkedIn",
+    href: "https://www.linkedin.com/company/hult-prize-university-of-calcutta/",
+  },
+] as const;
+
 export function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const pathname = usePathname();
@@ -17,19 +73,21 @@ export function Navbar() {
     setIsMenuOpen(false);
   };
 
-  const isJudgesInvestors = pathname === "/judges-investors";
-  const isRecruitment = pathname === "/committee-recruitment";
+  /* ============================================================
+     SECTION SCROLLING
+  ============================================================ */
 
-  const scrollToAnnouncements = (
+  const scrollToSection = (
     event: React.MouseEvent<HTMLAnchorElement>,
+    sectionId?: string,
   ) => {
-    if (pathname !== "/") {
+    if (!sectionId || pathname !== "/") {
       return;
     }
 
     event.preventDefault();
 
-    const element = document.getElementById("announcements");
+    const element = document.getElementById(sectionId);
 
     if (!element) {
       return;
@@ -45,6 +103,18 @@ export function Navbar() {
       top: Math.max(0, targetPosition),
       behavior: "smooth",
     });
+  };
+
+  /* ============================================================
+     ACTIVE STATE
+  ============================================================ */
+
+  const isItemActive = (item: (typeof NAV_ITEMS)[number]) => {
+    if (item.route) {
+      return pathname === item.route;
+    }
+
+    return false;
   };
 
   return (
@@ -65,6 +135,7 @@ export function Navbar() {
           className="pointer-events-none absolute inset-0 overflow-hidden rounded-[22px] sm:rounded-[24px] lg:rounded-[26px]"
         >
           <div className="absolute -left-20 top-1/2 h-32 w-56 -translate-y-1/2 rounded-full bg-blue-200/20 blur-3xl" />
+
           <div className="absolute -right-20 top-1/2 h-32 w-56 -translate-y-1/2 rounded-full bg-pink-200/20 blur-3xl" />
         </div>
 
@@ -85,6 +156,7 @@ export function Navbar() {
           className="relative z-10 flex min-w-0 shrink-0 items-center lg:-ml-2 xl:-ml-3"
         >
           {/* MOBILE + TABLET — SINGLE COMPACT FROSTED STRIP */}
+
           <div className="flex h-[42px] shrink-0 items-center rounded-[12px] border border-white/65 bg-white/[0.55] px-1.5 shadow-[inset_0_1px_0_rgba(255,255,255,0.8),0_4px_14px_rgba(15,15,15,0.05)] backdrop-blur-xl backdrop-saturate-150 sm:h-[46px] sm:rounded-[13px] sm:px-2 lg:hidden">
             <div className="flex shrink-0 items-center gap-1 sm:gap-1.5">
               {/* University of Calcutta */}
@@ -134,6 +206,7 @@ export function Navbar() {
           </div>
 
           {/* DESKTOP — INDIVIDUAL LARGER FROSTED GLASS LOGO TILES */}
+
           <div className="hidden shrink-0 items-center gap-2 lg:flex">
             {/* University of Calcutta */}
             <div className="flex h-[64px] w-[64px] shrink-0 items-center justify-center rounded-[14px] border border-white/65 bg-white/[0.28] shadow-[inset_0_1px_0_rgba(255,255,255,0.8),0_4px_14px_rgba(15,15,15,0.05)] backdrop-blur-xl backdrop-saturate-150">
@@ -225,80 +298,35 @@ export function Navbar() {
           aria-label="Main navigation"
           className="relative z-10 ml-auto mr-auto hidden items-center gap-0.5 lg:flex xl:gap-1"
         >
-          {/* Home */}
-          <Link
-            href="/"
-            className={`group relative whitespace-nowrap rounded-full px-3 py-3 font-body text-[13px] font-semibold transition-all duration-200 xl:px-3.5 xl:text-sm ${pathname === "/" ? "text-hult-pink" : "text-charcoal hover:text-hult-pink"}`}
-          >
-            Home
-            <span
-              aria-hidden="true"
-              className={`absolute bottom-1.5 left-3 right-3 h-0.5 origin-left rounded-full bg-hult-pink transition-transform duration-200 xl:left-3.5 xl:right-3.5 ${pathname === "/" ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"}`}
-            />
-          </Link>
+          {NAV_ITEMS.map((item) => {
+            const active = isItemActive(item);
 
-          {/* Recruitment */}
-          <Link
-            href="/committee-recruitment"
-            className={`group relative whitespace-nowrap rounded-full px-3 py-3 font-body text-[13px] font-semibold transition-all duration-200 xl:px-3.5 xl:text-sm ${isRecruitment ? "text-hult-pink" : "text-charcoal hover:text-hult-pink"}`}
-          >
-            Recruitment
-            <span
-              aria-hidden="true"
-              className={`absolute bottom-1.5 left-3 right-3 h-0.5 origin-left rounded-full bg-hult-pink transition-transform duration-200 xl:left-3.5 xl:right-3.5 ${isRecruitment ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"}`}
-            />
-          </Link>
+            return (
+              <Link
+                key={item.label}
+                href={item.href}
+                onClick={(event) => {
+                  if (item.section) {
+                    scrollToSection(event, item.section);
+                  }
+                }}
+                className={`group relative whitespace-nowrap rounded-full px-3 py-3 font-body text-[13px] font-semibold transition-all duration-200 xl:px-3.5 xl:text-sm ${
+                  active
+                    ? "text-hult-pink"
+                    : "text-charcoal hover:text-hult-pink"
+                }`}
+              >
+                {item.label}
 
-          {/* Judges & Investors */}
-          <Link
-            href="/judges-investors"
-            className={`group relative whitespace-nowrap rounded-full px-3 py-3 font-body text-[13px] font-semibold transition-all duration-200 xl:px-3.5 xl:text-sm ${isJudgesInvestors ? "text-hult-pink" : "text-charcoal hover:text-hult-pink"}`}
-          >
-            Judges & Investors
-            <span
-              aria-hidden="true"
-              className={`absolute bottom-1.5 left-3 right-3 h-0.5 origin-left rounded-full bg-hult-pink transition-transform duration-200 xl:left-3.5 xl:right-3.5 ${isJudgesInvestors ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"}`}
-            />
-          </Link>
-
-          {/* Technical Sponsors */}
-          <Link
-            href="/#technical-sponsors"
-            className="group relative whitespace-nowrap rounded-full px-3 py-3 font-body text-[13px] font-semibold text-charcoal transition-all duration-200 hover:text-hult-pink xl:px-3.5 xl:text-sm"
-          >
-            Technical Sponsors
-            <span
-              aria-hidden="true"
-              className="absolute bottom-1.5 left-3 right-3 h-0.5 origin-left scale-x-0 rounded-full bg-hult-pink transition-transform duration-200 group-hover:scale-x-100 xl:left-3.5 xl:right-3.5"
-            />
-          </Link>
-
-          {/* Contacts */}
-          <Link
-            href="/#contact"
-            className="group relative whitespace-nowrap rounded-full px-3 py-3 font-body text-[13px] font-semibold text-charcoal transition-all duration-200 hover:text-hult-pink xl:px-3.5 xl:text-sm"
-          >
-            Contacts
-            <span
-              aria-hidden="true"
-              className="absolute bottom-1.5 left-3 right-3 h-0.5 origin-left scale-x-0 rounded-full bg-hult-pink transition-transform duration-200 group-hover:scale-x-100 xl:left-3.5 xl:right-3.5"
-            />
-          </Link>
-
-          {/* Latest News & Announcements */}
-          <Link
-            href="/#announcements"
-            onClick={scrollToAnnouncements}
-            className="group relative whitespace-nowrap rounded-full px-3 py-3 font-body text-[13px] font-semibold text-charcoal transition-all duration-200 hover:text-hult-pink xl:px-3.5 xl:text-sm"
-          >
-            Latest News
-            <span
-              aria-hidden="true"
-              className="absolute bottom-1.5 left-3 right-3 h-0.5 origin-left scale-x-0 rounded-full bg-hult-pink transition-transform duration-200 group-hover:scale-x-100 xl:left-3.5 xl:right-3.5"
-            />
-          </Link>
-
-
+                <span
+                  aria-hidden="true"
+                  className={`absolute bottom-1.5 left-3 right-3 h-0.5 origin-left rounded-full bg-hult-pink transition-transform duration-200 xl:left-3.5 xl:right-3.5 ${
+                    active ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"
+                  }`}
+                />
+              </Link>
+            );
+          })}
         </nav>
 
         {/* =========================================================
@@ -313,86 +341,13 @@ export function Navbar() {
 
           {/* Desktop Social Links */}
           <div className="hidden items-center gap-1 xl:flex">
-            {/* Instagram */}
-            <a
-              href="https://www.instagram.com/hultprizecaluniv?igsi=aGw3Y2JueG01ZXgw"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Instagram"
-              className="flex h-10 w-10 items-center justify-center rounded-full text-charcoal transition-all duration-200 hover:bg-hult-pink/10 hover:text-hult-pink"
-            >
-              <svg
-                viewBox="0 0 24 24"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-[21px] w-[21px]"
-                aria-hidden="true"
-              >
-                <rect
-                  x="3"
-                  y="3"
-                  width="18"
-                  height="18"
-                  rx="5"
-                  stroke="currentColor"
-                  strokeWidth="1.8"
-                />
-                <circle
-                  cx="12"
-                  cy="12"
-                  r="4"
-                  stroke="currentColor"
-                  strokeWidth="1.8"
-                />
-                <circle cx="17.5" cy="6.5" r="1" fill="currentColor" />
-              </svg>
-            </a>
-
-            {/* LinkedIn */}
-            <a
-              href="https://www.linkedin.com/company/hult-prize-university-of-calcutta/"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="LinkedIn"
-              className="flex h-10 w-10 items-center justify-center rounded-full text-charcoal transition-all duration-200 hover:bg-hult-pink/10 hover:text-hult-pink"
-            >
-              <svg
-                viewBox="0 0 24 24"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-[21px] w-[21px]"
-                aria-hidden="true"
-              >
-                <rect
-                  x="4"
-                  y="4"
-                  width="16"
-                  height="16"
-                  rx="2"
-                  stroke="currentColor"
-                  strokeWidth="1.8"
-                />
-                <path
-                  d="M8 10V16"
-                  stroke="currentColor"
-                  strokeWidth="1.8"
-                  strokeLinecap="round"
-                />
-                <circle cx="8" cy="7.5" r="1" fill="currentColor" />
-                <path
-                  d="M12 16V12.8C12 11.25 13.05 10 14.5 10C15.95 10 17 11.25 17 12.8V16"
-                  stroke="currentColor"
-                  strokeWidth="1.8"
-                  strokeLinecap="round"
-                />
-                <path
-                  d="M12 13V16"
-                  stroke="currentColor"
-                  strokeWidth="1.8"
-                  strokeLinecap="round"
-                />
-              </svg>
-            </a>
+            {SOCIAL_LINKS.map((social) => (
+              <SocialLink
+                key={social.label}
+                href={social.href}
+                label={social.label}
+              />
+            ))}
           </div>
 
           {/* Mobile / Tablet Menu Button */}
@@ -515,7 +470,12 @@ export function Navbar() {
                   </span>
                 </motion.div>
 
-                {/* MAIN NAVIGATION */}
+                {/* =================================================
+                    MOBILE NAVIGATION
+
+                    Generated from NAV_ITEMS.
+                ================================================== */}
+
                 <motion.nav
                   aria-label="Mobile navigation"
                   className="mt-5 sm:mt-6"
@@ -531,227 +491,70 @@ export function Navbar() {
                     },
                   }}
                 >
-                  {/* Home */}
-                  <motion.div
-                    variants={{
-                      hidden: { opacity: 0, x: 30 },
-                      visible: { opacity: 1, x: 0 },
-                    }}
-                    transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
-                  >
-                    <Link
-                      href="/"
-                      onClick={closeMenu}
-                      aria-current={pathname === "/" ? "page" : undefined}
-                      className="group flex items-center justify-between border-b border-charcoal/[0.08] py-3.5 sm:py-4"
-                    >
-                      <div className="flex items-center gap-3.5 sm:gap-4">
-                        <span
-                          className={`font-body text-[9px] font-bold tracking-[0.18em] ${pathname === "/" ? "text-[#AB3C68]" : "text-charcoal/35"}`}
-                        >
-                          01
-                        </span>
+                  {NAV_ITEMS.map((item, index) => {
+                    const active = isItemActive(item);
 
-                        <span
-                          className={`font-display text-[1.25rem] font-bold leading-none tracking-[-0.035em] transition-colors duration-300 sm:text-[1.4rem] ${pathname === "/" ? "text-[#AB3C68]" : "text-charcoal group-hover:text-[#AB3C68]"}`}
-                        >
-                          Home
-                        </span>
-                      </div>
-
-                      <span
-                        className={`flex h-9 w-9 items-center justify-center rounded-full border transition-all duration-300 sm:h-10 sm:w-10 ${pathname === "/" ? "border-[#AB3C68]/30 bg-[#AB3C68] text-white" : "border-charcoal/10 bg-white/45 text-charcoal group-hover:border-[#AB3C68]/30 group-hover:bg-[#AB3C68] group-hover:text-white"}`}
+                    return (
+                      <motion.div
+                        key={item.label}
+                        variants={{
+                          hidden: { opacity: 0, x: 30 },
+                          visible: { opacity: 1, x: 0 },
+                        }}
+                        transition={{
+                          duration: 0.45,
+                          ease: [0.22, 1, 0.36, 1],
+                        }}
                       >
-                        <ArrowUpRight
-                          size={17}
-                          strokeWidth={1.8}
-                          className="transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
-                        />
-                      </span>
-                    </Link>
-                  </motion.div>
+                        <Link
+                          href={item.href}
+                          onClick={(event) => {
+                            closeMenu();
 
-                  {/* Recruitment */}
-                  <motion.div
-                    variants={{
-                      hidden: { opacity: 0, x: 30 },
-                      visible: { opacity: 1, x: 0 },
-                    }}
-                    transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
-                  >
-                    <Link
-                      href="/committee-recruitment"
-                      onClick={closeMenu}
-                      aria-current={isRecruitment ? "page" : undefined}
-                      className="group flex items-center justify-between border-b border-charcoal/[0.08] py-3.5 sm:py-4"
-                    >
-                      <div className="flex items-center gap-3.5 sm:gap-4">
-                        <span
-                          className={`font-body text-[9px] font-bold tracking-[0.18em] ${isRecruitment ? "text-[#AB3C68]" : "text-charcoal/35"}`}
+                            if (item.section) {
+                              scrollToSection(event, item.section);
+                            }
+                          }}
+                          aria-current={active ? "page" : undefined}
+                          className="group flex items-center justify-between border-b border-charcoal/[0.08] py-3.5 sm:py-4"
                         >
-                          02
-                        </span>
+                          <div className="flex items-center gap-3.5 sm:gap-4">
+                            <span
+                              className={`font-body text-[9px] font-bold tracking-[0.18em] ${
+                                active ? "text-[#AB3C68]" : "text-charcoal/35"
+                              }`}
+                            >
+                              {String(index + 1).padStart(2, "0")}
+                            </span>
 
-                        <span
-                          className={`font-display text-[1.25rem] font-bold leading-none tracking-[-0.035em] transition-colors duration-300 sm:text-[1.4rem] ${isRecruitment ? "text-[#AB3C68]" : "text-charcoal group-hover:text-[#AB3C68]"}`}
-                        >
-                          Recruitment
-                        </span>
-                      </div>
+                            <span
+                              className={`font-display text-[1.25rem] font-bold leading-none tracking-[-0.035em] transition-colors duration-300 sm:text-[1.4rem] ${
+                                active
+                                  ? "text-[#AB3C68]"
+                                  : "text-charcoal group-hover:text-[#AB3C68]"
+                              }`}
+                            >
+                              {item.label}
+                            </span>
+                          </div>
 
-                      <span
-                        className={`flex h-9 w-9 items-center justify-center rounded-full border transition-all duration-300 sm:h-10 sm:w-10 ${isRecruitment ? "border-[#AB3C68]/30 bg-[#AB3C68] text-white" : "border-charcoal/10 bg-white/45 text-charcoal group-hover:border-[#AB3C68]/30 group-hover:bg-[#AB3C68] group-hover:text-white"}`}
-                      >
-                        <ArrowUpRight
-                          size={17}
-                          strokeWidth={1.8}
-                          className="transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
-                        />
-                      </span>
-                    </Link>
-                  </motion.div>
-
-                  {/* Judges & Investors */}
-                  <motion.div
-                    variants={{
-                      hidden: { opacity: 0, x: 30 },
-                      visible: { opacity: 1, x: 0 },
-                    }}
-                    transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
-                  >
-                    <Link
-                      href="/judges-investors"
-                      onClick={closeMenu}
-                      aria-current={isJudgesInvestors ? "page" : undefined}
-                      className="group flex items-center justify-between border-b border-charcoal/[0.08] py-3.5 sm:py-4"
-                    >
-                      <div className="flex items-center gap-3.5 sm:gap-4">
-                        <span
-                          className={`font-body text-[9px] font-bold tracking-[0.18em] ${isJudgesInvestors ? "text-[#AB3C68]" : "text-charcoal/35"}`}
-                        >
-                          03
-                        </span>
-
-                        <span
-                          className={`font-display text-[1.25rem] font-bold leading-none tracking-[-0.035em] transition-colors duration-300 sm:text-[1.4rem] ${isJudgesInvestors ? "text-[#AB3C68]" : "text-charcoal group-hover:text-[#AB3C68]"}`}
-                        >
-                          Judges & Investors
-                        </span>
-                      </div>
-
-                      <span
-                        className={`flex h-9 w-9 items-center justify-center rounded-full border transition-all duration-300 sm:h-10 sm:w-10 ${isJudgesInvestors ? "border-[#AB3C68]/30 bg-[#AB3C68] text-white" : "border-charcoal/10 bg-white/45 text-charcoal group-hover:border-[#AB3C68]/30 group-hover:bg-[#AB3C68] group-hover:text-white"}`}
-                      >
-                        <ArrowUpRight
-                          size={17}
-                          strokeWidth={1.8}
-                          className="transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
-                        />
-                      </span>
-                    </Link>
-                  </motion.div>
-
-                  {/* Technical Sponsors */}
-                  <motion.div
-                    variants={{
-                      hidden: { opacity: 0, x: 30 },
-                      visible: { opacity: 1, x: 0 },
-                    }}
-                    transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
-                  >
-                    <Link
-                      href="/#technical-sponsors"
-                      onClick={closeMenu}
-                      className="group flex items-center justify-between border-b border-charcoal/[0.08] py-3.5 sm:py-4"
-                    >
-                      <div className="flex items-center gap-3.5 sm:gap-4">
-                        <span className="font-body text-[9px] font-bold tracking-[0.18em] text-charcoal/35">
-                          04
-                        </span>
-
-                        <span className="font-display text-[1.25rem] font-bold leading-none tracking-[-0.035em] text-charcoal transition-colors duration-300 group-hover:text-[#AB3C68] sm:text-[1.4rem]">
-                          Technical Sponsors
-                        </span>
-                      </div>
-
-                      <span className="flex h-9 w-9 items-center justify-center rounded-full border border-charcoal/10 bg-white/45 text-charcoal transition-all duration-300 group-hover:border-[#AB3C68]/30 group-hover:bg-[#AB3C68] group-hover:text-white sm:h-10 sm:w-10">
-                        <ArrowUpRight
-                          size={17}
-                          strokeWidth={1.8}
-                          className="transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
-                        />
-                      </span>
-                    </Link>
-                  </motion.div>
-
-                  {/* Contacts */}
-                  <motion.div
-                    variants={{
-                      hidden: { opacity: 0, x: 30 },
-                      visible: { opacity: 1, x: 0 },
-                    }}
-                    transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
-                  >
-                    <Link
-                      href="/#contact"
-                      onClick={closeMenu}
-                      className="group flex items-center justify-between border-b border-charcoal/[0.08] py-3.5 sm:py-4"
-                    >
-                      <div className="flex items-center gap-3.5 sm:gap-4">
-                        <span className="font-body text-[9px] font-bold tracking-[0.18em] text-charcoal/35">
-                          05
-                        </span>
-
-                        <span className="font-display text-[1.25rem] font-bold leading-none tracking-[-0.035em] text-charcoal transition-colors duration-300 group-hover:text-[#AB3C68] sm:text-[1.4rem]">
-                          Contacts
-                        </span>
-                      </div>
-
-                      <span className="flex h-9 w-9 items-center justify-center rounded-full border border-charcoal/10 bg-white/45 text-charcoal transition-all duration-300 group-hover:border-[#AB3C68]/30 group-hover:bg-[#AB3C68] group-hover:text-white sm:h-10 sm:w-10">
-                        <ArrowUpRight
-                          size={17}
-                          strokeWidth={1.8}
-                          className="transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
-                        />
-                      </span>
-                    </Link>
-                  </motion.div>
-
-                  {/* Latest News and Announcements */}
-                  <motion.div
-                    variants={{
-                      hidden: { opacity: 0, x: 30 },
-                      visible: { opacity: 1, x: 0 },
-                    }}
-                    transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
-                  >
-                    <Link
-                      href="/#announcements"
-                      onClick={(event) => {
-                        closeMenu();
-                        scrollToAnnouncements(event);
-                      }}
-                      className="group flex items-center justify-between border-b border-charcoal/[0.08] py-3.5 sm:py-4"
-                    >
-                      <div className="flex items-center gap-3.5 sm:gap-4">
-                        <span className="font-body text-[9px] font-bold tracking-[0.18em] text-charcoal/35">
-                          06
-                        </span>
-
-                        <span className="font-display text-[1.25rem] font-bold leading-none tracking-[-0.035em] text-charcoal transition-colors duration-300 group-hover:text-[#AB3C68] sm:text-[1.4rem]">
-                          Latest News
-                        </span>
-                      </div>
-
-                      <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-charcoal/10 bg-white/45 text-charcoal transition-all duration-300 group-hover:border-[#AB3C68]/30 group-hover:bg-[#AB3C68] group-hover:text-white sm:h-10 sm:w-10">
-                        <ArrowUpRight
-                          size={17}
-                          strokeWidth={1.8}
-                          className="transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
-                        />
-                      </span>
-                    </Link>
-                  </motion.div>
+                          <span
+                            className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-full border transition-all duration-300 sm:h-10 sm:w-10 ${
+                              active
+                                ? "border-[#AB3C68]/30 bg-[#AB3C68] text-white"
+                                : "border-charcoal/10 bg-white/45 text-charcoal group-hover:border-[#AB3C68]/30 group-hover:bg-[#AB3C68] group-hover:text-white"
+                            }`}
+                          >
+                            <ArrowUpRight
+                              size={17}
+                              strokeWidth={1.8}
+                              className="transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+                            />
+                          </span>
+                        </Link>
+                      </motion.div>
+                    );
+                  })}
                 </motion.nav>
 
                 {/* =================================================
@@ -791,91 +594,14 @@ export function Navbar() {
                     </div>
 
                     <div className="flex items-center gap-2">
-                      {/* Instagram */}
-                      <a
-                        href="https://www.instagram.com/hultprizecaluniv?igsi=aGw3Y2JueG01ZXgw"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label="Instagram"
-                        className="flex h-11 w-11 items-center justify-center rounded-full border border-charcoal/10 bg-white/45 text-charcoal backdrop-blur-md transition-all duration-300 hover:border-[#AB3C68]/30 hover:bg-[#AB3C68] hover:text-white"
-                      >
-                        <svg
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          xmlns="http://www.w3.org/2000/svg"
-                          className="h-[19px] w-[19px]"
-                          aria-hidden="true"
-                        >
-                          <rect
-                            x="3"
-                            y="3"
-                            width="18"
-                            height="18"
-                            rx="5"
-                            stroke="currentColor"
-                            strokeWidth="1.8"
-                          />
-                          <circle
-                            cx="12"
-                            cy="12"
-                            r="4"
-                            stroke="currentColor"
-                            strokeWidth="1.8"
-                          />
-                          <circle
-                            cx="17.5"
-                            cy="6.5"
-                            r="1"
-                            fill="currentColor"
-                          />
-                        </svg>
-                      </a>
-
-                      {/* LinkedIn */}
-                      <a
-                        href="https://www.linkedin.com/company/hult-prize-university-of-calcutta/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label="LinkedIn"
-                        className="flex h-11 w-11 items-center justify-center rounded-full border border-charcoal/10 bg-white/45 text-charcoal backdrop-blur-md transition-all duration-300 hover:border-[#AB3C68]/30 hover:bg-[#AB3C68] hover:text-white"
-                      >
-                        <svg
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          xmlns="http://www.w3.org/2000/svg"
-                          className="h-[19px] w-[19px]"
-                          aria-hidden="true"
-                        >
-                          <rect
-                            x="4"
-                            y="4"
-                            width="16"
-                            height="16"
-                            rx="2"
-                            stroke="currentColor"
-                            strokeWidth="1.8"
-                          />
-                          <path
-                            d="M8 10V16"
-                            stroke="currentColor"
-                            strokeWidth="1.8"
-                            strokeLinecap="round"
-                          />
-                          <circle cx="8" cy="7.5" r="1" fill="currentColor" />
-                          <path
-                            d="M12 16V12.8C12 11.25 13.05 10 14.5 10C15.95 10 17 11.25 17 12.8V16"
-                            stroke="currentColor"
-                            strokeWidth="1.8"
-                            strokeLinecap="round"
-                          />
-                          <path
-                            d="M12 13V16"
-                            stroke="currentColor"
-                            strokeWidth="1.8"
-                            strokeLinecap="round"
-                          />
-                        </svg>
-                      </a>
+                      {SOCIAL_LINKS.map((social) => (
+                        <SocialLink
+                          key={social.label}
+                          href={social.href}
+                          label={social.label}
+                          mobile
+                        />
+                      ))}
                     </div>
                   </motion.div>
                 </div>
@@ -885,5 +611,104 @@ export function Navbar() {
         )}
       </AnimatePresence>
     </header>
+  );
+}
+
+/* ============================================================
+   SOCIAL LINK
+============================================================ */
+
+function SocialLink({
+  href,
+  label,
+  mobile = false,
+}: {
+  href: string;
+  label: string;
+  mobile?: boolean;
+}) {
+  return (
+    <a
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label={label}
+      className={`flex items-center justify-center rounded-full transition-all duration-200 ${
+        mobile
+          ? "h-11 w-11 border border-charcoal/10 bg-white/45 text-charcoal backdrop-blur-md hover:border-[#AB3C68]/30 hover:bg-[#AB3C68] hover:text-white"
+          : "h-10 w-10 text-charcoal hover:bg-hult-pink/10 hover:text-hult-pink"
+      }`}
+    >
+      {label === "Instagram" ? (
+        <svg
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          className={mobile ? "h-[19px] w-[19px]" : "h-[21px] w-[21px]"}
+          aria-hidden="true"
+        >
+          <rect
+            x="3"
+            y="3"
+            width="18"
+            height="18"
+            rx="5"
+            stroke="currentColor"
+            strokeWidth="1.8"
+          />
+
+          <circle
+            cx="12"
+            cy="12"
+            r="4"
+            stroke="currentColor"
+            strokeWidth="1.8"
+          />
+
+          <circle cx="17.5" cy="6.5" r="1" fill="currentColor" />
+        </svg>
+      ) : (
+        <svg
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          className={mobile ? "h-[19px] w-[19px]" : "h-[21px] w-[21px]"}
+          aria-hidden="true"
+        >
+          <rect
+            x="4"
+            y="4"
+            width="16"
+            height="16"
+            rx="2"
+            stroke="currentColor"
+            strokeWidth="1.8"
+          />
+
+          <path
+            d="M8 10V16"
+            stroke="currentColor"
+            strokeWidth="1.8"
+            strokeLinecap="round"
+          />
+
+          <circle cx="8" cy="7.5" r="1" fill="currentColor" />
+
+          <path
+            d="M12 16V12.8C12 11.25 13.05 10 14.5 10C15.95 10 17 11.25 17 12.8V16"
+            stroke="currentColor"
+            strokeWidth="1.8"
+            strokeLinecap="round"
+          />
+
+          <path
+            d="M12 13V16"
+            stroke="currentColor"
+            strokeWidth="1.8"
+            strokeLinecap="round"
+          />
+        </svg>
+      )}
+    </a>
   );
 }
