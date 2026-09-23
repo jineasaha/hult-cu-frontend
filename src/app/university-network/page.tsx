@@ -32,7 +32,7 @@ export default function UniversityNetwork() {
               {/* Eyebrow */}
 
               <Reveal>
-                <div className="flex items-center justify-center gap-3">
+                <div className="mt-10 flex items-center justify-center gap-3">
                   <span className="h-px w-10 bg-[#F58FBD] sm:w-14" />
 
                   <span className="font-sans text-[10px] font-bold uppercase tracking-[0.32em] text-[#FFD0E7] sm:text-[11px]">
@@ -46,7 +46,7 @@ export default function UniversityNetwork() {
               {/* Main title */}
 
               <Reveal delay={0.08}>
-                <h1 className="mt-8 font-display text-6xl font-bold leading-[0.88] tracking-[-0.06em] sm:text-7xl lg:text-[7.5rem]">
+                <h1 className="mt-8 font-display text-5xl font-bold leading-[0.88] tracking-[-0.06em] sm:text-6xl lg:text-[7rem]">
                   The{" "}
                   <span className="bg-linear-to-r from-[#f556f1] via-[#b545b5] to-[#b82c72] bg-clip-text text-transparent">
                     University
@@ -66,23 +66,6 @@ export default function UniversityNetwork() {
                 </p>
               </Reveal>
 
-              {/* Stats */}
-
-              <Reveal delay={0.21}>
-                <div className="mt-8 flex flex-wrap justify-center gap-3 sm:gap-4">
-                  <div className="rounded-full border border-white/15 bg-white/[0.07] px-5 py-3 backdrop-blur-sm">
-                    <span className="font-sans text-xs font-semibold text-white/80 sm:text-sm">
-                      14 University Campuses
-                    </span>
-                  </div>
-
-                  <div className="rounded-full border border-white/15 bg-white/[0.07] px-5 py-3 backdrop-blur-sm">
-                    <span className="font-sans text-xs font-semibold text-white/80 sm:text-sm">
-                      155 Affiliated Colleges
-                    </span>
-                  </div>
-                </div>
-              </Reveal>
 
               {/* Supporting statement */}
 
@@ -159,7 +142,7 @@ export default function UniversityNetwork() {
           className="pointer-events-none absolute bottom-0 left-1/2 h-80 w-80 -translate-x-1/2 rounded-full bg-[#FFE7D2]/25 blur-3xl"
         />
 
-        <Container className="relative z-10">
+        <Container className="-mt-11 relative z-10">
           {/* ========================================================
               CAMPUSES
           ======================================================== */}

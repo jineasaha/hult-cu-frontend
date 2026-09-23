@@ -172,7 +172,7 @@ const teams: Team[] = [
       {
         name: "Anukta Goswami",
         department: "DEPARTMENT",
-        image: "/images/default/man.png",
+        image: "/images/committee/Anukta goswami.jpg",
       },
       {
         name: "Soham Ray",

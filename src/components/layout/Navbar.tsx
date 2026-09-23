@@ -47,11 +47,11 @@ const NAV_ITEMS: NavItem[] = [
     href: "/#contact",
     section: "contact",
   },
-  {
-    label: "Latest News",
-    href: "/#announcements",
-    section: "announcements",
-  },
+  // {
+  //   label: "Latest News",
+  //   href: "/#announcements",
+  //   section: "announcements",
+  // },
 ];
 
 const SOCIAL_LINKS = [
