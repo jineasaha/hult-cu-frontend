@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import Image from "next/image";
 
 import { Container } from "@/components/ui/Container";
@@ -13,17 +14,32 @@ const faculties = [
   {
     name: "Prof. Swapan Kumar Ghosh",
     designation:
-      "Teacher-in-charge, Hult Prize On-Campus, University of Calcutta",
-    department:
-      "Prof., Department of Jute and Fibre Technology, Institute of Jute and Fibre Technology, University of Calcutta",
-    image: "/images/default/man.png",
+      "Teacher-in-charge, HultPrize On-campus University of Calcutta and Campus co-ordinator of Ballygunge Science College campus",
+    emails: ["skgjft@caluniv.ac.in"],
+    image: "/images/faculty/swapan_kumar_ghosh.png",
+  },
+  {
+    name: "Dr. Shampa Guin",
+    designation:
+      "Professor, Institute of Radiophysics and Electronics, IIC Coordinator HultPrize and Campus co-ordinator of Rajabazar Science College campus",
+    emails: ["sgrpe@caluniv.ac.in"],
+    image: "/images/faculty/shampa_guin.jpg",
   },
   {
     name: "Dr. Rajarshi Gupta",
+    designation: "IIC Convenor, University of Calcutta",
+    emails: [
+      "convener.iic-cu@caluniv.ac.in",
+      "rgaphy@caluniv.ac.in",
+    ],
+    image: "/images/faculty/rajarshi_gupta.jpg",
+  },
+  {
+    name: "Dr. Sharmistha Banerjee",
     designation:
-      "Convenor, Institution's Innovative Council, University of Calcutta",
-    department: "Prof., Department of Applied Physics, University of Calcutta",
-    image: "/images/default/man.png",
+      "Professor and HOD, Department of MBA. Campus co-ordinator HultPrize from Alipore Campus University of Calcutta.",
+    emails: ["sharmisthabanerjee@hotmail.com"],
+    image: "/images/faculty/sharmistha_banerjee.jpg",
   },
 ];
 
@@ -44,7 +60,7 @@ export function FacultySection() {
         className="pointer-events-none absolute -bottom-40 -right-32 z-0 h-72 w-72 rounded-full border-[35px] border-[#FFE6F1] opacity-60"
       />
 
-      <Container className="relative z-10">
+      <Container className="-mt-10 relative z-10">
         {/* Header */}
         <Reveal>
           <div className="mx-auto mb-12 max-w-2xl text-center sm:mb-14">
@@ -80,18 +96,13 @@ export function FacultySection() {
 
         {/* Faculty members */}
         <Reveal>
-          <div className="mx-auto grid max-w-4xl grid-cols-1 gap-10 sm:grid-cols-2 lg:gap-14">
+          <div className="mx-auto grid max-w-4xl grid-cols-1 gap-10 sm:grid-cols-2 lg:gap-16">
             {faculties.map((person, index) => (
               <Reveal key={person.name} delay={index * 0.08}>
                 <FacultyProfile person={person} />
               </Reveal>
             ))}
           </div>
-        </Reveal>
-
-        {/* Faculty recruitment */}
-        <Reveal delay={0.16}>
-          <FacultyRecruitmentCard />
         </Reveal>
       </Container>
     </Section>
@@ -108,10 +119,43 @@ function FacultyProfile({
   person: {
     name: string;
     designation: string;
-    department: string;
+    emails: string[];
     image: string;
   };
 }) {
+  const [copiedEmail, setCopiedEmail] = useState<string | null>(null);
+
+  const handleCopy = async (email: string) => {
+    try {
+      await navigator.clipboard.writeText(email);
+      setCopiedEmail(email);
+
+      setTimeout(() => {
+        setCopiedEmail(null);
+      }, 2000);
+    } catch {
+      // Fallback for browsers where Clipboard API is unavailable
+      const textArea = document.createElement("textarea");
+      textArea.value = email;
+      textArea.style.position = "fixed";
+      textArea.style.opacity = "0";
+      document.body.appendChild(textArea);
+      textArea.focus();
+      textArea.select();
+
+      try {
+        document.execCommand("copy");
+        setCopiedEmail(email);
+
+        setTimeout(() => {
+          setCopiedEmail(null);
+        }, 2000);
+      } finally {
+        document.body.removeChild(textArea);
+      }
+    }
+  };
+
   return (
     <article className="group text-center">
       <div className="relative mx-auto aspect-[4/4.5] w-full max-w-[280px] overflow-hidden rounded-[24px] bg-[#F4F4F6]">
@@ -125,7 +169,7 @@ function FacultyProfile({
           src={person.image}
           alt={person.name}
           fill
-          className="relative z-10 object-contain transition-transform duration-500 group-hover:scale-[1.02]"
+          className="relative z-10 object-cover transition-transform duration-500 group-hover:scale-[1.02]"
           sizes="(max-width: 640px) 280px, (max-width: 1024px) 40vw, 280px"
         />
 
@@ -147,67 +191,142 @@ function FacultyProfile({
         {person.designation}
       </p>
 
-      <p className="mx-auto mt-2 max-w-[320px] font-sans text-xs leading-5 text-[#4B4B4B]">
-        {person.department}
-      </p>
-    </article>
-  );
-}
+      {/* Email strip */}
+      <div className="mx-auto mt-3 flex w-full max-w-[320px] items-center justify-between gap-3 rounded-xl border border-[#E9E9EE] bg-[#FAFAFC] px-3 py-2.5 text-left shadow-[0_2px_8px_rgba(0,0,0,0.03)]">
+        <div className="flex min-w-0 items-center gap-2.5">
+          {/* Email icon */}
+          <svg
+            aria-hidden="true"
+            viewBox="0 0 24 24"
+            className="h-4 w-4 shrink-0"
+            fill="none"
+            stroke={HULT_PINK}
+            strokeWidth="1.8"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          >
+            <rect x="3" y="5" width="18" height="14" rx="2" />
+            <path d="m3 7 9 6 9-6" />
+          </svg>
 
-/* ============================================================
-   FACULTY RECRUITMENT
-============================================================ */
+          <div className="min-w-0">
 
-function FacultyRecruitmentCard() {
-  return (
-    <div className="mx-auto mt-8 max-w-3xl">
-      <div className="relative overflow-hidden rounded-[18px] border border-[#F4B400]/25 bg-[#FFF9E8] px-5 py-5 sm:px-7 sm:py-5">
+            <span className="truncate font-sans text-[15px] leading-5 text-[#4B4B4B]">
+              {person.emails[0]}
+            </span>
+          </div>
+        </div>
+
+        {/* Copy button for first email */}
+        <button
+          type="button"
+          onClick={() => handleCopy(person.emails[0])}
+          aria-label={
+            copiedEmail === person.emails[0]
+              ? "Email copied"
+              : "Copy email address"
+          }
+          className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg border border-[#E5E5EA] bg-white text-[#555] transition-all duration-200 hover:border-[#d6318c]/30 hover:bg-[#FFF5FA] hover:text-[#d6318c] active:scale-95"
+        >
+          {copiedEmail === person.emails[0] ? (
+            <svg
+              aria-hidden="true"
+              viewBox="0 0 24 24"
+              className="h-4 w-4"
+              fill="none"
+              stroke="#16A34A"
+              strokeWidth="2.2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <path d="m5 12 4 4L19 6" />
+            </svg>
+          ) : (
+            <svg
+              aria-hidden="true"
+              viewBox="0 0 24 24"
+              className="h-4 w-4"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="1.8"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <rect x="9" y="9" width="11" height="11" rx="2" />
+              <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" />
+            </svg>
+          )}
+        </button>
+      </div>
+
+      {/* Additional email strips */}
+      {person.emails.slice(1).map((email) => (
         <div
-          aria-hidden="true"
-          className="absolute -left-10 -top-10 h-20 w-20 rounded-full bg-[#F4B400]/10"
-        />
+          key={email}
+          className="mx-auto mt-2 flex w-full max-w-[320px] items-center justify-between gap-3 rounded-xl border border-[#E9E9EE] bg-[#FAFAFC] px-3 py-2.5 text-left shadow-[0_2px_8px_rgba(0,0,0,0.03)]"
+        >
+          <div className="flex min-w-0 items-center gap-2.5">
+            <svg
+              aria-hidden="true"
+              viewBox="0 0 24 24"
+              className="h-4 w-4 shrink-0"
+              fill="none"
+              stroke={HULT_PINK}
+              strokeWidth="1.8"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <rect x="3" y="5" width="18" height="14" rx="2" />
+              <path d="m3 7 9 6 9-6" />
+            </svg>
 
-        <div
-          aria-hidden="true"
-          className="absolute -bottom-10 -right-10 h-20 w-20 rounded-full border-[10px] border-[#F4B400]/10"
-        />
+            <div className="min-w-0">
 
-        <div className="relative z-10 flex flex-col items-center justify-between gap-4 sm:flex-row sm:gap-6">
-          <div className="text-center sm:text-left">
-            <div className="mb-1.5 flex items-center justify-center gap-2 sm:justify-start">
-              <span
-                className="h-px w-5"
-                style={{ backgroundColor: "#F4B400" }}
-              />
-
-              <span
-                className="font-sans text-[9px] font-bold uppercase tracking-[0.22em]"
-                style={{ color: "#B47D00" }}
-              >
-                Join Our Academic Network
-              </span>
+              <p className="truncate font-sans text-[15px] leading-5 text-[#4B4B4B]">
+                {email}
+              </p>
             </div>
-
-            <h4 className="font-display text-lg font-bold tracking-[-0.035em] text-[#0F0F0F] sm:text-xl">
-              We’re looking for more faculty contact points.
-            </h4>
-
-            <p className="mt-1.5 max-w-xl font-sans text-xs leading-5 text-[#4B4B4B] sm:text-sm">
-              We’re looking for more faculty contact points from each university
-              campus to expand our academic outreach. Faculty members interested
-              in collaborating or serving as campus contacts are encouraged to
-              connect with us.
-            </p>
           </div>
 
-          <a
-            href="#contact"
-            className="shrink-0 rounded-full bg-[#F4B400] px-5 py-2.5 font-sans text-xs font-bold text-[#0F0F0F] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md"
+          <button
+            type="button"
+            onClick={() => handleCopy(email)}
+            aria-label={
+              copiedEmail === email ? "Email copied" : "Copy email address"
+            }
+            className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg border border-[#E5E5EA] bg-white text-[#555] transition-all duration-200 hover:border-[#d6318c]/30 hover:bg-[#FFF5FA] hover:text-[#d6318c] active:scale-95"
           >
-            Contact Us
-          </a>
+            {copiedEmail === email ? (
+              <svg
+                aria-hidden="true"
+                viewBox="0 0 24 24"
+                className="h-4 w-4"
+                fill="none"
+                stroke="#16A34A"
+                strokeWidth="2.2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <path d="m5 12 4 4L19 6" />
+              </svg>
+            ) : (
+              <svg
+                aria-hidden="true"
+                viewBox="0 0 24 24"
+                className="h-4 w-4"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.8"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <rect x="9" y="9" width="11" height="11" rx="2" />
+                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" />
+              </svg>
+            )}
+          </button>
         </div>
-      </div>
-    </div>
+      ))}
+    </article>
   );
 }
