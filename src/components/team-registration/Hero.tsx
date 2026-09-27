@@ -791,7 +791,7 @@ export function Hero() {
               </a>
 
               <a
-                href="#the-challenge"
+                href="#before-you-register"
                 className="group inline-flex min-h-[52px] w-full items-center justify-center gap-3 rounded-full border border-white/25 bg-white/[0.035] px-7 font-body text-sm font-semibold text-white/80 backdrop-blur-md transition-all duration-300 hover:-translate-y-1 hover:border-[#ffb3d1]/50 hover:bg-white/[0.08] hover:text-white focus:outline-none focus:ring-2 focus:ring-[#ffb3d1]/60 sm:w-auto"
               >
                 Explore the Rules

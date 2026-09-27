@@ -3,6 +3,10 @@ import type { Metadata } from "next";
 import { Hero } from "@/components/team-registration/Hero";
 import { BeforeYouRegister } from "@/components/team-registration/BeforeYouRegister";
 import { BuildYourTeam } from "@/components/team-registration/BuildYourTeam";
+import { ShapeYourVenture } from "@/components/team-registration/ShapeYourVenture";
+// import { WhatYoullSubmit } from "@/components/team-registration/WhatYoullSubmit";
+import { ProtectYourWork } from "@/components/team-registration/ProtectYourWork";
+import { PrepareAndPitch } from "@/components/team-registration/PrepareAndPitch";
 
 export const metadata: Metadata = {
   title: "Team Registration",
@@ -18,6 +22,14 @@ export default function TeamRegistration() {
       <BeforeYouRegister />
 
       <BuildYourTeam />
+
+      <ShapeYourVenture />
+
+      <ProtectYourWork />
+
+      <PrepareAndPitch />
+
+      {/* <WhatYoullSubmit /> */}
     </>
   );
 }

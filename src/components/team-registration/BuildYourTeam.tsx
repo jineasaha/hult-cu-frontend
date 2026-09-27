@@ -94,13 +94,11 @@ export function BuildYourTeam() {
                 <span className="bg-linear-to-t from-pink-600 via-pink-300 to-red-200 bg-clip-text text-transparent">
                   team
                 </span>
-                .
                 <br />
                 Get ready{" "}
                 <span className="bg-linear-to-t from-pink-600 via-pink-300 to-red-200 bg-clip-text text-transparent">
                   to compete
                 </span>
-                .
               </h2>
             </div>
           </Reveal>
