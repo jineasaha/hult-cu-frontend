@@ -1,17 +1,23 @@
 import type { Metadata } from "next";
 
 import { Hero } from "@/components/team-registration/Hero";
+import { BeforeYouRegister } from "@/components/team-registration/BeforeYouRegister";
+import { BuildYourTeam } from "@/components/team-registration/BuildYourTeam";
 
 export const metadata: Metadata = {
   title: "Team Registration",
   description:
-    "Discover the Hult Prize, its impact framework, the University of Calcutta OnCampus programme, venture development opportunities, evaluation criteria and the journey from idea to global impact.",
+    "Everything you need to build your team, meet the eligibility requirements, register for Hult Prize OnCampus at the University of Calcutta, and prepare your venture for the competition.",
 };
 
-export default function TeamRegistration(){
-    return(
-        <>
-        <Hero/>
-        </>
-    )
+export default function TeamRegistration() {
+  return (
+    <>
+      <Hero />
+
+      <BeforeYouRegister />
+
+      <BuildYourTeam />
+    </>
+  );
 }
