@@ -22,10 +22,20 @@ const NAV_ITEMS: NavItem[] = [
     href: "/",
     route: "/",
   },
+  // {
+  //   label: "Recruitment",
+  //   href: "/committee-recruitment",
+  //   route: "/committee-recruitment",
+  // },
   {
-    label: "Recruitment",
-    href: "/committee-recruitment",
-    route: "/committee-recruitment",
+    label: "About",
+    href: "/about",
+    route: "/about",
+  },
+  {
+    label: "Team Registration",
+    href: "/team-registration",
+    route: "/team-registration",
   },
   {
     label: "Judges & Investors",
@@ -37,11 +47,11 @@ const NAV_ITEMS: NavItem[] = [
     href: "/university-network",
     route: "/university-network",
   },
-  {
-    label: "Technical Sponsors",
-    href: "/#technical-sponsors",
-    section: "technical-sponsors",
-  },
+  // {
+  //   label: "Technical Sponsors",
+  //   href: "/#technical-sponsors",
+  //   section: "technical-sponsors",
+  // },
   {
     label: "Contacts",
     href: "/#contact",
