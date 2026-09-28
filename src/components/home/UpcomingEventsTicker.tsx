@@ -30,12 +30,7 @@ const announcements: Announcement[] = [
     brochureHref: "/docs/Final_Committee_List.pdf",
     featured: true,
   },
-  {
-    title: "Positions Open for Faculty Contact Points",
-    description:
-      "Faculty contact points are being welcomed across university campuses.",
-    href: "#contact",
-  },
+
 ];
 
 export default function UpcomingEventsTicker() {

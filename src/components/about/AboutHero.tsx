@@ -4,11 +4,11 @@ export function AboutHero() {
   return (
     <section
       id="about"
-      className="relative isolate min-h-[calc(100svh-96px)] overflow-hidden bg-[#3a1024] text-white"
+      className="relative isolate min-h-[calc(100svh-96px)] overflow-hidden text-[#171522]"
     >
-      {/* =========================================================
-          BASE GRADIENT — KEEPING THE EXISTING LOOK
-      ========================================================== */}
+      {/* ============================================================
+          BASE ATMOSPHERIC BACKGROUND
+      ============================================================ */}
 
       <div
         aria-hidden="true"
@@ -16,614 +16,522 @@ export function AboutHero() {
         style={{
           background: `
             radial-gradient(
-              circle at 78% 42%,
-              rgba(230, 0, 126, 0.30) 0%,
-              rgba(157, 29, 92, 0.18) 22%,
-              rgba(58, 16, 36, 0) 52%
-            ),
-            radial-gradient(
-              circle at 95% 85%,
-              rgba(255, 179, 209, 0.22) 0%,
-              rgba(255, 179, 209, 0.05) 25%,
-              transparent 52%
-            ),
-            linear-gradient(
-              118deg,
-              #351020 0%,
-              #4a142d 34%,
-              #63183d 63%,
-              #32101f 100%
+              ellipse 85% 75% at 50% 42%,
+              rgba(255, 239, 245, 0.98) 0%,
+              rgba(249, 220, 235, 0.94) 27%,
+              rgba(220, 207, 241, 0.94) 58%,
+              rgba(165, 174, 231, 0.96) 100%
             )
           `,
         }}
       />
 
-      {/* =========================================================
-          SOFT AMBIENT LIGHT
-      ========================================================== */}
+      {/* Upper pink atmospheric light */}
 
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute -right-20 -top-32 h-[620px] w-[620px] rounded-full bg-[#ffb3d1]/10 blur-[130px]"
-      />
-
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute left-[42%] top-[10%] h-[360px] w-[500px] rounded-full bg-[#e6007e]/10 blur-[120px]"
-      />
-
-      {/* =========================================================
-          VERY SUBTLE TECHNICAL GRID
-      ========================================================== */}
-
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-0 opacity-[0.055]"
+        className="pointer-events-none absolute left-1/2 top-[-12%] h-[650px] w-[950px] -translate-x-1/2 rounded-full blur-[110px]"
         style={{
-          backgroundImage: `
-            linear-gradient(rgba(255,255,255,0.8) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(255,255,255,0.8) 1px, transparent 1px)
-          `,
-          backgroundSize: "82px 82px",
-          maskImage:
-            "linear-gradient(to right, transparent 0%, black 55%, transparent 100%)",
-          WebkitMaskImage:
-            "linear-gradient(to right, transparent 0%, black 55%, transparent 100%)",
+          background:
+            "radial-gradient(ellipse, rgba(255,220,236,0.78) 0%, rgba(255,225,239,0.42) 45%, transparent 76%)",
         }}
       />
 
-      {/* =========================================================
-          STATIC FLUID LIGHT GRAPHIC
-      ========================================================== */}
+      {/* Left lavender atmosphere */}
 
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-y-0 right-[-8%] w-[72%] overflow-hidden sm:right-[-5%] lg:right-[-2%] lg:w-[67%]"
+        className="pointer-events-none absolute left-[-18%] top-[10%] h-[650px] w-[650px] rounded-full blur-[120px]"
+        style={{
+          background:
+            "radial-gradient(circle, rgba(123,143,229,0.46) 0%, rgba(146,158,235,0.22) 48%, transparent 75%)",
+        }}
+      />
+
+      {/* Right pink atmosphere */}
+
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute right-[-18%] top-[12%] h-[650px] w-[650px] rounded-full blur-[120px]"
+        style={{
+          background:
+            "radial-gradient(circle, rgba(245,164,205,0.46) 0%, rgba(235,181,218,0.23) 48%, transparent 76%)",
+        }}
+      />
+
+      {/* Central soft light */}
+
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute left-1/2 top-[40%] h-[520px] w-[780px] -translate-x-1/2 -translate-y-1/2 rounded-full blur-[105px]"
+        style={{
+          background:
+            "radial-gradient(ellipse, rgba(255,247,249,0.82) 0%, rgba(255,232,241,0.45) 42%, transparent 76%)",
+        }}
+      />
+
+      {/* ============================================================
+          SUBTLE BACKGROUND GRID / TEXTURE
+      ============================================================ */}
+
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 opacity-[0.10]"
+        style={{
+          backgroundImage: `
+            linear-gradient(
+              90deg,
+              rgba(255,255,255,0.75) 1px,
+              transparent 1px
+            ),
+            linear-gradient(
+              rgba(255,255,255,0.75) 1px,
+              transparent 1px
+            )
+          `,
+          backgroundSize: "180px 180px",
+          maskImage:
+            "linear-gradient(to bottom, transparent 0%, black 20%, black 78%, transparent 100%)",
+          WebkitMaskImage:
+            "linear-gradient(to bottom, transparent 0%, black 20%, black 78%, transparent 100%)",
+        }}
+      />
+
+      {/* ============================================================
+          LARGE ORBITAL CIRCLE
+      ============================================================ */}
+
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute left-1/2 top-[2%] h-[700px] w-[700px] -translate-x-1/2 rounded-full border border-white/55"
+      />
+
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute left-1/2 top-[10%] h-[520px] w-[520px] -translate-x-1/2 rounded-full border border-white/30"
+      />
+
+      {/* ============================================================
+          LEFT VERTICAL LIGHT
+      ============================================================ */}
+
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute left-[7.5%] top-0 h-[62%] w-px bg-gradient-to-b from-white/0 via-white/35 to-white/5"
+      />
+
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute left-[7.5%] top-[14%] h-2 w-2 -translate-x-1/2 rounded-full bg-white/75 shadow-[0_0_18px_rgba(255,255,255,0.85)]"
+      />
+
+      {/* ============================================================
+          RIGHT VERTICAL LIGHT
+      ============================================================ */}
+
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute right-[7.5%] top-0 h-[62%] w-px bg-gradient-to-b from-white/0 via-white/35 to-white/5"
+      />
+
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute right-[7.5%] top-[20%] h-2 w-2 translate-x-1/2 rounded-full bg-[#E6007E]/70 shadow-[0_0_20px_rgba(230,0,126,0.55)]"
+      />
+
+      {/* ============================================================
+          FLUID WAVE LIGHT — LARGE BLURRED GLOW
+      ============================================================ */}
+
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute bottom-[-100px] left-[-7%] h-[440px] w-[65%] rounded-[50%] blur-[65px]"
+        style={{
+          background:
+            "radial-gradient(ellipse, rgba(106,83,190,0.45) 0%, rgba(196,116,202,0.30) 40%, rgba(244,161,202,0.16) 67%, transparent 78%)",
+          transform: "rotate(-7deg)",
+        }}
+      />
+
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute bottom-[-100px] right-[-7%] h-[440px] w-[65%] rounded-[50%] blur-[65px]"
+        style={{
+          background:
+            "radial-gradient(ellipse, rgba(105,88,192,0.42) 0%, rgba(204,112,198,0.30) 40%, rgba(244,158,201,0.18) 67%, transparent 78%)",
+          transform: "rotate(7deg)",
+        }}
+      />
+
+      {/* ============================================================
+          MAIN FLUID WAVE SYSTEM
+      ============================================================ */}
+
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute bottom-0 left-0 right-0 h-[57%] overflow-hidden"
       >
-        {/* =====================================================
-            AMBIENT GLOW BEHIND THE FLUID
-        ====================================================== */}
-
-        <div
-          className="absolute right-[5%] top-[16%] h-[620px] w-[620px] rounded-full blur-[115px]"
-          style={{
-            background:
-              "radial-gradient(circle, rgba(236,0,140,0.28) 0%, rgba(236,0,140,0.10) 42%, transparent 72%)",
-          }}
-        />
-
-        <div
-          className="absolute right-[-5%] bottom-[-2%] h-[560px] w-[760px] rounded-full blur-[130px]"
-          style={{
-            background:
-              "radial-gradient(ellipse, rgba(255,179,209,0.22) 0%, rgba(230,0,126,0.08) 45%, transparent 74%)",
-          }}
-        />
-
-        <div
-          className="absolute right-[24%] top-[29%] h-[330px] w-[330px] rounded-full blur-[100px]"
-          style={{
-            background:
-              "radial-gradient(circle, rgba(255,235,243,0.12), rgba(255,179,209,0.06) 42%, transparent 72%)",
-          }}
-        />
-
-        {/* =====================================================
-            BACK FLUID LAYER
-        ====================================================== */}
-
         <svg
-          className="absolute inset-[-5%] h-[110%] w-[120%]"
-          viewBox="0 0 1000 900"
+          className="absolute bottom-[-2%] left-1/2 h-[100%] w-[135%] -translate-x-1/2 min-w-[1250px]"
+          viewBox="0 0 1600 620"
+          preserveAspectRatio="none"
           fill="none"
-          preserveAspectRatio="xMidYMid slice"
         >
           <defs>
+            {/* ------------------------------------------------------
+                LEFT DEEP PURPLE
+            ------------------------------------------------------- */}
+
             <linearGradient
-              id="staticBackFluid"
+              id="leftDeep"
+              x1="0"
+              y1="620"
+              x2="680"
+              y2="250"
+              gradientUnits="userSpaceOnUse"
+            >
+              <stop offset="0" stopColor="#5B4B9B" stopOpacity="0.90" />
+              <stop offset="0.30" stopColor="#7463B7" stopOpacity="0.78" />
+              <stop offset="0.55" stopColor="#9C75C5" stopOpacity="0.55" />
+              <stop offset="0.76" stopColor="#D99BCF" stopOpacity="0.30" />
+              <stop offset="1" stopColor="#F4C8DD" stopOpacity="0" />
+            </linearGradient>
+
+            {/* ------------------------------------------------------
+                LEFT PINK
+            ------------------------------------------------------- */}
+
+            <linearGradient
+              id="leftPink"
               x1="40"
-              y1="80"
-              x2="930"
-              y2="720"
+              y1="610"
+              x2="720"
+              y2="270"
               gradientUnits="userSpaceOnUse"
             >
-              <stop stopColor="#ffb3d1" stopOpacity="0" />
-
-              <stop offset="0.25" stopColor="#ffb3d1" stopOpacity="0.05" />
-
-              <stop offset="0.43" stopColor="#ffb3d1" stopOpacity="0.18" />
-
-              <stop offset="0.54" stopColor="#e6007e" stopOpacity="0.30" />
-
-              <stop offset="0.70" stopColor="#9d1d5c" stopOpacity="0.28" />
-
-              <stop stopColor="#3a1024" stopOpacity="0" offset="1" />
+              <stop offset="0" stopColor="#7D58B3" stopOpacity="0.65" />
+              <stop offset="0.28" stopColor="#AD65C0" stopOpacity="0.70" />
+              <stop offset="0.52" stopColor="#E36BAE" stopOpacity="0.72" />
+              <stop offset="0.72" stopColor="#F29DC8" stopOpacity="0.48" />
+              <stop offset="1" stopColor="#FFDCE9" stopOpacity="0" />
             </linearGradient>
 
+            {/* ------------------------------------------------------
+                RIGHT DEEP PURPLE
+            ------------------------------------------------------- */}
+
             <linearGradient
-              id="staticBackHighlight"
-              x1="80"
-              y1="0"
-              x2="900"
-              y2="600"
-              gradientUnits="userSpaceOnUse"
-            >
-              <stop stopColor="#ffffff" stopOpacity="0" />
-
-              <stop offset="0.42" stopColor="#ffffff" stopOpacity="0.04" />
-
-              <stop offset="0.55" stopColor="#ffb3d1" stopOpacity="0.38" />
-
-              <stop offset="0.62" stopColor="#ffffff" stopOpacity="0.14" />
-
-              <stop offset="0.76" stopColor="#ffb3d1" stopOpacity="0.03" />
-
-              <stop offset="1" stopColor="#ffffff" stopOpacity="0" />
-            </linearGradient>
-
-            <filter id="staticBackBlur">
-              <feGaussianBlur stdDeviation="16" />
-            </filter>
-          </defs>
-
-          {/* Broad rear fluid surface */}
-          <path
-            d="
-              M 90 -90
-              C 285 50, 380 170, 525 255
-              C 690 350, 810 310, 1070 65
-              L 1070 285
-              C 855 475, 710 485, 545 400
-              C 385 318, 280 205, 55 75
-              Z
-            "
-            fill="url(#staticBackFluid)"
-          />
-
-          {/* Soft illuminated fold */}
-          <path
-            d="
-              M 70 -30
-              C 285 105, 390 220, 540 300
-              C 700 385, 820 325, 1055 95
-            "
-            stroke="url(#staticBackHighlight)"
-            strokeWidth="38"
-            strokeLinecap="round"
-            opacity="0.45"
-            filter="url(#staticBackBlur)"
-          />
-
-          {/* Delicate fold edge */}
-          <path
-            d="
-              M 80 -25
-              C 300 110, 390 225, 540 300
-              C 700 382, 825 325, 1055 95
-            "
-            stroke="url(#staticBackHighlight)"
-            strokeWidth="1.2"
-            strokeLinecap="round"
-            opacity="0.8"
-          />
-        </svg>
-
-        {/* =====================================================
-            MAIN SILK / LIGHT FORM
-        ====================================================== */}
-
-        <svg
-          className="absolute inset-[-4%] h-[108%] w-[120%]"
-          viewBox="0 0 1000 900"
-          fill="none"
-          preserveAspectRatio="xMidYMid slice"
-        >
-          <defs>
-            {/* Main translucent surface */}
-            <linearGradient
-              id="silkSurface"
-              x1="90"
-              y1="790"
-              x2="910"
-              y2="190"
-              gradientUnits="userSpaceOnUse"
-            >
-              <stop stopColor="#e6007e" stopOpacity="0" />
-
-              <stop offset="0.20" stopColor="#e6007e" stopOpacity="0.07" />
-
-              <stop offset="0.36" stopColor="#ffb3d1" stopOpacity="0.15" />
-
-              <stop offset="0.47" stopColor="#ffb3d1" stopOpacity="0.42" />
-
-              <stop offset="0.53" stopColor="#fff6fa" stopOpacity="0.68" />
-
-              <stop offset="0.59" stopColor="#ffb3d1" stopOpacity="0.38" />
-
-              <stop offset="0.72" stopColor="#e6007e" stopOpacity="0.17" />
-
-              <stop offset="0.90" stopColor="#e6007e" stopOpacity="0.04" />
-
-              <stop offset="1" stopColor="#e6007e" stopOpacity="0" />
-            </linearGradient>
-
-            {/* Pink shadow surface */}
-            <linearGradient
-              id="pinkShadowSurface"
-              x1="150"
-              y1="820"
-              x2="850"
-              y2="220"
-              gradientUnits="userSpaceOnUse"
-            >
-              <stop stopColor="#e6007e" stopOpacity="0" />
-
-              <stop offset="0.35" stopColor="#e6007e" stopOpacity="0.10" />
-
-              <stop offset="0.52" stopColor="#c2186b" stopOpacity="0.20" />
-
-              <stop offset="0.70" stopColor="#ffb3d1" stopOpacity="0.08" />
-
-              <stop stopColor="#e6007e" stopOpacity="0" offset="1" />
-            </linearGradient>
-
-            {/* Bright central highlight */}
-            <linearGradient
-              id="silkHighlight"
-              x1="100"
-              y1="800"
+              id="rightDeep"
+              x1="1600"
+              y1="620"
               x2="920"
-              y2="170"
+              y2="250"
               gradientUnits="userSpaceOnUse"
             >
-              <stop stopColor="#ffb3d1" stopOpacity="0" />
-
-              <stop offset="0.40" stopColor="#ffb3d1" stopOpacity="0.10" />
-
-              <stop offset="0.50" stopColor="#ffffff" stopOpacity="0.78" />
-
-              <stop offset="0.57" stopColor="#ffb3d1" stopOpacity="0.34" />
-
-              <stop stopColor="#ffb3d1" stopOpacity="0" offset="1" />
+              <stop offset="0" stopColor="#5B4B9B" stopOpacity="0.90" />
+              <stop offset="0.30" stopColor="#38011c" stopOpacity="0.78" />
+              <stop offset="0.55" stopColor="#991863" stopOpacity="0.54" />
+              <stop offset="0.76" stopColor="#ed3a9f" stopOpacity="0.30" />
+              <stop offset="1" stopColor="#ffb5e2" stopOpacity="0" />
             </linearGradient>
 
-            <filter id="silkGlow">
-              <feGaussianBlur stdDeviation="11" />
-            </filter>
+            {/* ------------------------------------------------------
+                RIGHT PINK
+            ------------------------------------------------------- */}
 
-            <filter id="silkGlowLarge">
-              <feGaussianBlur stdDeviation="25" />
-            </filter>
-          </defs>
-
-          {/* -----------------------------------------------------
-              Large translucent flowing body
-          ------------------------------------------------------ */}
-
-          <path
-            d="
-              M -70 850
-              C 115 690, 250 490, 405 425
-              C 545 366, 660 462, 780 425
-              C 880 394, 935 300, 1080 125
-              L 1080 390
-              C 945 530, 845 590, 735 602
-              C 570 620, 505 500, 395 530
-              C 260 568, 170 745, 0 920
-              Z
-            "
-            fill="url(#silkSurface)"
-          />
-
-          {/* -----------------------------------------------------
-              Deeper pink fold
-          ------------------------------------------------------ */}
-
-          <path
-            d="
-              M 20 930
-              C 185 755, 275 610, 410 550
-              C 545 490, 640 575, 760 530
-              C 865 490, 920 360, 1040 185
-              L 1040 370
-              C 935 515, 835 595, 730 600
-              C 585 608, 505 525, 405 575
-              C 300 628, 230 790, 110 930
-              Z
-            "
-            fill="url(#pinkShadowSurface)"
-            opacity="0.75"
-          />
-
-          {/* -----------------------------------------------------
-              Huge soft light following the central fold
-          ------------------------------------------------------ */}
-
-          <path
-            d="
-              M -10 795
-              C 170 655, 255 505, 410 438
-              C 560 375, 665 485, 795 440
-              C 880 410, 945 302, 1060 185
-            "
-            stroke="url(#silkHighlight)"
-            strokeWidth="48"
-            strokeLinecap="round"
-            opacity="0.50"
-            filter="url(#silkGlowLarge)"
-          />
-
-          {/* -----------------------------------------------------
-              Bright silk edge
-          ------------------------------------------------------ */}
-
-          <path
-            d="
-              M -10 795
-              C 170 655, 255 505, 410 438
-              C 560 375, 665 485, 795 440
-              C 880 410, 945 302, 1060 185
-            "
-            stroke="url(#silkHighlight)"
-            strokeWidth="5"
-            strokeLinecap="round"
-            opacity="0.72"
-            filter="url(#silkGlow)"
-          />
-
-          <path
-            d="
-              M -10 795
-              C 170 655, 255 505, 410 438
-              C 560 375, 665 485, 795 440
-              C 880 410, 945 302, 1060 185
-            "
-            stroke="url(#silkHighlight)"
-            strokeWidth="1.4"
-            strokeLinecap="round"
-            opacity="0.9"
-          />
-
-          {/* -----------------------------------------------------
-              Secondary flowing highlight
-          ------------------------------------------------------ */}
-
-          <path
-            d="
-              M 170 900
-              C 290 735, 350 615, 475 565
-              C 605 512, 700 560, 815 455
-              C 900 378, 940 270, 1025 155
-            "
-            stroke="url(#silkHighlight)"
-            strokeWidth="20"
-            strokeLinecap="round"
-            opacity="0.20"
-            filter="url(#silkGlow)"
-          />
-
-          <path
-            d="
-              M 170 900
-              C 290 735, 350 615, 475 565
-              C 605 512, 700 560, 815 455
-              C 900 378, 940 270, 1025 155
-            "
-            stroke="#ffb3d1"
-            strokeOpacity="0.20"
-            strokeWidth="1"
-            strokeLinecap="round"
-          />
-        </svg>
-
-        {/* =====================================================
-            FOREGROUND LIGHT RIBBON
-        ====================================================== */}
-
-        <svg
-          className="absolute inset-0 h-full w-full"
-          viewBox="0 0 1000 900"
-          fill="none"
-          preserveAspectRatio="xMidYMid slice"
-        >
-          <defs>
             <linearGradient
-              id="foregroundLight"
-              x1="150"
-              y1="800"
-              x2="850"
-              y2="100"
+              id="rightPink"
+              x1="1560"
+              y1="610"
+              x2="880"
+              y2="270"
               gradientUnits="userSpaceOnUse"
             >
-              <stop stopColor="#ffb3d1" stopOpacity="0" />
-
-              <stop offset="0.37" stopColor="#ffb3d1" stopOpacity="0.04" />
-
-              <stop offset="0.50" stopColor="#ffffff" stopOpacity="0.58" />
-
-              <stop offset="0.58" stopColor="#ffb3d1" stopOpacity="0.18" />
-
-              <stop stopColor="#ffb3d1" stopOpacity="0" offset="1" />
+              <stop offset="0" stopColor="#7957B2" stopOpacity="0.65" />
+              <stop offset="0.28" stopColor="#AA63BF" stopOpacity="0.70" />
+              <stop offset="0.52" stopColor="#E269AE" stopOpacity="0.72" />
+              <stop offset="0.72" stopColor="#F19DC9" stopOpacity="0.48" />
+              <stop offset="1" stopColor="#FFDCE9" stopOpacity="0" />
             </linearGradient>
 
-            <filter id="foregroundBlur">
-              <feGaussianBlur stdDeviation="7" />
+            {/* ------------------------------------------------------
+                WHITE / PEARLESCENT RIDGE
+            ------------------------------------------------------- */}
+
+            <linearGradient
+              id="pearlRidge"
+              x1="0"
+              y1="500"
+              x2="1600"
+              y2="350"
+              gradientUnits="userSpaceOnUse"
+            >
+              <stop offset="0" stopColor="#FFFFFF" stopOpacity="0" />
+              <stop offset="0.18" stopColor="#FFFFFF" stopOpacity="0.66" />
+              <stop offset="0.33" stopColor="#FFDCEB" stopOpacity="0.78" />
+              <stop offset="0.47" stopColor="#FFFFFF" stopOpacity="0.88" />
+              <stop offset="0.62" stopColor="#FFE4EF" stopOpacity="0.72" />
+              <stop offset="0.80" stopColor="#FFFFFF" stopOpacity="0.58" />
+              <stop offset="1" stopColor="#FFFFFF" stopOpacity="0" />
+            </linearGradient>
+
+            {/* ------------------------------------------------------
+                BRIGHT MAGENTA RIDGE
+            ------------------------------------------------------- */}
+
+            <linearGradient
+              id="pinkRidge"
+              x1="0"
+              y1="540"
+              x2="1600"
+              y2="300"
+              gradientUnits="userSpaceOnUse"
+            >
+              <stop offset="0" stopColor="#D60086" stopOpacity="0" />
+              <stop offset="0.20" stopColor="#a71c6f" stopOpacity="0.65" />
+              <stop offset="0.36" stopColor="#FF8BC6" stopOpacity="0.50" />
+              <stop offset="0.52" stopColor="#8c0951" stopOpacity="0.72" />
+              <stop offset="0.70" stopColor="#FF8BC6" stopOpacity="0.45" />
+              <stop offset="0.84" stopColor="#951b60" stopOpacity="0.65" />
+              <stop offset="1" stopColor="#D60086" stopOpacity="0" />
+            </linearGradient>
+
+            {/* ------------------------------------------------------
+                SOFT WHITE WAVE
+            ------------------------------------------------------- */}
+
+            <linearGradient
+              id="softWave"
+              x1="0"
+              y1="500"
+              x2="1600"
+              y2="380"
+              gradientUnits="userSpaceOnUse"
+            >
+              <stop offset="0" stopColor="#FFFFFF" stopOpacity="0.05" />
+              <stop offset="0.20" stopColor="#FFFFFF" stopOpacity="0.26" />
+              <stop offset="0.40" stopColor="#FFFFFF" stopOpacity="0.12" />
+              <stop offset="0.50" stopColor="#FFFFFF" stopOpacity="0.34" />
+              <stop offset="0.68" stopColor="#FFFFFF" stopOpacity="0.12" />
+              <stop offset="0.84" stopColor="#FFFFFF" stopOpacity="0.25" />
+              <stop offset="1" stopColor="#FFFFFF" stopOpacity="0.04" />
+            </linearGradient>
+
+            {/* ------------------------------------------------------
+                WAVE GLOW FILTER
+            ------------------------------------------------------- */}
+
+            <filter
+              id="waveGlow"
+              x="-40%"
+              y="-40%"
+              width="180%"
+              height="180%"
+            >
+              <feGaussianBlur stdDeviation="18" />
+            </filter>
+
+            <filter
+              id="smallGlow"
+              x="-50%"
+              y="-50%"
+              width="200%"
+              height="200%"
+            >
+              <feGaussianBlur stdDeviation="8" />
             </filter>
           </defs>
 
-          {/* Thin luminous silk strand */}
+          {/* ========================================================
+              LEFT LOWER MASS
+          ========================================================= */}
+
           <path
             d="
-              M 55 900
-              C 205 720, 290 610, 420 560
-              C 560 505, 675 590, 770 515
-              C 860 444, 905 300, 1005 115
+              M 0 620
+              L 0 455
+              C 95 410 145 335 250 315
+              C 355 295 390 370 475 380
+              C 545 389 575 345 660 292
+              C 700 266 735 255 790 250
+              L 790 620
+              Z
             "
-            stroke="url(#foregroundLight)"
-            strokeWidth="15"
+            fill="url(#leftDeep)"
+          />
+
+          {/* Left upper pink fold */}
+
+          <path
+            d="
+              M 0 620
+              L 0 500
+              C 110 448 155 365 270 344
+              C 382 323 420 399 500 408
+              C 580 417 620 354 700 306
+              C 735 285 770 274 810 268
+              C 755 330 700 398 625 425
+              C 540 456 465 430 380 407
+              C 270 377 185 452 90 525
+              Z
+            "
+            fill="url(#leftPink)"
+          />
+
+          {/* ========================================================
+              RIGHT LOWER MASS
+          ========================================================= */}
+
+          <path
+            d="
+              M 1600 620
+              L 1600 455
+              C 1505 410 1455 335 1350 315
+              C 1245 295 1210 370 1125 380
+              C 1055 389 1025 345 940 292
+              C 900 266 865 255 810 250
+              L 810 620
+              Z
+            "
+            fill="url(#rightDeep)"
+          />
+
+          {/* Right upper pink fold */}
+
+          <path
+            d="
+              M 1600 620
+              L 1600 500
+              C 1490 448 1445 365 1330 344
+              C 1218 323 1180 399 1100 408
+              C 1020 417 980 354 900 306
+              C 865 285 830 274 790 268
+              C 845 330 900 398 975 425
+              C 1060 456 1135 430 1220 407
+              C 1330 377 1415 452 1510 525
+              Z
+            "
+            fill="url(#rightPink)"
+          />
+
+    
+          
+          {/* ========================================================
+              MAGENTA INNER RIDGE
+          ========================================================= */}
+
+          <path
+            d="
+              M -20 535
+              C 120 455 205 380 315 374
+              C 440 367 510 458 620 470
+              C 700 479 752 465 800 442
+              C 848 465 900 479 980 470
+              C 1090 458 1160 367 1285 374
+              C 1395 380 1480 455 1620 535
+            "
+            stroke="url(#pinkRidge)"
+            strokeWidth="9"
             strokeLinecap="round"
-            opacity="0.30"
-            filter="url(#foregroundBlur)"
+            opacity="0.56"
+            filter="url(#smallGlow)"
           />
 
           <path
             d="
-              M 55 900
-              C 205 720, 290 610, 420 560
-              C 560 505, 675 590, 770 515
-              C 860 444, 905 300, 1005 115
+              M -20 535
+              C 120 455 205 380 315 374
+              C 440 367 510 458 620 470
+              C 700 479 752 465 800 442
+              C 848 465 900 479 980 470
+              C 1090 458 1160 367 1285 374
+              C 1395 380 1480 455 1620 535
             "
-            stroke="url(#foregroundLight)"
-            strokeWidth="1"
+            stroke="url(#pinkRidge)"
+            strokeWidth="2"
             strokeLinecap="round"
-            opacity="0.80"
+            opacity="0.78"
           />
 
-          {/* Additional ultra-fine contour */}
+          {/* ========================================================
+              LOWEST SOFT WAVES
+          ========================================================= */}
+
+          
           <path
             d="
-              M 225 900
-              C 335 760, 365 630, 485 570
-              C 610 508, 710 552, 815 455
-              C 900 375, 935 250, 1015 165
+              M -20 595
+              C 180 520 280 520 390 550
+              C 520 585 610 615 800 600
+              C 990 615 1080 585 1210 550
+              C 1320 520 1420 520 1620 595
             "
-            stroke="#ffffff"
-            strokeOpacity="0.11"
-            strokeWidth="1"
+            stroke="rgba(255,255,255,0.12)"
+            strokeWidth="2"
+            strokeLinecap="round"
           />
         </svg>
-
-        {/* =====================================================
-            STATIC LIGHT POOL
-        ====================================================== */}
-
-        <div
-          className="absolute right-[20%] top-[27%] h-[270px] w-[270px] rounded-full blur-[70px]"
-          style={{
-            background:
-              "radial-gradient(circle, rgba(255,235,243,0.20) 0%, rgba(255,179,209,0.10) 38%, rgba(230,0,126,0.06) 58%, transparent 75%)",
-          }}
-        />
-
-        {/* =====================================================
-            GLOWING NODES — STATIC
-        ====================================================== */}
-
-        <div className="absolute right-[74%] top-[41%]">
-          <div className="absolute -inset-3 rounded-full bg-[#e6007e]/25 blur-md" />
-
-          <div className="relative h-2.5 w-2.5 rounded-full bg-[#ffb3d1] shadow-[0_0_18px_5px_rgba(255,179,209,0.48)]" />
-        </div>
-
-        <div className="absolute right-[23%] top-[47%]">
-          <div className="absolute -inset-4 rounded-full bg-[#e6007e]/25 blur-lg" />
-
-          <div className="relative h-3 w-3 rounded-full bg-[#ffb3d1] shadow-[0_0_22px_6px_rgba(255,179,209,0.35)]" />
-        </div>
-
-        <div className="absolute bottom-[21%] right-[34%]">
-          <div className="absolute -inset-3 rounded-full bg-[#e6007e]/25 blur-md" />
-
-          <div className="relative h-2 w-2 rounded-full bg-[#e6007e] shadow-[0_0_16px_5px_rgba(230,0,126,0.55)]" />
-        </div>
-
-        <div className="absolute right-[11%] top-[17%] h-1.5 w-1.5 rounded-full bg-[#ffb3d1] shadow-[0_0_14px_4px_rgba(255,179,209,0.45)]" />
-
-        {/* =====================================================
-            STATIC LIGHT STREAK
-        ====================================================== */}
-
-        <div
-          className="absolute bottom-[11%] right-[4%] h-[2px] w-[55%] rotate-[-20deg] blur-[2px]"
-          style={{
-            background:
-              "linear-gradient(90deg, transparent, rgba(255,179,209,.10), rgba(255,255,255,.48), rgba(255,179,209,.06), transparent)",
-          }}
-        />
-
-        {/* =====================================================
-            YEAR
-        ====================================================== */}
-
-        <div className="absolute bottom-[8%] right-[12%] text-right">
-          <div className="mb-4 ml-auto h-px w-8 bg-[#e6007e]" />
-
-          <p className="font-body text-[11px] font-medium tracking-[0.28em] text-white/65">
-            2026 — 27
-          </p>
-        </div>
-
-        {/* =====================================================
-            RIGHT-SIDE WORD MARK
-        ====================================================== */}
-
-        <div className="absolute right-[6%] top-[46%] hidden xl:block">
-          <div className="border-l border-[#ffb3d1]/25 pl-5">
-            <p className="max-w-[90px] font-body text-[9px] font-semibold uppercase leading-[1.8] tracking-[0.24em] text-[]">
-              Ideas
-              <br />
-              People
-              <br />
-              Planet
-            </p>
-
-            <div className="mt-4 h-px w-8 bg-gray-light" />
-          </div>
-        </div>
       </div>
 
-      {/* =========================================================
+      {/* ============================================================
           CONTENT
-      ========================================================== */}
+      ============================================================ */}
 
-      <div className="relative z-20 mx-auto flex min-h-[calc(100svh-96px)] max-w-[1400px] items-center px-6 py-20 sm:px-8 lg:px-12 xl:px-16">
-        <div className="w-full max-w-[710px]">
-          {/* Eyebrow */}
+      <div className="mt-6 relative z-20 mx-auto flex min-h-[calc(100svh)] max-w-[1250px] items-center justify-center px-6 pb-12 pt-14 sm:px-8 lg:px-12">
+        <div className="flex w-full max-w-[850px] flex-col items-center text-center">
+          {/* EYEBROW */}
+
           <div className="mb-7 flex items-center gap-3">
-            <span className="h-1.5 w-1.5 rounded-full bg-[#e6007e] shadow-[0_0_10px_rgba(230,0,126,.7)]" />
+            <span className="h-[2px] w-9 rounded-full bg-[#E6007E]/70" />
 
-            <span className="font-body text-[10px] font-semibold uppercase tracking-[0.28em] text-white/55 sm:text-xs">
+            <span className="font-body text-[8px] font-bold uppercase tracking-[0.32em] text-[#30283A]/70 sm:text-[9px]">
               HULT PRIZE · UNIVERSITY OF CALCUTTA
             </span>
+
+            <span className="h-[2px] w-9 rounded-full bg-[#E6007E]/70" />
           </div>
 
-          {/* Heading */}
-          <h1 className="py-5 max-w-[690px] font-display text-[clamp(3rem,7vw,5.7rem)] font-bold leading-[1] tracking-[-0.065em]">
-            <span className="block text-white">Build Your Team</span>
+          {/* HEADING */}
+
+          <h1 className="font-display text-[clamp(3.4rem,7.5vw,6rem)] font-semibold leading-[1] tracking-[-0.065em] text-[#171522]">
+            <span className="block">Ideas that</span>
 
             <span
-              className="block bg-linear-to-b
-                from-pink-200
-                via-pink-300
-                to-pink-800
-                bg-clip-text
-                text-transparent"
+              className="mt-2 block bg-gradient-to-r from-hult-pink-base via-[#952a5f] to-[#7b1046] bg-clip-text text-transparent"
               style={{
-                textShadow: "0 0 45px rgba(230,0,126,0.12)",
+                textShadow: "0 8px 35px rgba(230,0,126,0.08)",
               }}
             >
-              Make Your Mark
+              create impact.
             </span>
           </h1>
 
-          {/* Description */}
-          <p className="mt-8 max-w-[570px] font-semibold text-[15px] leading-7 text-light-gray/80 sm:text-base sm:leading-8 lg:text-[17px]">
-            Everything you need to know to build your team, register for the Hult Prize, and take your idea from campus to impact.
+          {/* DESCRIPTION */}
+
+          <p className="mt-10 max-w-[690px] font-bold text-[13px] leading-6 text-[#393344]/70 sm:text-[14px] sm:leading-7 lg:text-[15px]">
+            The Hult Prize is a global student entrepreneurship programme
+            challenging young innovators to build for-profit startups that
+            create measurable social and environmental impact.
           </p>
 
-          {/* CTA */}
-          <div className="mt-9 flex flex-col gap-3 sm:flex-row sm:items-center">
+          {/* BUTTONS */}
+
+          <div className="mt-12 flex flex-col items-center gap-6 sm:flex-row">
+            {/* PRIMARY */}
+
             <a
               href="/brochure.pdf"
               download
-              className="group relative inline-flex min-h-[52px] items-center justify-center gap-3 overflow-hidden rounded-full bg-gradient-to-br from-[#ffa1f5] via-[#c44499] to-[#73063d] px-7 font-body text-sm font-bold text-white shadow-[0_15px_45px_rgba(230,0,126,0.26)] transition-all duration-300 hover:-translate-y-1 hover:bg-[#c2186b] hover:shadow-[0_20px_55px_rgba(230,0,126,0.38)] focus:outline-none focus:ring-2 focus:ring-[#ffb3d1] focus:ring-offset-2 focus:ring-offset-[#3a1024]"
+              className="group relative inline-flex h-[52px] min-w-[245px] items-center justify-center gap-3 overflow-hidden rounded-full bg-gradient-to-br from-[#fb78b9] via-[#d90581] to-[#790d43] px-7 font-body text-[13px] font-bold text-white shadow-[0_14px_35px_rgba(230,0,126,0.25)] transition-all duration-300 hover:-translate-y-1 hover:bg-[#D80075] hover:shadow-[0_18px_42px_rgba(230,0,126,0.34)]"
             >
-              <span className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/20 to-transparent transition-transform duration-700 group-hover:translate-x-full" />
+              <span className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/25 to-transparent transition-transform duration-700 group-hover:translate-x-full" />
 
-              <span className="relative">Download Event Brochure</span>
+              <span className="relative">
+                Download Event Brochure
+              </span>
 
               <svg
-                className="relative h-4 w-4 transition-transform duration-300 group-hover:translate-y-0.5"
+                className="relative h-4 w-4"
                 viewBox="0 0 20 20"
                 fill="none"
               >
@@ -637,11 +545,14 @@ export function AboutHero() {
               </svg>
             </a>
 
+            {/* SECONDARY */}
+
             <a
               href="#the-challenge"
-              className="group inline-flex min-h-[52px] items-center justify-center gap-3 rounded-full border border-white/25 bg-white/[0.035] px-7 font-body text-sm font-semibold text-white/80 backdrop-blur-md transition-all duration-300 hover:-translate-y-1 hover:border-[#ffb3d1]/50 hover:bg-white/[0.08] hover:text-white focus:outline-none focus:ring-2 focus:ring-[#ffb3d1]/60"
+              className="group inline-flex h-[52px] min-w-[220px] items-center justify-center gap-3 rounded-full border border-[#5B5267]/20 bg-light-gray/50 px-7 font-body text-[13px] font-semibold text-[#282332]/80 shadow-[0_8px_25px_rgba(76,57,95,0.06)] backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:border-[#E6007E]/30 hover:bg-white/45 hover:text-[#171522]"
             >
-              Explore the Rules
+              Explore the Programme
+
               <svg
                 className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1"
                 viewBox="0 0 20 20"
@@ -658,152 +569,23 @@ export function AboutHero() {
             </a>
           </div>
 
-          {/* =====================================================
-              FEATURE INDICATORS
-          ====================================================== */}
+          
 
-          <div className="mt-11 flex max-w-[620px] border-t border-white/10 pt-6">
-            {/* Global */}
-            <div className="flex flex-1 items-center gap-3 pr-4 sm:pr-6">
-              <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-[#e6007e]/60 bg-[#e6007e]/[0.08]">
-                <svg
-                  className="h-[18px] w-[18px] text-[#ffb3d1]"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                >
-                  <circle
-                    cx="12"
-                    cy="12"
-                    r="8.5"
-                    stroke="currentColor"
-                    strokeWidth="1.3"
-                  />
-                  <path
-                    d="M3.5 12h17M12 3.5c2.1 2.35 3.15 5.18 3.15 8.5S14.1 18.15 12 20.5c-2.1-2.35-3.15-5.18-3.15-8.5S9.9 5.85 12 3.5Z"
-                    stroke="currentColor"
-                    strokeWidth="1.3"
-                  />
-                </svg>
-              </div>
-
-              <div>
-                <p className="font-body text-[8px] font-bold uppercase tracking-[0.2em] text-white/40">
-                  Global
-                </p>
-
-                <p className="mt-1 font-body text-[9px] font-semibold uppercase tracking-[0.16em] text-white/75">
-                  Platform
-                </p>
-              </div>
-            </div>
-
-            {/* Student */}
-            <div className="flex flex-1 items-center gap-3 border-l border-white/10 px-4 sm:px-6">
-              <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-[#e6007e]/60 bg-[#e6007e]/[0.08]">
-                <svg
-                  className="h-[18px] w-[18px] text-[#ffb3d1]"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                >
-                  <circle
-                    cx="9"
-                    cy="8"
-                    r="3"
-                    stroke="currentColor"
-                    strokeWidth="1.3"
-                  />
-
-                  <circle
-                    cx="16.5"
-                    cy="9"
-                    r="2.4"
-                    stroke="currentColor"
-                    strokeWidth="1.3"
-                  />
-
-                  <path
-                    d="M3.5 19c.45-3.25 2.3-5 5.5-5s5.05 1.75 5.5 5M14 14.5c3.2-.1 5.2 1.4 6 4.5"
-                    stroke="currentColor"
-                    strokeWidth="1.3"
-                    strokeLinecap="round"
-                  />
-                </svg>
-              </div>
-
-              <div>
-                <p className="font-body text-[8px] font-bold uppercase tracking-[0.2em] text-white/40">
-                  Student
-                </p>
-
-                <p className="mt-1 font-body text-[9px] font-semibold uppercase tracking-[0.16em] text-white/75">
-                  Innovators
-                </p>
-              </div>
-            </div>
-
-            {/* Impact */}
-            <div className="flex flex-1 items-center gap-3 border-l border-white/10 pl-4 sm:pl-6">
-              <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-[#e6007e]/60 bg-[#e6007e]/[0.08]">
-                <svg
-                  className="h-[18px] w-[18px] text-[#ffb3d1]"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                >
-                  <path
-                    d="M12 20.5c0-5.7 2.4-10.2 7.5-13.5.1 5.9-2.5 10.8-7.5 13.5ZM12 20.5c0-4.4-1.7-8.1-5.5-10.8-.2 4.9 1.6 8.7 5.5 10.8Z"
-                    stroke="currentColor"
-                    strokeWidth="1.3"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-
-                  <path
-                    d="M12 20.5V8"
-                    stroke="currentColor"
-                    strokeWidth="1.3"
-                    strokeLinecap="round"
-                  />
-                </svg>
-              </div>
-
-              <div>
-                <p className="font-body text-[8px] font-bold uppercase tracking-[0.2em] text-white/40">
-                  Real-world
-                </p>
-
-                <p className="mt-1 font-body text-[9px] font-semibold uppercase tracking-[0.16em] text-white/75">
-                  Impact
-                </p>
-              </div>
-            </div>
-          </div>
+          
         </div>
       </div>
 
-      {/* =========================================================
-          MOBILE DECORATIVE ORB
-      ========================================================== */}
+      {/* ============================================================
+          FOREGROUND BOTTOM HAZE
+      ============================================================ */}
 
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute bottom-[-150px] right-[-110px] h-[390px] w-[390px] rounded-full lg:hidden"
-      >
-        <div className="absolute inset-0 rounded-full bg-[#e6007e]/10 blur-[70px]" />
-
-        <div className="absolute inset-[15%] rounded-full border border-[#ffb3d1]/20" />
-
-        <div className="absolute inset-[27%] rounded-full border border-[#ffb3d1]/15" />
-
-        <div className="absolute inset-[39%] rounded-full border border-[#ffb3d1]/25 bg-[#ffb3d1]/10 backdrop-blur-sm shadow-[0_0_70px_rgba(230,0,126,0.18)]" />
-      </div>
-
-      {/* =========================================================
-          BOTTOM FADE
-      ========================================================== */}
-
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute bottom-0 left-0 right-0 h-28 bg-gradient-to-t from-[#2b0b1b]/35 to-transparent"
+        className="pointer-events-none absolute bottom-0 left-0 right-0 z-[5] h-24"
+        style={{
+          background:
+            "linear-gradient(to top, rgba(171,174,225,0.18), transparent)",
+        }}
       />
     </section>
   );
