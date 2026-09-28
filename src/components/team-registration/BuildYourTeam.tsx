@@ -80,12 +80,11 @@ export function BuildYourTeam() {
             HEADER
         ========================================================== */}
 
-        <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-end lg:gap-20">
+        <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-center lg:gap-16">
           {/* Heading */}
-
           <Reveal>
             <div>
-              <p className="mb-5 text-[11px] font-semibold uppercase tracking-[0.24em] text-[#ff75b5]">
+              <p className="mb-4 text-[11px] font-semibold uppercase tracking-[0.24em] text-[#ff75b5]">
                 Build Your Team
               </p>
 
@@ -103,14 +102,40 @@ export function BuildYourTeam() {
             </div>
           </Reveal>
 
-          {/* Description */}
+          {/* Ownership Highlight */}
+          <Reveal delay={0.12}>
+            <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-white/[0.045] px-6 py-5 backdrop-blur-xl sm:px-8 sm:py-6">
+              {/* Subtle premium accents */}
+              <div
+                aria-hidden="true"
+                className="pointer-events-none absolute -right-12 -top-16 h-48 w-48 rounded-full bg-[#E6007E]/15 blur-[75px]"
+              />
+              <div
+                aria-hidden="true"
+                className="pointer-events-none absolute bottom-0 left-0 h-px w-full bg-gradient-to-r from-transparent via-[#ff75b5]/50 to-transparent"
+              />
 
-          <Reveal delay={0.1}>
-            <div className="lg:pb-1">
-              <p className="max-w-2xl text-base leading-7 text-white/55 sm:text-lg sm:leading-8">
-                From registration to verification, make sure your team is
-                properly structured before you move forward with your venture.
-              </p>
+              <div className="relative">
+                <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-[#ff75b5] sm:text-[11px]">
+                  One important number
+                </p>
+
+                <div className="mt-2 flex flex-wrap items-baseline gap-x-3 gap-y-1">
+                  <span className="text-5xl font-semibold leading-none tracking-[-0.05em] text-[#ff75b5] sm:text-6xl">
+                    51%
+                  </span>
+
+                  <span className="text-base font-semibold text-white/85 sm:text-lg">
+                    minimum eligible team ownership
+                  </span>
+                </div>
+
+                <p className="mt-3 max-w-xl text-xs leading-5 text-white/50 sm:text-[13px] sm:leading-6">
+                  At least 51% of the competing company's equity must be owned
+                  by eligible team members listed on the Hult Prize application,
+                  in accordance with the official Hult Prize terms.
+                </p>
+              </div>
             </div>
           </Reveal>
         </div>
@@ -179,38 +204,6 @@ export function BuildYourTeam() {
             ))}
           </div>
         </div>
-
-        {/* =========================================================
-            OWNERSHIP HIGHLIGHT
-        ========================================================== */}
-
-        <Reveal delay={0.15}>
-          <div className="mt-16 border-t border-white/10 pt-8 sm:mt-20 lg:mt-24">
-            <div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
-              <div className="max-w-3xl">
-                <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#ff75b5]">
-                  One important number
-                </p>
-
-                <div className="mt-3 flex flex-wrap items-baseline gap-x-4 gap-y-1">
-                  <span className="text-5xl font-semibold tracking-[-0.05em] text-[#ff75b5] sm:text-6xl">
-                    51%
-                  </span>
-
-                  <span className="text-lg font-medium text-white/75 sm:text-xl">
-                    minimum eligible team ownership
-                  </span>
-                </div>
-
-                <p className="mt-3 max-w-2xl text-sm leading-6 text-white/40">
-                  At least 51% of the equity of the competing company must be
-                  owned by eligible team members listed on the Hult Prize
-                  application, in accordance with the official Hult Prize terms.
-                </p>
-              </div>
-            </div>
-          </div>
-        </Reveal>
 
         {/* =========================================================
             TRANSITION
