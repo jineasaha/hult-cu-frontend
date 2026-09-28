@@ -1,5 +1,7 @@
 "use client";
 
+import { Reveal } from "@/components/ui/Reveal";
+
 export function AboutHero() {
   return (
     <section
@@ -321,23 +323,11 @@ export function AboutHero() {
                 WAVE GLOW FILTER
             ------------------------------------------------------- */}
 
-            <filter
-              id="waveGlow"
-              x="-40%"
-              y="-40%"
-              width="180%"
-              height="180%"
-            >
+            <filter id="waveGlow" x="-40%" y="-40%" width="180%" height="180%">
               <feGaussianBlur stdDeviation="18" />
             </filter>
 
-            <filter
-              id="smallGlow"
-              x="-50%"
-              y="-50%"
-              width="200%"
-              height="200%"
-            >
+            <filter id="smallGlow" x="-50%" y="-50%" width="200%" height="200%">
               <feGaussianBlur stdDeviation="8" />
             </filter>
           </defs>
@@ -414,8 +404,6 @@ export function AboutHero() {
             fill="url(#rightPink)"
           />
 
-    
-          
           {/* ========================================================
               MAGENTA INNER RIDGE
           ========================================================= */}
@@ -457,7 +445,6 @@ export function AboutHero() {
               LOWEST SOFT WAVES
           ========================================================= */}
 
-          
           <path
             d="
               M -20 595
@@ -478,7 +465,7 @@ export function AboutHero() {
       ============================================================ */}
 
       <div className="mt-6 relative z-20 mx-auto flex min-h-[calc(100svh)] max-w-[1250px] items-center justify-center px-6 pb-12 pt-14 sm:px-8 lg:px-12">
-        <div className="flex w-full max-w-[850px] flex-col items-center text-center">
+        <Reveal className="flex w-full max-w-[850px] flex-col items-center text-center">
           {/* EYEBROW */}
 
           <div className="mb-7 flex items-center gap-3">
@@ -519,22 +506,16 @@ export function AboutHero() {
           <div className="mt-12 flex flex-col items-center gap-6 sm:flex-row">
             {/* PRIMARY */}
 
-            <a
+            {/* <a
               href="/brochure.pdf"
               download
               className="group relative inline-flex h-[52px] min-w-[245px] items-center justify-center gap-3 overflow-hidden rounded-full bg-gradient-to-br from-[#fb78b9] via-[#d90581] to-[#790d43] px-7 font-body text-[13px] font-bold text-white shadow-[0_14px_35px_rgba(230,0,126,0.25)] transition-all duration-300 hover:-translate-y-1 hover:bg-[#D80075] hover:shadow-[0_18px_42px_rgba(230,0,126,0.34)]"
             >
               <span className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/25 to-transparent transition-transform duration-700 group-hover:translate-x-full" />
 
-              <span className="relative">
-                Download Event Brochure
-              </span>
+              <span className="relative">Download Event Brochure</span>
 
-              <svg
-                className="relative h-4 w-4"
-                viewBox="0 0 20 20"
-                fill="none"
-              >
+              <svg className="relative h-4 w-4" viewBox="0 0 20 20" fill="none">
                 <path
                   d="M10 3v9m0 0 3.5-3.5M10 12 6.5 8.5M4 16h12"
                   stroke="currentColor"
@@ -543,7 +524,7 @@ export function AboutHero() {
                   strokeLinejoin="round"
                 />
               </svg>
-            </a>
+            </a> */}
 
             {/* SECONDARY */}
 
@@ -552,7 +533,6 @@ export function AboutHero() {
               className="group inline-flex h-[52px] min-w-[220px] items-center justify-center gap-3 rounded-full border border-[#5B5267]/20 bg-light-gray/50 px-7 font-body text-[13px] font-semibold text-[#282332]/80 shadow-[0_8px_25px_rgba(76,57,95,0.06)] backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:border-[#E6007E]/30 hover:bg-white/45 hover:text-[#171522]"
             >
               Explore the Programme
-
               <svg
                 className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1"
                 viewBox="0 0 20 20"
@@ -568,11 +548,7 @@ export function AboutHero() {
               </svg>
             </a>
           </div>
-
-          
-
-          
-        </div>
+        </Reveal>
       </div>
 
       {/* ============================================================

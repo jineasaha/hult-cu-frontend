@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { Reveal } from "@/components/ui/Reveal";
 
 const teamSteps = [
@@ -46,10 +45,7 @@ export function BuildYourTeam() {
       id="build-your-team"
       className="relative isolate overflow-hidden bg-[#111111] text-white"
     >
-      {/* =========================================================
-          BACKGROUND
-      ========================================================== */}
-
+      {/* BACKGROUND */}
       <div
         aria-hidden="true"
         className="pointer-events-none absolute -left-48 top-20 h-[460px] w-[460px] rounded-full bg-[#E6007E]/12 blur-[140px]"
@@ -76,10 +72,7 @@ export function BuildYourTeam() {
       />
 
       <div className="relative mx-auto max-w-[1500px] px-5 py-20 sm:px-8 sm:py-24 lg:px-12 lg:py-28 xl:px-16">
-        {/* =========================================================
-            HEADER
-        ========================================================== */}
-
+        {/* HEADER */}
         <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-center lg:gap-16">
           {/* Heading */}
           <Reveal>
@@ -105,7 +98,6 @@ export function BuildYourTeam() {
           {/* Ownership Highlight */}
           <Reveal delay={0.12}>
             <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-white/[0.045] px-6 py-5 backdrop-blur-xl sm:px-8 sm:py-6">
-              {/* Subtle premium accents */}
               <div
                 aria-hidden="true"
                 className="pointer-events-none absolute -right-12 -top-16 h-48 w-48 rounded-full bg-[#E6007E]/15 blur-[75px]"
@@ -140,48 +132,36 @@ export function BuildYourTeam() {
           </Reveal>
         </div>
 
-        {/* =========================================================
-            HORIZONTAL TIMELINE
-        ========================================================== */}
-
+        {/* TIMELINE */}
         <div className="relative mt-16 sm:mt-20 lg:mt-24">
-          {/* Connecting line */}
-
+          {/* Desktop connecting line */}
           <div
             aria-hidden="true"
             className="absolute left-0 right-0 top-[23px] hidden h-px bg-white/10 lg:block"
           />
 
-          {/* Pink progress line */}
-
+          {/* Desktop pink progress line */}
           <div
             aria-hidden="true"
             className="absolute left-0 top-[23px] hidden h-px w-full bg-gradient-to-r from-[#E6007E] via-[#ff75b5]/70 to-white/10 lg:block"
           />
 
           {/* Timeline steps */}
-
           <div className="grid gap-10 lg:grid-cols-6 lg:gap-5">
             {teamSteps.map((item, index) => (
               <Reveal key={item.step} delay={0.08 + index * 0.08}>
-                <article className="group relative lg:min-w-0">
+                <article className="group relative min-h-[90px] lg:min-h-0 lg:min-w-0">
                   {/* Timeline node */}
-
-                  <div className="relative z-10 flex items-center gap-4 lg:block">
+                  <div className="absolute left-0 top-0 z-10 h-[46px] lg:relative lg:left-auto lg:top-auto lg:block">
                     <div className="flex h-[46px] w-[46px] shrink-0 items-center justify-center rounded-full border border-[#E6007E]/60 bg-[#111111] shadow-[0_0_0_7px_#111111] transition-all duration-300 group-hover:border-[#ff75b5] group-hover:shadow-[0_0_0_7px_#111111,0_0_25px_rgba(230,0,126,0.2)]">
                       <span className="text-[10px] font-semibold tracking-[0.16em] text-[#ff75b5]">
                         {item.step}
                       </span>
                     </div>
-
-                    {/* Mobile step indicator */}
-
-                    <div className="h-px flex-1 bg-white/10 lg:hidden" />
                   </div>
 
                   {/* Content */}
-
-                  <div className="mt-5 lg:mt-8">
+                  <div className="mt-0 pl-[62px] lg:mt-8 lg:pl-0">
                     <h3 className="text-lg font-semibold tracking-[-0.025em] sm:text-xl">
                       {item.title}
                     </h3>
@@ -191,8 +171,7 @@ export function BuildYourTeam() {
                     </p>
                   </div>
 
-                  {/* Mobile separator */}
-
+                  {/* Mobile vertical connector */}
                   {index < teamSteps.length - 1 && (
                     <div
                       aria-hidden="true"
@@ -205,10 +184,7 @@ export function BuildYourTeam() {
           </div>
         </div>
 
-        {/* =========================================================
-            TRANSITION
-        ========================================================== */}
-
+        {/* TRANSITION */}
         <Reveal delay={0.15}>
           <div className="mt-12 flex flex-col gap-6 border-t border-white/10 pt-7 sm:mt-14 sm:flex-row sm:items-center sm:justify-between">
             <p className="max-w-2xl text-sm leading-6 text-white/40">

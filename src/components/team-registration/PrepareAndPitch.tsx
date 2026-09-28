@@ -12,8 +12,8 @@ const submissionItems = [
   "Business model",
   "Market information",
   "Impact model",
-  "Pitch deck",
   "Pitch video or live pitch, where required",
+  "Pitch deck",
   "Supporting evidence and documentation",
 ];
 
@@ -138,7 +138,7 @@ export function PrepareAndPitch() {
                       <div className="flex items-start gap-2.5">
                         <span className="mt-[6px] h-1.5 w-1.5 shrink-0 rounded-full bg-gradient-to-br from-[#E6007E] to-[#62456f]" />
 
-                        <p className="text-[12px] leading-[1.35rem] text-[#111111]/65 sm:text-[13px]">
+                        <p className="text-[13px] leading-[1.35rem] text-[#111111]/65 sm:text-[16px]">
                           {item}
                         </p>
                       </div>
@@ -192,35 +192,35 @@ export function PrepareAndPitch() {
                 </div>
 
                 {/* Pitch principles */}
-                <div className="mt-5 space-y-4">
+                <div className="my-5 space-y-4">
                   <div className="border-b border-white/10 pb-4">
-                    <p className="text-[14px] font-semibold sm:text-[15px]">
+                    <p className="text-[15px] font-semibold sm:text-[15px]">
                       Know your venture.
                     </p>
 
-                    <p className="mt-1 text-[12px] leading-5 text-white/55 sm:text-[13px]">
+                    <p className="mt-1 text-[13px] leading-5 text-white/55 sm:text-[13px]">
                       Every registered team member should be familiar with the
                       venture and its business model.
                     </p>
                   </div>
 
                   <div className="border-b border-white/10 pb-4">
-                    <p className="text-[14px] font-semibold sm:text-[15px]">
+                    <p className="text-[15px] font-semibold sm:text-[15px]">
                       Follow the format.
                     </p>
 
-                    <p className="mt-1 text-[12px] leading-5 text-white/55 sm:text-[13px]">
+                    <p className="mt-1 text-[13px] leading-5 text-white/55 sm:text-[13px]">
                       Follow the pitch format, duration and presentation
                       guidelines communicated by the Organising Committee.
                     </p>
                   </div>
 
                   <div>
-                    <p className="text-[14px] font-semibold sm:text-[15px]">
+                    <p className="text-[15px] font-semibold sm:text-[15px]">
                       Expect questions.
                     </p>
 
-                    <p className="mt-1 text-[12px] leading-5 text-white/55 sm:text-[13px]">
+                    <p className="mt-1 text-[13px] leading-5 text-white/55 sm:text-[13px]">
                       Be prepared to explain the venture from the problem
                       through to the team.
                     </p>
@@ -236,7 +236,7 @@ export function PrepareAndPitch() {
                   <div className="mt-3 flex flex-wrap gap-1.5">
                     {pitchQuestions.map((question, index) => (
                       <Reveal key={question} delay={0.035 + index * 0.02}>
-                        <span className="inline-flex rounded-full border border-white/10 bg-white/[0.055] px-2.5 py-1 text-[10px] text-white/68 backdrop-blur-sm sm:text-[11px]">
+                        <span className="inline-flex rounded-full border border-white/10 bg-white/[0.055] px-2.5 py-1 text-[12px] text-white/68 backdrop-blur-sm sm:text-[13px]">
                           {question}
                         </span>
                       </Reveal>
