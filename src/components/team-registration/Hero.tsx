@@ -766,7 +766,7 @@ export function Hero() {
 
           <Reveal delay={0.2}>
             <div className="mt-6 flex w-full flex-col gap-3 sm:mt-9 sm:flex-row sm:items-center">
-              <a
+              {/* <a
                 href="/brochure.pdf"
                 download
                 className="group relative inline-flex min-h-[52px] w-full items-center justify-center gap-3 overflow-hidden rounded-full bg-gradient-to-br from-[#ffa1f5] via-[#c44499] to-[#73063d] px-7 font-body text-sm font-bold text-white shadow-[0_15px_45px_rgba(230,0,126,0.26)] transition-all duration-300 hover:-translate-y-1 hover:bg-[#c2186b] hover:shadow-[0_20px_55px_rgba(230,0,126,0.38)] focus:outline-none focus:ring-2 focus:ring-[#ffb3d1] focus:ring-offset-2 focus:ring-offset-[#3a1024] sm:w-auto"
@@ -788,7 +788,7 @@ export function Hero() {
                     strokeLinejoin="round"
                   />
                 </svg>
-              </a>
+              </a> */}
 
               <a
                 href="#before-you-register"

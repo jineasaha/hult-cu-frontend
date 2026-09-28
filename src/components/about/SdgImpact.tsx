@@ -1,3 +1,5 @@
+import { Reveal } from "../ui/Reveal";
+
 const sdgs = [
   {
     number: "02",
@@ -77,73 +79,82 @@ export function SdgImpact() {
 
       <div className="relative mx-auto max-w-[1400px] px-5 sm:px-8 lg:px-12">
         <div className="-mt-10 grid gap-12 lg:grid-cols-[.7fr_1.3fr]">
-          <div>
-            <div className="inline-flex items-center gap-2 text-s font-bold uppercase tracking-[0.2em] text-hult-pink-dark">
-              <span className="h-px w-8 bg-hult-pink" />
-              Impact Framework
+          <Reveal delay={0.05} duration={0.7} y={24}>
+            <div>
+              <div className="inline-flex items-center gap-2 text-s font-bold uppercase tracking-[0.2em] text-hult-pink-dark">
+                <span className="h-px w-8 bg-hult-pink" />
+                Impact Framework
+              </div>
+
+              <h2 className="mt-6 max-w-2xl font-display text-[clamp(2.2rem,6vw,3.5rem)] font-bold leading-[.98] tracking-[-0.045em] text-charcoal">
+                Ideas aligned with{" "}
+                <span className="bg-gradient-to-l from-hult-pink-wine via-pink-500 to-red-400 bg-clip-text text-transparent">
+                  global goals.
+                </span>
+              </h2>
             </div>
+          </Reveal>
 
-            <h2 className="mt-6 max-w-2xl font-display text-[clamp(2.2rem,6vw,3.5rem)] font-bold leading-[.98] tracking-[-0.045em] text-charcoal">
-              Ideas aligned with {" "}
-              <span className="bg-gradient-to-l from-hult-pink-wine via-pink-500 to-red-400 bg-clip-text text-transparent">
-                global goals.
-              </span>
-            </h2>
-          </div>
-
-          <div className="max-w-2xl lg:justify-self-end">
-            <p className="text-base font-semibold leading-8 text-gray sm:text-lg">
-              The United Nations Sustainable Development Goals provide the
-              global impact framework through which Hult Prize ventures are
-              aligned. Participating ventures are expected to directly support
-              at least one UN SDG.
-            </p>
-
-            <div className="mt-5 rounded-2xl border border-charcoal/10 bg-light-gray/70 p-5">
-              <p className="text-sm leading-6 text-gray">
-                <span className="font-bold text-charcoal">
-                  The UN connection.
-                </span>{" "}
-                The Hult Prize itself is operated by the Hult Prize Foundation
-                and is not a competition operated by the United Nations.
+          <Reveal delay={0.15} duration={0.75} y={28}>
+            <div className="max-w-2xl lg:justify-self-end">
+              <p className="text-base font-semibold leading-8 text-gray sm:text-lg">
+                The United Nations Sustainable Development Goals provide the
+                global impact framework through which Hult Prize ventures are
+                aligned. Participating ventures are expected to directly support
+                at least one UN SDG.
               </p>
+
+              <div className="mt-5 rounded-2xl border border-charcoal/10 bg-light-gray/70 p-5">
+                <p className="text-sm leading-6 text-gray">
+                  <span className="font-bold text-charcoal">
+                    The UN connection.
+                  </span>{" "}
+                  The Hult Prize itself is operated by the Hult Prize Foundation
+                  and is not a competition operated by the United Nations.
+                </p>
+              </div>
             </div>
-          </div>
+          </Reveal>
         </div>
 
         <div className="mt-16 grid gap-7 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-          {sdgs.map((sdg) => (
-            <article
+          {sdgs.map((sdg, index) => (
+            <Reveal
               key={sdg.number}
-              className="group relative min-h-[205px] overflow-hidden rounded-[20px] border border-white/80 bg-gradient-to-br from-[#fff7fa]/95 to-white/80 p-5 shadow-[0_10px_35px_rgba(15,15,15,.055)] backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:border-hult-pink/20 hover:from-[#fff4f8]/95 hover:via-white/85 hover:to-hult-pink-light/40 hover:shadow-[0_20px_48px_rgba(15,15,15,.09)]"
+              delay={index * 0.06}
+              duration={0.65}
+              y={22}
+              className="h-full"
             >
-              <div
-                className={`absolute left-0 top-0 h-1 w-full ${sdg.accent} opacity-80`}
-              />
+              <article className="group relative min-h-[205px] h-full overflow-hidden rounded-[20px] border border-white/80 bg-gradient-to-br from-[#fff7fa]/95 to-white/80 p-5 shadow-[0_10px_35px_rgba(15,15,15,.055)] backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:border-hult-pink/20 hover:from-[#fff4f8]/95 hover:via-white/85 hover:to-hult-pink-light/40 hover:shadow-[0_20px_48px_rgba(15,15,15,.09)]">
+                <div
+                  className={`absolute left-0 top-0 h-1 w-full ${sdg.accent} opacity-80`}
+                />
 
-              <div
-                aria-hidden="true"
-                className="pointer-events-none absolute -right-16 -top-16 h-32 w-32 rounded-full bg-white/60 blur-2xl transition-opacity duration-300 group-hover:opacity-80"
-              />
+                <div
+                  aria-hidden="true"
+                  className="pointer-events-none absolute -right-16 -top-16 h-32 w-32 rounded-full bg-white/60 blur-2xl transition-opacity duration-300 group-hover:opacity-80"
+                />
 
-              <div className="relative flex items-start justify-between gap-4">
-                <span className="font-display text-4xl font-extrabold tracking-[-0.05em] text-charcoal/10 transition-colors duration-300 group-hover:text-hult-pink/40">
-                  {sdg.number}
-                </span>
+                <div className="relative flex items-start justify-between gap-4">
+                  <span className="font-display text-4xl font-extrabold tracking-[-0.05em] text-charcoal/10 transition-colors duration-300 group-hover:text-hult-pink/40">
+                    {sdg.number}
+                  </span>
 
-                <span className="mt-1 flex h-7 w-7 shrink-0 items-center justify-center rounded-full border border-charcoal/10 bg-white/35 text-xs text-gray backdrop-blur-sm transition-colors group-hover:border-hult-pink/30 group-hover:bg-white/55 group-hover:text-hult-pink">
-                  ↗
-                </span>
-              </div>
+                  <span className="mt-1 flex h-7 w-7 shrink-0 items-center justify-center rounded-full border border-charcoal/10 bg-white/35 text-xs text-gray backdrop-blur-sm transition-colors group-hover:border-hult-pink/30 group-hover:bg-white/55 group-hover:text-hult-pink">
+                    ↗
+                  </span>
+                </div>
 
-              <h3 className="relative mt-6 font-display text-lg font-bold leading-tight text-charcoal">
-                SDG {sdg.number} — {sdg.title}
-              </h3>
+                <h3 className="relative mt-6 font-display text-lg font-bold leading-tight text-charcoal">
+                  SDG {sdg.number} — {sdg.title}
+                </h3>
 
-              <p className="relative mt-3 text-sm leading-6 text-gray">
-                {sdg.text}
-              </p>
-            </article>
+                <p className="relative mt-3 text-sm leading-6 text-gray">
+                  {sdg.text}
+                </p>
+              </article>
+            </Reveal>
           ))}
         </div>
       </div>

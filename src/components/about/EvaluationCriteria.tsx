@@ -90,8 +90,7 @@ const progression = [
   {
     number: "04",
     title: "Scaling",
-    question:
-      "Can the business model and impact be expanded sustainably?",
+    question: "Can the business model and impact be expanded sustainably?",
   },
 ];
 
@@ -104,9 +103,7 @@ export function EvaluationCriteria() {
           "linear-gradient(115deg, #E4F3FB 0%, #EDF7FC 20%, #F9FAFC 43%, #FFF8FB 68%, #F8ECF5 100%)",
       }}
     >
-      {/* ============================================================ */}
-      {/* ATMOSPHERIC BACKGROUND                                       */}
-      {/* ============================================================ */}
+      {/* ATMOSPHERIC BACKGROUND */}
 
       <div
         aria-hidden="true"
@@ -153,9 +150,7 @@ export function EvaluationCriteria() {
         }}
       />
 
-      {/* ============================================================ */}
-      {/* SUBTLE BACKGROUND GRAPHICS                                   */}
-      {/* ============================================================ */}
+      {/* SUBTLE BACKGROUND GRAPHICS */}
 
       <div
         aria-hidden="true"
@@ -192,14 +187,10 @@ export function EvaluationCriteria() {
         className="pointer-events-none absolute right-[12%] top-[47%] hidden h-3 w-3 rounded-full bg-[#B86CC4]/25 lg:block"
       />
 
-      {/* ============================================================ */}
-      {/* CONTENT                                                       */}
-      {/* ============================================================ */}
+      {/* CONTENT */}
 
       <div className="relative z-10 mx-auto max-w-[1400px] px-5 sm:px-8 lg:px-10">
-        {/* ========================================================== */}
-        {/* HEADER                                                       */}
-        {/* ========================================================== */}
+        {/* HEADER */}
 
         <Reveal delay={0.05} duration={0.7} y={22}>
           <div className="-mt-10 mx-auto max-w-[900px] text-center">
@@ -213,9 +204,8 @@ export function EvaluationCriteria() {
               <span className="h-px w-10 bg-hult-pink/35 sm:w-12" />
             </div>
 
-            <h2 className="mt-5 font-display text-[2.5rem] font-bold leading-[0.99] tracking-[-0.06em] text-charcoal sm:text-[clamp(3.1rem,6vw,3.8rem)]">
-              What makes a venture
-              <br className="hidden sm:block" />
+            <h2 className="mt-5 font-display text-[2rem] font-bold leading-[0.99] tracking-[-0.06em] text-charcoal sm:text-[clamp(3.1rem,6vw,3.8rem)]">
+              What makes a venture <br className="hidden sm:block" />
               <span className="bg-gradient-to-r from-hult-pink-dark via-hult-pink to-hult-pink-wine bg-clip-text text-transparent">
                 competition-ready?
               </span>
@@ -224,24 +214,22 @@ export function EvaluationCriteria() {
             <p className="mx-auto mt-5 max-w-[720px] text-[16px] font-semibold leading-7 text-[#4B4B4B]/65 sm:mt-6 sm:text-[17px]">
               Hult Prize uses a progressive evaluation framework. As a venture
               moves through the competition, the emphasis increases from the
-              strength of the team and idea toward validation, market
-              execution, traction and scalability.
+              strength of the team and idea toward validation, market execution,
+              traction and scalability.
             </p>
           </div>
         </Reveal>
 
-        {/* ========================================================== */}
-        {/* FOUR CORE CRITERIA                                           */}
-        {/* ========================================================== */}
+        {/* FOUR CORE CRITERIA */}
 
         <Reveal delay={0.18} duration={0.8} y={28}>
           <div className="mx-auto mt-10 max-w-[1150px] sm:mt-14">
             <div className="grid gap-5 md:grid-cols-2 lg:gap-8">
-              {criteria.map((criterion, index) => (
+              {criteria.map((criterion) => (
                 <article
                   key={criterion.number}
                   className="group relative overflow-hidden rounded-[22px] border border-white/80 bg-white/[0.42] p-5 shadow-[0_18px_50px_rgba(50,65,90,0.07)] backdrop-blur-[24px] backdrop-saturate-[155%] transition-all duration-500 hover:-translate-y-1.5 hover:border-white hover:shadow-[0_25px_65px_rgba(50,65,90,0.11)] sm:p-6"
-                  style={ 
+                  style={
                     {
                       "--accent": criterion.accentColor,
                       "--hover-gradient": criterion.accentGradient,
@@ -249,40 +237,37 @@ export function EvaluationCriteria() {
                     } as React.CSSProperties
                   }
                 >
+                  {/* Static accent wash */}
 
-                  {/* Static accent wash — returns to white on hover */}
                   <div
                     aria-hidden="true"
                     className="pointer-events-none absolute inset-0 opacity-100 transition-opacity duration-500 group-hover:opacity-0"
-                    style={{
-                      background: criterion.accentGradient,
-                    }}
+                    style={{ background: criterion.accentGradient }}
                   />
 
                   {/* Frosted glass highlight */}
+
                   <div
                     aria-hidden="true"
                     className="pointer-events-none absolute left-[-20%] top-[-45%] h-[230px] w-[65%] rotate-[-12deg] rounded-full bg-white/55 blur-[35px] transition-all duration-700 group-hover:translate-x-[20%]"
                   />
 
                   {/* Accent line */}
+
                   <div
                     aria-hidden="true"
                     className="absolute left-0 top-0 h-[3px] w-full opacity-80"
-                    style={{
-                      background: criterion.accentColor,
-                    }}
+                    style={{ background: criterion.accentColor }}
                   />
 
                   <div className="relative z-10">
                     {/* Top row */}
+
                     <div className="flex items-start justify-between gap-4">
                       <div className="flex items-center gap-3">
                         <span
                           className="flex h-9 w-9 items-center justify-center rounded-xl border border-white/80 bg-white/65 font-mono text-[11px] font-bold tracking-[0.08em] shadow-[0_5px_18px_rgba(30,40,60,0.06)]"
-                          style={{
-                            color: criterion.accentColor,
-                          }}
+                          style={{ color: criterion.accentColor }}
                         >
                           {criterion.number}
                         </span>
@@ -293,6 +278,7 @@ export function EvaluationCriteria() {
                       </div>
 
                       {/* Decorative accent dot */}
+
                       <span
                         className="mt-1 h-2.5 w-2.5 shrink-0 rounded-full opacity-70 transition-transform duration-500 group-hover:scale-125"
                         style={{
@@ -303,23 +289,26 @@ export function EvaluationCriteria() {
                     </div>
 
                     {/* Title */}
+
                     <h3 className="mt-5 font-display text-[22px] font-extrabold tracking-[-0.035em] text-charcoal transition-colors duration-300 sm:text-[24px]">
                       {criterion.title}
                     </h3>
 
                     {/* Question */}
+
                     <p className="mt-2 max-w-[590px] text-[14px] font-semibold leading-6 text-[#4B4B4B]/72 sm:text-[15px] sm:leading-6">
                       {criterion.question}
                     </p>
 
                     {/* Evaluation points */}
+
                     <div className="mt-5 border-t border-charcoal/[0.07] pt-4">
                       <p className="mb-3 text-[10px] font-bold uppercase tracking-[0.18em] text-[#8793A0]">
                         What judges look for
                       </p>
 
                       <ul className="space-y-2.5">
-                        {criterion.points.map((point, pointIndex) => (
+                        {criterion.points.map((point) => (
                           <li
                             key={point}
                             className="group/item flex items-center gap-3 text-[15px] font-semibold leading-5 text-[#3F4650] sm:text-[15.5px]"
@@ -359,19 +348,16 @@ export function EvaluationCriteria() {
           </div>
         </Reveal>
 
-        {/* ========================================================== */}
-        {/* PROGRESSION + GLOBAL FINALS                                 */}
-        {/* ========================================================== */}
+        {/* PROGRESSION + GLOBAL FINALS */}
 
         <Reveal delay={0.35} duration={0.75} y={24}>
           <div className="mx-auto mt-8 max-w-[1180px] sm:mt-10">
             <div className="grid gap-5 lg:grid-cols-[1.55fr_0.9fr] lg:gap-6">
-              {/* ------------------------------------------------------ */}
-              {/* VENTURE PROGRESSION                                     */}
-              {/* ------------------------------------------------------ */}
+              {/* VENTURE PROGRESSION */}
 
               <div className="group relative overflow-hidden rounded-[22px] border border-white/80 bg-white/[0.48] shadow-[0_18px_50px_rgba(50,65,90,0.07)] backdrop-blur-[24px] backdrop-saturate-[155%] transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_25px_65px_rgba(50,65,90,0.10)]">
                 {/* Subtle hover gradient */}
+
                 <div
                   aria-hidden="true"
                   className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100"
@@ -398,11 +384,7 @@ export function EvaluationCriteria() {
                     {progression.map((item, index) => (
                       <div
                         key={item.title}
-                        className={`group/row grid gap-3 px-4 py-3.5 transition-colors duration-300 hover:bg-white/60 sm:grid-cols-[0.8fr_1.6fr] sm:gap-6 sm:px-5 ${
-                          index !== progression.length - 1
-                            ? "border-b border-charcoal/[0.06]"
-                            : ""
-                        }`}
+                        className={`group/row grid gap-3 px-4 py-3.5 transition-colors duration-300 hover:bg-white/60 sm:grid-cols-[0.8fr_1.6fr] sm:gap-6 sm:px-5 ${index !== progression.length - 1 ? "border-b border-charcoal/[0.06]" : ""}`}
                       >
                         <div className="flex items-center gap-3">
                           <span className="font-mono text-[9px] font-bold tracking-[0.08em] text-hult-pink/70">
@@ -423,13 +405,9 @@ export function EvaluationCriteria() {
                 </div>
               </div>
 
-              {/* ------------------------------------------------------ */}
-              {/* GLOBAL FINALS                                           */}
-              {/* ------------------------------------------------------ */}
+              {/* GLOBAL FINALS */}
 
               <div className="group relative overflow-hidden rounded-[22px] border border-white/20 bg-gradient-to-bl from-[#0f172a] via-[#1e1a78]/90 to-[#0f172a] px-5 py-6 text-white shadow-[0_20px_55px_rgba(11,31,58,0.16)] transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_28px_70px_rgba(11,31,58,0.20)] sm:px-6">
-
-
                 <div className="relative z-10 flex h-full flex-col">
                   <div className="flex items-center gap-3">
                     <span className="h-px w-7 bg-hult-pink-light/60" />
@@ -474,9 +452,7 @@ export function EvaluationCriteria() {
           </div>
         </Reveal>
 
-        {/* ========================================================== */}
-        {/* BACKGROUND MICRO TYPOGRAPHY                                  */}
-        {/* ========================================================== */}
+        {/* BACKGROUND MICRO TYPOGRAPHY */}
 
         <div className="pointer-events-none absolute bottom-[8%] right-[8%] hidden flex-col items-start gap-1 opacity-30 lg:flex">
           <span className="h-14 w-px bg-[#0B1F3A]/25" />

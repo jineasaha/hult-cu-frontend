@@ -36,10 +36,7 @@ export function OnCampusSection() {
         background: `linear-gradient(115deg, #E4F3FB 0%, #EDF7FC 20%, #F8F9FC 42%, #FFF8FB 67%, #F8ECF5 100%)`,
       }}
     >
-      {/* ============================================================ */}
-      {/* ATMOSPHERIC BACKGROUND                                       */}
-      {/* ============================================================ */}
-
+      {/* Atmospheric Background */}
       <div
         className="pointer-events-none absolute -left-[220px] -top-[250px] h-[650px] w-[650px] rounded-full blur-[100px]"
         style={{
@@ -80,35 +77,19 @@ export function OnCampusSection() {
         }}
       />
 
-      {/* ============================================================ */}
-      {/* BACKGROUND GRAPHICS                                         */}
-      {/* ============================================================ */}
-
+      {/* Background Graphics */}
       <div className="pointer-events-none absolute -left-[65px] top-[110px] hidden h-[360px] w-[360px] rounded-full border border-[#D58AC1]/[0.13] lg:block" />
-
       <div className="pointer-events-none absolute -left-[6px] top-[150px] hidden h-[280px] w-[280px] rounded-full border border-[#D58AC1]/[0.10] lg:block" />
-
       <div className="pointer-events-none absolute left-[80px] top-[215px] hidden h-[145px] w-[145px] rounded-full border border-[#E6007E]/[0.07] lg:block" />
-
       <div className="pointer-events-none absolute -right-[60px] -top-[100px] hidden h-[390px] w-[390px] rounded-full border border-[#8C4A9B]/[0.20] lg:block" />
-
       <div className="pointer-events-none absolute -right-[3px] -top-[50px] hidden h-[300px] w-[300px] rounded-full border border-dashed border-[#8C4A9B]/[0.17] lg:block" />
-
       <div className="pointer-events-none absolute left-[10%] top-[39%] hidden h-4 w-4 rounded-full bg-gradient-to-br from-[#E6007E]/70 to-[#C77BD4]/30 shadow-[0_0_20px_rgba(230,0,126,0.15)] lg:block" />
-
       <div className="pointer-events-none absolute right-[13%] top-[44%] hidden h-3 w-3 rounded-full bg-[#B86CC4]/30 lg:block" />
-
       <div className="pointer-events-none absolute right-[7%] top-[52%] hidden h-4 w-4 rounded-full bg-gradient-to-br from-[#E6007E]/45 to-[#A9D9EA]/40 lg:block" />
 
-      {/* ============================================================ */}
-      {/* CONTENT                                                      */}
-      {/* ============================================================ */}
-
+      {/* Content */}
       <div className="relative z-10 mx-auto max-w-[1400px] px-5 sm:px-8 lg:px-10">
-        {/* ========================================================== */}
-        {/* CENTERED HEADER                                            */}
-        {/* ========================================================== */}
-
+        {/* Centered Header */}
         <Reveal delay={0.05} duration={0.7} y={22}>
           <div className="mx-auto max-w-[900px] text-center">
             <div className="flex items-center justify-center gap-4">
@@ -123,8 +104,7 @@ export function OnCampusSection() {
 
             <h2 className="mt-2 font-display text-[2.5rem] font-bold leading-[0.99] tracking-[-0.06em] sm:mt-2 sm:text-[clamp(3.1rem,6vw,3.5rem)]">
               <span className="bg-gradient-to-r from-[#0F0F0F] via-[#E6007E] to-hult-pink-dark bg-clip-text text-transparent">
-                From campus innovation
-                <br className="hidden sm:block" />
+                From campus innovation <br className="hidden sm:block" />
                 to a global stage
               </span>
             </h2>
@@ -155,16 +135,10 @@ export function OnCampusSection() {
           </div>
         </Reveal>
 
-        {/* ========================================================== */}
-        {/* FIVE ONCAMPUS STAGES                                      */}
-        {/* ========================================================== */}
-
+        {/* Five OnCampus Stages */}
         <Reveal delay={0.22} duration={0.8} y={28}>
           <div className="relative mx-auto mt-8 max-w-[1260px] sm:mt-14 lg:mt-16">
-            {/* ======================================================== */}
-            {/* FLOWING RESPONSIBILITY RIBBON                            */}
-            {/* ======================================================== */}
-
+            {/* Flowing Responsibility Ribbon */}
             <div className="pointer-events-none absolute -top-[12px] left-[1%] right-[1%] hidden h-[155px] lg:block">
               <svg
                 viewBox="0 0 1200 220"
@@ -182,35 +156,23 @@ export function OnCampusSection() {
                     y2="0"
                     gradientUnits="userSpaceOnUse"
                   >
-                    <stop
-                      offset="0"
-                      stopColor="#E6007E"
-                      stopOpacity="0.62"
-                    />
-
+                    <stop offset="0" stopColor="#E6007E" stopOpacity="0.62" />
                     <stop
                       offset="0.28"
                       stopColor="#D53A9A"
                       stopOpacity="0.50"
                     />
-
                     <stop
                       offset="0.52"
                       stopColor="#8D4B9B"
                       stopOpacity="0.40"
                     />
-
                     <stop
                       offset="0.74"
                       stopColor="#B9DDEA"
                       stopOpacity="0.52"
                     />
-
-                    <stop
-                      offset="1"
-                      stopColor="#E6007E"
-                      stopOpacity="0.28"
-                    />
+                    <stop offset="1" stopColor="#E6007E" stopOpacity="0.28" />
                   </linearGradient>
 
                   <filter
@@ -224,7 +186,7 @@ export function OnCampusSection() {
                   </filter>
                 </defs>
 
-                {/* Soft glow */}
+                {/* Soft Glow */}
                 <path
                   d="M 0 94 C 75 94, 82 42, 170 42 C 250 42, 270 138, 350 138 C 430 138, 445 40, 535 40 C 615 40, 630 138, 710 138 C 795 138, 805 42, 895 42 C 975 42, 990 94, 1200 94"
                   stroke="url(#onCampusRibbon)"
@@ -234,7 +196,7 @@ export function OnCampusSection() {
                   filter="url(#onCampusRibbonBlur)"
                 />
 
-                {/* Main ribbon */}
+                {/* Main Ribbon */}
                 <path
                   d="M 0 94 C 75 94, 82 42, 170 42 C 250 42, 270 138, 350 138 C 430 138, 445 40, 535 40 C 615 40, 630 138, 710 138 C 795 138, 805 42, 895 42 C 975 42, 990 94, 1200 94"
                   stroke="#E8C9E2"
@@ -243,7 +205,7 @@ export function OnCampusSection() {
                   strokeLinecap="round"
                 />
 
-                {/* Gradient highlight */}
+                {/* Gradient Highlight */}
                 <path
                   d="M 0 94 C 75 94, 82 42, 170 42 C 250 42, 270 138, 350 138 C 430 138, 445 40, 535 40 C 615 40, 630 138, 710 138 C 795 138, 805 42, 895 42 C 975 42, 990 94, 1200 94"
                   stroke="url(#onCampusRibbon)"
@@ -251,7 +213,7 @@ export function OnCampusSection() {
                   strokeLinecap="round"
                 />
 
-                {/* White highlight */}
+                {/* White Highlight */}
                 <path
                   d="M 0 91 C 75 91, 82 39, 170 39 C 250 39, 270 135, 350 135 C 430 135, 445 37, 535 37 C 615 37, 630 135, 710 135 C 795 135, 805 39, 895 39 C 975 39, 990 91, 1200 91"
                   stroke="white"
@@ -262,10 +224,7 @@ export function OnCampusSection() {
               </svg>
             </div>
 
-            {/* ======================================================== */}
-            {/* FIVE ONCAMPUS STAGES                                    */}
-            {/* ======================================================== */}
-
+            {/* Five OnCampus Stages */}
             <div className="relative grid grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-x-8 sm:gap-y-12 lg:grid-cols-5 lg:gap-4">
               {stages.map((stage, index) => {
                 const icons = [
@@ -283,7 +242,6 @@ export function OnCampusSection() {
                     <path d="M3.5 19c.4-3.5 2.2-5.5 5.5-5.5s5.1 2 5.5 5.5" />
                     <path d="M14.5 14.2c2.5-.3 4.7 1.2 5.3 4.8" />
                   </svg>,
-
                   <svg
                     key="idea"
                     viewBox="0 0 24 24"
@@ -297,7 +255,6 @@ export function OnCampusSection() {
                     <path d="M10 21h4" />
                     <path d="M8.5 14.5C7.2 13.5 6.5 12 6.5 10.3A5.5 5.5 0 0 1 12 4.8a5.5 5.5 0 0 1 5.5 5.5c0 1.7-.7 3.2-2 4.2-.9.7-1.5 1.4-1.5 2.5h-5c0-1.1-.6-1.8-1.5-2.5Z" />
                   </svg>,
-
                   <svg
                     key="mentorship"
                     viewBox="0 0 24 24"
@@ -311,7 +268,6 @@ export function OnCampusSection() {
                     <path d="M5 20c.5-4.2 2.8-6.5 7-6.5s6.5 2.3 7 6.5" />
                     <path d="M4 5h2M18 5h2M12 2v2" />
                   </svg>,
-
                   <svg
                     key="competition"
                     viewBox="0 0 24 24"
@@ -328,7 +284,6 @@ export function OnCampusSection() {
                     <path d="M8 21h8" />
                     <path d="M9.5 18h5" />
                   </svg>,
-
                   <svg
                     key="progression"
                     viewBox="0 0 24 24"
@@ -353,15 +308,10 @@ export function OnCampusSection() {
                     key={stage.number}
                     className="group relative flex flex-col items-center text-center"
                   >
-                    {/* ================================================= */}
-                    {/* FLOATING GLASS ORB                               */}
-                    {/* ================================================= */}
-
+                    {/* Floating Glass Orb */}
                     <div className="relative z-20 flex h-[68px] w-[68px] items-center justify-center rounded-full border border-white/[0.95] bg-white/[0.42] text-hult-pink shadow-[0_14px_40px_rgba(75,49,83,0.10)] backdrop-blur-[26px] backdrop-saturate-[150%] transition-all duration-500 group-hover:-translate-y-1.5 group-hover:scale-[1.045] group-hover:bg-white/[0.58] group-hover:shadow-[0_20px_50px_rgba(230,0,126,0.14)] sm:h-[100px] sm:w-[100px]">
                       <span className="pointer-events-none absolute -inset-3 rounded-full bg-white/[0.20] blur-[15px]" />
-
                       <span className="absolute inset-[7px] rounded-full border border-white/75 bg-gradient-to-br from-[#FFF0F7]/75 via-white/50 to-[#EAF6FB]/70" />
-
                       <span className="pointer-events-none absolute left-[18%] top-[12%] h-[22px] w-[43px] rotate-[-20deg] rounded-full bg-white/70 blur-[7px]" />
 
                       <span className="relative z-10 transition-transform duration-500 group-hover:scale-110">
@@ -370,23 +320,19 @@ export function OnCampusSection() {
                     </div>
 
                     {/* Number */}
-
                     <span className="mt-3 font-mono text-[10px] font-medium tracking-[0.10em] text-[#8793A0]/75 sm:mt-5 sm:text-[11px]">
                       0{index + 1}
                     </span>
 
-                    {/* Pink underline */}
-
+                    {/* Pink Underline */}
                     <span className="mt-1.5 h-[2px] w-6 rounded-full bg-hult-pink/75 transition-all duration-500 group-hover:w-11 sm:mt-2 sm:w-7" />
 
                     {/* Stage Title */}
-
                     <h3 className="mt-2 max-w-[185px] font-display text-[15px] font-bold leading-[1.3] tracking-[-0.025em] text-[#0F0F0F] transition-colors duration-300 group-hover:text-[#861F65] sm:mt-3 sm:text-[18px] sm:leading-[1.38]">
                       {stage.title}
                     </h3>
 
                     {/* Stage Description */}
-
                     <p className="mt-2 max-w-[205px] text-[14px] font-semibold leading-[1.55] text-[#4B4B4B]/65 sm:text-[14px] sm:leading-[1.6]">
                       {stage.text}
                     </p>
@@ -397,12 +343,9 @@ export function OnCampusSection() {
           </div>
         </Reveal>
 
-        {/* ========================================================== */}
-        {/* CONTINUING INNOVATION PLATFORM                             */}
-        {/* ========================================================== */}
-
+        {/* Continuing Innovation Platform */}
         <Reveal delay={0.42} duration={0.65} y={16}>
-          <div className="-mb-12 mx-auto mt-10 max-w-[840px] sm:mt-14">
+          <div className="mb-10 mx-auto mt-10 max-w-[840px] sm:mt-14">
             <div className="rounded-[22px] border border-hult-pink/15 bg-gradient-to-br from-hult-pink-pale/80 via-white to-white p-6 sm:p-7">
               <p className="text-xs font-bold uppercase tracking-[0.18em] text-hult-pink-dark">
                 A continuing innovation platform
@@ -419,10 +362,7 @@ export function OnCampusSection() {
           </div>
         </Reveal>
 
-        {/* ========================================================== */}
-        {/* BACKGROUND MICRO TYPOGRAPHY                               */}
-        {/* ========================================================== */}
-
+        {/* Background Micro Typography */}
         <div className="pointer-events-none absolute bottom-[95%] right-[8%] hidden flex-col items-start gap-1 opacity-40 lg:flex">
           <span className="mt-0 h-15 w-px bg-[#0B1F3A]/30" />
         </div>

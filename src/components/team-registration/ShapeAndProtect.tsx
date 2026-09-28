@@ -67,7 +67,7 @@ export function ShapeAndProtect() {
   return (
     <Section
       id="shape-your-venture"
-      className="relative isolate overflow-hidden bg-gradient-to-br from-[#FCE7F3] via-[#F3E8F8] to-[#DBEAFE] text-[#17151b] -mb-30"
+      className="relative isolate overflow-hidden bg-gradient-to-br from-[#FCE7F3] via-[#F3E8F8] to-[#DBEAFE] text-[#17151b]"
     >
       <div
         aria-hidden="true"
@@ -77,7 +77,7 @@ export function ShapeAndProtect() {
         <div className="absolute -right-24 bottom-0 h-96 w-96 rounded-full bg-[#d9d0f5]/35 blur-[110px]" />
       </div>
 
-      <div className="-mt-10 mx-auto w-full max-w-7xl px-5 py-12 sm:px-8 sm:py-14 lg:px-10 lg:py-16">
+      <div className="-mt-10 mx-auto w-full max-w-7xl px-5 pt-12 pb-10 sm:px-8 sm:py-14 lg:px-10 lg:py-16">
         {/* Compact header */}
         <Reveal>
           <div className="mb-8 flex flex-col gap-3 border-b border-[#211b2a]/15 pb-6 sm:mb-10 sm:flex-row sm:items-end sm:justify-between">
