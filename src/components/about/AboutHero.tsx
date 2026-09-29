@@ -506,8 +506,8 @@ export function AboutHero() {
           <div className="mt-12 flex flex-col items-center gap-6 sm:flex-row">
             {/* PRIMARY */}
 
-            {/* <a
-              href="/brochure.pdf"
+            <a
+              href="/brochure/official-brochure.pdf"
               download
               className="group relative inline-flex h-[52px] min-w-[245px] items-center justify-center gap-3 overflow-hidden rounded-full bg-gradient-to-br from-[#fb78b9] via-[#d90581] to-[#790d43] px-7 font-body text-[13px] font-bold text-white shadow-[0_14px_35px_rgba(230,0,126,0.25)] transition-all duration-300 hover:-translate-y-1 hover:bg-[#D80075] hover:shadow-[0_18px_42px_rgba(230,0,126,0.34)]"
             >
@@ -524,7 +524,7 @@ export function AboutHero() {
                   strokeLinejoin="round"
                 />
               </svg>
-            </a> */}
+            </a>
 
             {/* SECONDARY */}
 
