@@ -212,14 +212,24 @@ export function Navbar() {
                   className="h-[138%] w-[138%] object-contain"
                 />
               </div>
+
+              {/* EF Hult */}
+              <div className="flex h-8 w-8 items-center justify-center sm:h-9 sm:w-9">
+                <Image
+                  src="/images/logos/ef-hult-logo.png"
+                  alt="EF Hult Prize"
+                  width={68}
+                  height={56}
+                  className="h-[138%] w-[138%] object-contain"
+                />
+              </div>
             </div>
           </div>
 
-          {/* DESKTOP — INDIVIDUAL LARGER FROSTED GLASS LOGO TILES */}
-
-          <div className="hidden shrink-0 items-center gap-2 lg:flex">
+          {/* DESKTOP + LAPTOP — FROSTED GLASS LOGO TILES */}
+          <div className="hidden shrink-0 items-center gap-1.5 lg:flex xl:gap-2">
             {/* University of Calcutta */}
-            <div className="flex h-[64px] w-[64px] shrink-0 items-center justify-center rounded-[14px] border border-white/65 bg-white/[0.28] shadow-[inset_0_1px_0_rgba(255,255,255,0.8),0_4px_14px_rgba(15,15,15,0.05)] backdrop-blur-xl backdrop-saturate-150">
+            <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl border border-white/65 bg-white/[0.28] shadow-[inset_0_1px_0_rgba(255,255,255,0.8),0_4px_14px_rgba(15,15,15,0.05)] backdrop-blur-xl backdrop-saturate-150 xl:h-16 xl:w-16 xl:rounded-[14px]">
               <Image
                 src="/images/logos/cu-logo.png"
                 alt="University of Calcutta"
@@ -230,7 +240,7 @@ export function Navbar() {
             </div>
 
             {/* Hult Prize */}
-            <div className="flex h-[64px] w-[64px] shrink-0 items-center justify-center rounded-[14px] border border-white/65 bg-white/[0.28] shadow-[inset_0_1px_0_rgba(255,255,255,0.8),0_4px_14px_rgba(15,15,15,0.05)] backdrop-blur-xl backdrop-saturate-150">
+            <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl border border-white/65 bg-white/[0.28] shadow-[inset_0_1px_0_rgba(255,255,255,0.8),0_4px_14px_rgba(15,15,15,0.05)] backdrop-blur-xl backdrop-saturate-150 xl:h-16 xl:w-16 xl:rounded-[14px]">
               <Image
                 src="/images/logos/hult-logo.png"
                 alt="Hult Prize"
@@ -241,7 +251,7 @@ export function Navbar() {
             </div>
 
             {/* Institution's Innovation Council */}
-            <div className="flex h-[64px] w-[64px] shrink-0 items-center justify-center rounded-[14px] border border-white/65 bg-white/[0.28] shadow-[inset_0_1px_0_rgba(255,255,255,0.8),0_4px_14px_rgba(15,15,15,0.05)] backdrop-blur-xl backdrop-saturate-150">
+            <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl border border-white/65 bg-white/[0.28] shadow-[inset_0_1px_0_rgba(255,255,255,0.8),0_4px_14px_rgba(15,15,15,0.05)] backdrop-blur-xl backdrop-saturate-150 xl:h-16 xl:w-16 xl:rounded-[14px]">
               <Image
                 src="/images/logos/iic-logo.png"
                 alt="Institution's Innovation Council"
@@ -252,10 +262,21 @@ export function Navbar() {
             </div>
 
             {/* OnCampus */}
-            <div className="flex h-[64px] w-[64px] shrink-0 items-center justify-center rounded-[14px] border border-white/65 bg-white/[0.28] shadow-[inset_0_1px_0_rgba(255,255,255,0.8),0_4px_14px_rgba(15,15,15,0.05)] backdrop-blur-xl backdrop-saturate-150">
+            <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl border border-white/65 bg-white/[0.28] shadow-[inset_0_1px_0_rgba(255,255,255,0.8),0_4px_14px_rgba(15,15,15,0.05)] backdrop-blur-xl backdrop-saturate-150 xl:h-16 xl:w-16 xl:rounded-[14px]">
               <Image
                 src="/images/logos/oncampus-logo.png"
                 alt="Hult Prize OnCampus"
+                width={68}
+                height={56}
+                className="h-[86%] w-[86%] object-contain"
+              />
+            </div>
+
+            {/* EF Hult */}
+            <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl border border-white/65 bg-white/[0.28] shadow-[inset_0_1px_0_rgba(255,255,255,0.8),0_4px_14px_rgba(15,15,15,0.05)] backdrop-blur-xl backdrop-saturate-150 xl:h-16 xl:w-16 xl:rounded-[14px]">
+              <Image
+                src="/images/logos/ef-hult-logo.png"
+                alt="EF Hult Prize"
                 width={68}
                 height={56}
                 className="h-[86%] w-[86%] object-contain"
