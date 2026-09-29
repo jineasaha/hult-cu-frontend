@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 
 import { Container } from "@/components/ui/Container";
 import { Reveal } from "@/components/ui/Reveal";
@@ -133,7 +134,6 @@ export function AboutHultPrize() {
 
         <div className="mt-12 grid gap-12 lg:mt-16 lg:grid-cols-[1.1fr_0.9fr] lg:gap-20">
           {/* Main description */}
-
           <Reveal delay={0.1} y={28}>
             <div className="max-w-3xl">
               <p className="font-body text-lg leading-8 text-charcoal/80 sm:text-xl sm:leading-9">
@@ -148,6 +148,22 @@ export function AboutHultPrize() {
                 students from across departments together to build, pitch, and
                 develop ideas that can create meaningful social impact.
               </p>
+
+              {/* Learn More CTA */}
+              <div className="mt-8 flex justify-start">
+                <Link
+                  href="/about"
+                  className="group inline-flex items-center gap-3 rounded-full bg-hult-pink px-6 py-3.5 font-body text-sm font-semibold text-white shadow-[0_8px_24px_rgba(230,0,126,0.2)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-hult-pink/90 hover:shadow-[0_12px_30px_rgba(230,0,126,0.3)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-hult-pink focus-visible:ring-offset-2"
+                >
+                  Learn More About Hult Prize
+                  <span
+                    aria-hidden="true"
+                    className="text-lg leading-none transition-transform duration-300 group-hover:translate-x-1"
+                  >
+                    →
+                  </span>
+                </Link>
+              </div>
             </div>
           </Reveal>
 

@@ -76,10 +76,10 @@ export function Hero() {
             {/* Logos */}
             <Reveal delay={0.2} y={18}>
               <div className="flex w-full items-center justify-center px-0">
-                <div className="flex w-full max-w-5xl items-center justify-between rounded-[18px] border border-white/30 bg-linear-to-r from-[#e3eeffcc] via-[#ffffffcc] to-[#fbf0ffc9] px-2.5 py-4 sm:rounded-[20px] sm:px-5 sm:py-4 md:rounded-[22px] md:px-8 md:py-5 lg:px-10 lg:py-6">
+                <div className="flex w-full max-w-5xl items-center justify-between rounded-[18px] border border-white/30 bg-linear-to-r from-[#e3eeffcc] via-[#ffffffcc] to-[#fbf0ffc9] px-1.5 py-3 sm:rounded-[20px] sm:px-4 sm:py-4 md:rounded-[22px] md:px-8 md:py-5 lg:px-10 lg:py-6">
                   {/* University of Calcutta */}
-                  <div className="flex shrink-0 flex-1 items-center justify-center">
-                    <div className="flex h-14 w-16 items-center justify-center sm:h-14 sm:w-20 md:h-16 md:w-24 lg:h-20 lg:w-32">
+                  <div className="flex min-w-0 flex-1 items-center justify-center">
+                    <div className="flex h-10 w-15 items-center justify-center sm:h-11 sm:w-14 md:h-14 md:w-20 lg:h-20 lg:w-32">
                       <Image
                         src="/images/logos/cu-logo.png"
                         alt="University of Calcutta logo"
@@ -93,12 +93,12 @@ export function Hero() {
                   {/* Divider */}
                   <span
                     aria-hidden="true"
-                    className="mx-1 h-11 shrink-0 border-l border-charcoal/40 sm:mx-3 sm:h-12 md:mx-5 md:h-14 lg:mx-7 lg:h-16"
+                    className="mx-0.5 h-8 shrink-0 border-l border-charcoal/40 sm:mx-2 sm:h-10 md:mx-4 md:h-12 lg:mx-7 lg:h-16"
                   />
 
                   {/* Hult Prize */}
-                  <div className="flex shrink-0 flex-1 items-center justify-center">
-                    <div className="flex h-14 w-16 items-center justify-center sm:h-14 sm:w-20 md:h-16 md:w-24 lg:h-20 lg:w-32">
+                  <div className="flex min-w-0 flex-1 items-center justify-center">
+                    <div className="flex h-10 w-15 items-center justify-center sm:h-11 sm:w-14 md:h-14 md:w-20 lg:h-20 lg:w-32">
                       <Image
                         src="/images/logos/hult_2.png"
                         alt="Hult Prize logo"
@@ -112,12 +112,12 @@ export function Hero() {
                   {/* Divider */}
                   <span
                     aria-hidden="true"
-                    className="mx-1 h-11 shrink-0 border-l border-charcoal/40 sm:mx-3 sm:h-12 md:mx-5 md:h-14 lg:mx-7 lg:h-16"
+                    className="mx-0.5 h-8 shrink-0 border-l border-charcoal/40 sm:mx-2 sm:h-10 md:mx-4 md:h-12 lg:mx-7 lg:h-16"
                   />
 
                   {/* Institution's Innovation Council */}
-                  <div className="flex shrink-0 flex-1 items-center justify-center">
-                    <div className="flex h-14 w-16 items-center justify-center sm:h-14 sm:w-20 md:h-16 md:w-24 lg:h-20 lg:w-32">
+                  <div className="flex min-w-0 flex-1 items-center justify-center">
+                    <div className="flex h-10 w-15 items-center justify-center sm:h-11 sm:w-14 md:h-14 md:w-20 lg:h-20 lg:w-32">
                       <Image
                         src="/images/logos/iic-logo.png"
                         alt="Institution's Innovation Council logo"
@@ -131,15 +131,34 @@ export function Hero() {
                   {/* Divider */}
                   <span
                     aria-hidden="true"
-                    className="mx-1 h-11 shrink-0 border-l border-charcoal/40 sm:mx-3 sm:h-12 md:mx-5 md:h-14 lg:mx-7 lg:h-16"
+                    className="mx-0.5 h-8 shrink-0 border-l border-charcoal/40 sm:mx-2 sm:h-10 md:mx-4 md:h-12 lg:mx-7 lg:h-16"
                   />
 
                   {/* OnCampus */}
-                  <div className="flex shrink-0 flex-1 items-center justify-center">
-                    <div className="flex h-14 w-16 items-center justify-center sm:h-14 sm:w-20 md:h-16 md:w-24 lg:h-20 lg:w-32">
+                  <div className="flex min-w-0 flex-1 items-center justify-center">
+                    <div className="flex h-10 w-15 items-center justify-center sm:h-11 sm:w-14 md:h-14 md:w-20 lg:h-20 lg:w-32">
                       <Image
                         src="/images/logos/oncampus-logo.png"
                         alt="Hult Prize OnCampus logo"
+                        width={160}
+                        height={160}
+                        className="h-full w-full object-contain"
+                      />
+                    </div>
+                  </div>
+
+                  {/* Divider */}
+                  <span
+                    aria-hidden="true"
+                    className="mx-0.5 h-8 shrink-0 border-l border-charcoal/40 sm:mx-2 sm:h-10 md:mx-4 md:h-12 lg:mx-7 lg:h-16"
+                  />
+
+                  {/* EF Hult */}
+                  <div className="flex min-w-0 flex-1 items-center justify-center">
+                    <div className="flex h-10 w-15 items-center justify-center sm:h-11 sm:w-14 md:h-14 md:w-20 lg:h-20 lg:w-32">
+                      <Image
+                        src="/images/logos/ef-hult-logo.png"
+                        alt="EF Hult"
                         width={160}
                         height={160}
                         className="h-full w-full object-contain"
