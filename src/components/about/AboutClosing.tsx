@@ -40,21 +40,21 @@ export function AboutClosing() {
               </p>
 
               <div className="mt-9 flex flex-col justify-center gap-3 sm:flex-row">
-                {/* <a
-                  href="/brochure.pdf"
+                <a
+                  href="/brochure/official-brochure.pdf"
                   download
                   className="inline-flex min-h-14 items-center justify-center gap-3 rounded-full bg-gradient-to-br from-[#fb78b9] to-[#d90581] px-7 text-sm font-bold text-white shadow-[0_15px_35px_rgba(230,0,126,.2)] transition-all duration-300 hover:-translate-y-1 hover:bg-hult-pink-dark hover:shadow-[0_20px_45px_rgba(230,0,126,.28)] focus:outline-none focus:ring-4 focus:ring-hult-pink/20"
                 >
                   Download Event Brochure
                   <span>↓</span>
-                </a> */}
-                <a
+                </a>
+                {/* <a
                   href="/team-registration"
                   className="inline-flex min-h-14 items-center justify-center gap-3 rounded-full bg-gradient-to-br from-[#fb78b9] to-[#d90581] px-7 text-sm font-bold text-white shadow-[0_15px_35px_rgba(230,0,126,.2)] transition-all duration-300 hover:-translate-y-1 hover:bg-hult-pink-dark hover:shadow-[0_20px_45px_rgba(230,0,126,.28)] focus:outline-none focus:ring-4 focus:ring-hult-pink/20"
                 >
                   See Team Tegistration Rules
                   <span>↗</span>
-                </a>
+                </a> */}
               </div>
             </div>
           </div>
