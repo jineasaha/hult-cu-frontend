@@ -11,39 +11,39 @@ const HULT_PINK = "#E6007E";
 const cohortImages = [
   {
     src: "/images/cohorts/cohort-01.jpg",
-    alt: "Hult Prize participants at a campus event",
+    alt: "Hult Prize at University of Calcutta – previous cohort event",
   },
   {
     src: "/images/cohorts/cohort-02.jpg",
-    alt: "Hult Prize student team",
+    alt: "Student entrepreneurs participating in Hult Prize at University of Calcutta",
   },
   {
     src: "/images/cohorts/cohort-03.jpg",
-    alt: "Hult Prize participants during an event",
+    alt: "Hult Prize University of Calcutta student participants",
   },
   {
     src: "/images/cohorts/cohort-04.jpg",
-    alt: "Hult Prize campus activity",
+    alt: "Hult Prize OnCampus activities at University of Calcutta",
   },
   {
     src: "/images/cohorts/cohort-05.jpg",
-    alt: "Hult Prize teams and participants",
+    alt: "Hult Prize student teams and campus community at University of Calcutta",
   },
   {
     src: "/images/cohorts/cohort-06.jpg",
-    alt: "Hult Prize pitch event",
+    alt: "Hult Prize student pitch event at University of Calcutta",
   },
   {
     src: "/images/cohorts/cohort-07.jpg",
-    alt: "Hult Prize student community",
+    alt: "Hult Prize student community at University of Calcutta",
   },
   {
     src: "/images/cohorts/cohort-08.jpg",
-    alt: "Hult Prize participants together",
+    alt: "Students together at a Hult Prize University of Calcutta event",
   },
   {
     src: "/images/cohorts/cohort-09.jpg",
-    alt: "Hult Prize campus gathering",
+    alt: "Hult Prize OnCampus gathering at University of Calcutta",
   },
 ];
 
@@ -146,7 +146,7 @@ export function PreviousCohorts() {
                 className="font-sans text-[10px] font-bold uppercase tracking-[0.32em]"
                 style={{ color: HULT_PINK }}
               >
-                Looking Back
+                Hult Prize History
               </span>
 
               <span
@@ -158,13 +158,15 @@ export function PreviousCohorts() {
             <h2 className="font-display text-4xl font-bold leading-none tracking-[-0.05em] text-[#0F0F0F] sm:text-5xl lg:text-6xl">
               Previous{" "}
               <span className="bg-gradient-to-r from-[#0F0F0F] via-[#E6007E] to-[#741E3F] bg-clip-text text-transparent">
-                Cohorts
+                Hult Prize Cohorts
               </span>
             </h2>
 
             <p className="mx-auto mt-5 max-w-2xl font-sans text-sm leading-6 text-[#4B4B4B] sm:text-base">
-              A look back at the people, ideas, and moments that shaped the Hult
-              Prize journey at the University of Calcutta.
+              Explore moments from previous Hult Prize cohorts at the University
+              of Calcutta, celebrating student participation, entrepreneurial
+              ideas and the campus community working towards solutions with
+              meaningful social impact.
             </p>
           </div>
         </Reveal>

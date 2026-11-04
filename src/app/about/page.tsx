@@ -12,9 +12,18 @@ import { JourneySection } from "@/components/about/JourneySection";
 import { AboutClosing } from "@/components/about/AboutClosing";
 
 export const metadata: Metadata = {
-  title: "About",
+  title: "About the Hult Prize",
   description:
-    "Discover the Hult Prize, its impact framework, the University of Calcutta OnCampus programme, venture development opportunities, evaluation criteria and the journey from idea to global impact.",
+    "Learn about the Hult Prize global student entrepreneurship competition, its focus on social and environmental impact, the University of Calcutta OnCampus programme, the UN Sustainable Development Goals, evaluation criteria and the competition journey.",
+  alternates: {
+    canonical: "/about",
+  },
+  openGraph: {
+    title: "About the Hult Prize | University of Calcutta",
+    description:
+      "Explore the Hult Prize competition, its impact framework and the University of Calcutta OnCampus programme. Discover the challenge, evaluation criteria and journey from student idea to impact.",
+    url: "/about",
+  },
 };
 
 export default function AboutPage() {

@@ -149,7 +149,7 @@ export function EventTimeline() {
             </div>
 
             <h2 className="font-display text-4xl font-extrabold tracking-[-0.045em] text-[#111111] sm:text-5xl lg:text-[52px]">
-              Event{" "}
+              Hult Prize{" "}
               <span
                 className="font-extrabold"
                 style={{ color: TIMELINE_COLOR }}
@@ -158,9 +158,10 @@ export function EventTimeline() {
               </span>
             </h2>
 
-            <p className="mx-auto mt-2 max-w-md font-sans text-sm leading-6 text-[#4B4B4B] sm:text-base">
-              A five-stage journey from building the team to reaching the global
-              stage.
+            <p className="mx-auto mt-2 max-w-lg font-sans text-sm leading-6 text-[#4B4B4B] sm:text-base">
+              Explore the journey of Hult Prize OnCampus at the University of
+              Calcutta, from team formation and preparation to the campus pitch
+              competition and beyond.
             </p>
           </div>
         </Reveal>

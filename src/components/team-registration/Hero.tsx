@@ -740,7 +740,9 @@ export function Hero() {
 
           <Reveal>
             <h1 className="max-w-[690px] py-2 font-display text-[clamp(2.5rem,10.5vw,5.7rem)] font-bold leading-[0.98] tracking-[-0.055em] sm:py-5 sm:text-[clamp(3.25rem,7vw,5.7rem)] sm:tracking-[-0.065em]">
-              <span className="block text-white">Build Your Team</span>
+              <span className="block text-white">
+                Hult Prize Team Registration
+              </span>
 
               <span
                 className="block bg-linear-to-b from-pink-200 via-pink-300 to-pink-800 bg-clip-text text-transparent"

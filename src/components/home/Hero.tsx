@@ -169,14 +169,6 @@ export function Hero() {
               </div>
             </Reveal>
 
-            {/* Tagline */}
-            <Reveal delay={0.4}>
-              <p className="mt-4 max-w-4xl px-3 font-body text-[0.82rem] font-bold uppercase leading-[1.8] tracking-[0.11em] text-light-gray sm:mt-6 sm:px-0 sm:text-[clamp(0.75rem,1.5vw,1.1rem)] sm:leading-relaxed sm:tracking-[0.18em]">
-                Leading the Next Generation of Social Entrepreneurs at the
-                University of Calcutta.
-              </p>
-            </Reveal>
-
             {/* Main event title */}
             <Reveal delay={0.55} y={28}>
               <h1
@@ -203,14 +195,23 @@ export function Hero() {
               </p>
             </Reveal>
 
-            {/* Description */}
+            {/* Tagline */}
+            <Reveal delay={0.4}>
+              <p className="mt-4 max-w-4xl px-3 font-body text-[0.82rem] font-bold uppercase leading-[1.8] tracking-[0.11em] text-light-gray sm:mt-6 sm:px-0 sm:text-[clamp(0.75rem,1.5vw,1.1rem)] sm:leading-relaxed sm:tracking-[0.18em]">
+                Hult Prize OnCampus at the University of Calcutta — empowering
+                the next generation of student entrepreneurs to create
+                meaningful social impact.
+              </p>
+            </Reveal>
+
+            {/* Description
             <Reveal delay={0.88}>
               <p className="mt-6 max-w-2xl px-4 font-body text-[16px] leading-[1.75] text-white/85 sm:mt-8 sm:px-0 sm:text-base sm:leading-7 lg:text-lg">
                 Empowering students at the University of Calcutta to turn
                 ambitious ideas into solutions that create meaningful social
                 impact.
               </p>
-            </Reveal>
+            </Reveal> */}
 
             {/* CTAs */}
             <Reveal delay={0.98}>

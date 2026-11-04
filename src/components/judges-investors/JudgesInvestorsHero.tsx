@@ -48,15 +48,14 @@ export function JudgesInvestorsHero() {
               </p>
 
               <h1 className="max-w-4xl font-display text-[clamp(3.3rem,7.5vw,7rem)] font-extrabold leading-[0.88] tracking-[-0.07em] text-white">
-                The{" "}
+                Hult Prize
+                <br />
                 <span className="bg-linear-to-r from-white via-red-200 to-pink-500 bg-clip-text text-transparent">
-                  people
+                  Judges &
                 </span>
                 <br />
-                behind the
-                <br />
                 <span className="bg-linear-to-r from-white via-red-200 to-pink-500 bg-clip-text text-transparent">
-                  decisions
+                  Investors
                 </span>
               </h1>
             </div>
@@ -67,8 +66,9 @@ export function JudgesInvestorsHero() {
               <div className="mb-5 h-px w-12 bg-hult-pink" />
 
               <p className="text-sm leading-6 text-white/65 sm:text-base sm:leading-7">
-                Meet the judges and investors who brought their experience,
-                perspective and ambition to the Hult Prize journey.
+                Meet the judges and investors contributing their experience,
+                perspectives and expertise to Hult Prize OnCampus at the
+                University of Calcutta.
               </p>
             </div>
           </Reveal>

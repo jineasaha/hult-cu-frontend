@@ -122,7 +122,8 @@ export function AboutHultPrize() {
             </p>
 
             <h2 className="mt-4 max-w-4xl font-display text-4xl font-semibold leading-[1.02] tracking-[-0.055em] text-charcoal sm:text-5xl lg:text-6xl">
-              Where student ideas become{" "}
+              <span className="text-hult-pink">The Hult Prize:</span> Where
+              student ideas become{" "}
               <span className="text-hult-pink">ideas for impact.</span>
             </h2>
           </div>
@@ -137,16 +138,19 @@ export function AboutHultPrize() {
           <Reveal delay={0.1} y={28}>
             <div className="max-w-3xl">
               <p className="font-body text-lg leading-8 text-charcoal/80 sm:text-xl sm:leading-9">
-                The Hult Prize is a global student competition for social
-                entrepreneurship that challenges young innovators to solve
-                pressing global issues through sustainable business models
-                aligned with the UN Sustainable Development Goals (SDGs).
+                The Hult Prize is a global student entrepreneurship competition
+                that challenges young innovators to develop sustainable business
+                ventures addressing pressing global challenges through solutions
+                aligned with the United Nations Sustainable Development Goals
+                (SDGs).
               </p>
 
               <p className="mt-6 font-body text-base leading-7 text-gray sm:text-lg sm:leading-8">
-                At the University of Calcutta, our OnCampus program brings
-                students from across departments together to build, pitch, and
-                develop ideas that can create meaningful social impact.
+                At the University of Calcutta, Hult Prize OnCampus brings
+                students together across academic disciplines to identify
+                real-world problems, develop innovative business ideas, and
+                pitch ventures designed to create meaningful social and
+                environmental impact.
               </p>
 
               {/* Learn More CTA */}
@@ -189,9 +193,9 @@ export function AboutHultPrize() {
               </h3>
 
               <p className="mt-6 max-w-md font-body text-base leading-7 text-gray">
-                Students identify meaningful problems, develop solutions,
-                collaborate across disciplines, and turn their ideas into
-                ventures with purpose.
+                Student teams identify real-world challenges, research problems,
+                develop innovative solutions, and build entrepreneurial ventures
+                that aim to create measurable social and environmental impact.
               </p>
 
               <div className="mt-8 flex items-center gap-3">
@@ -261,7 +265,7 @@ export function AboutHultPrize() {
                         <div className="relative aspect-square w-full max-w-[105px] overflow-hidden rounded-[10px] shadow-[0_6px_18px_rgba(15,15,15,0.07)] transition-all duration-300 group-hover:-translate-y-1 group-hover:shadow-[0_12px_28px_rgba(15,15,15,0.12)]">
                           <Image
                             src={sdg.icon}
-                            alt={`Sustainable Development Goal ${sdg.number}`}
+                            alt={`UN Sustainable Development Goal ${sdg.number}: ${sdg.title}`}
                             fill
                             sizes="(max-width: 640px) 28vw, (max-width: 1024px) 20vw, 105px"
                             className="object-cover transition-transform duration-500 group-hover:scale-[1.04]"

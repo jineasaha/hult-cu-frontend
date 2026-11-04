@@ -215,7 +215,7 @@ export function ContactSection() {
                   sm:text-[14px]
                 "
               >
-                Have questions?
+                Hult Prize Contact & Support
               </p>
 
               <span
@@ -240,37 +240,37 @@ export function ContactSection() {
                 text-[#0F0F0F]
               "
             >
-              We&apos;re {" "}
+              Hult Prize{" "}
               <span
                 className="
-                  bg-gradient-to-r
-                  from-[#0B1F3A]
-                  via-[#6A4269]
-                  to-[#E6007E]
-                  bg-clip-text
-                  text-transparent
-                "
+    bg-gradient-to-r
+    from-[#0B1F3A]
+    via-[#6A4269]
+    to-[#E6007E]
+    bg-clip-text
+    text-transparent
+  "
               >
-                here to help.
+                Contact Directory
               </span>
             </h2>
 
             {/* Supporting copy */}
             <p
               className="
-                mx-auto
-                mt-6
-                max-w-[620px]
-                text-[14px]
-                font-semibold
-                leading-7
-                text-[#4B4B4B]/70
-                sm:text-[15px]
-              "
+    mx-auto
+    mt-6
+    max-w-[620px]
+    text-[14px]
+    font-semibold
+    leading-7
+    text-[#4B4B4B]/70
+    sm:text-[15px]
+  "
             >
-              Not sure which role is right for you or have a question
-              about the recruitment process? Reach out to the team
-              and we&apos;ll be happy to help.
+              Get in touch with the Hult Prize OnCampus organising team at the
+              University of Calcutta for enquiries about team registration,
+              sponsorship, judges, mentorship and event participation.
             </p>
           </div>
         </Reveal>
@@ -393,14 +393,18 @@ export function ContactSection() {
                       const cardNumber =
                         contactGroups
                           .slice(0, groupIndex)
-                          .reduce((total, currentGroup) => total + currentGroup.contacts.length, 0) +
+                          .reduce(
+                            (total, currentGroup) =>
+                              total + currentGroup.contacts.length,
+                            0,
+                          ) +
                         index +
                         1;
 
                       return (
-                      <div
-                        key={contact.email}
-                        className={`
+                        <div
+                          key={contact.email}
+                          className={`
                           group
                           relative
                           ${groupIndex === 1 ? "min-h-[260px]" : "min-h-[290px]"}
@@ -420,30 +424,30 @@ export function ContactSection() {
                           hover:shadow-[0_28px_75px_rgba(75,53,67,0.13)]
                           sm:p-8
                         `}
-                      >
-                        {/* ================================================== */}
-                        {/* BLUE → WHITE → PINK GLASS FOUNDATION              */}
-                        {/* ================================================== */}
+                        >
+                          {/* ================================================== */}
+                          {/* BLUE → WHITE → PINK GLASS FOUNDATION              */}
+                          {/* ================================================== */}
 
-                        <div
-                          className="
+                          <div
+                            className="
                             pointer-events-none
                             absolute
                             inset-0
                             opacity-90
                           "
-                          style={{
-                            background:
-                              "linear-gradient(135deg, rgba(208,234,247,0.48) 0%, rgba(255,255,255,0.62) 47%, rgba(255,224,238,0.48) 100%)",
-                          }}
-                        />
+                            style={{
+                              background:
+                                "linear-gradient(135deg, rgba(208,234,247,0.48) 0%, rgba(255,255,255,0.62) 47%, rgba(255,224,238,0.48) 100%)",
+                            }}
+                          />
 
-                        {/* ================================================== */}
-                        {/* TOP GLASS REFLECTION                              */}
-                        {/* ================================================== */}
+                          {/* ================================================== */}
+                          {/* TOP GLASS REFLECTION                              */}
+                          {/* ================================================== */}
 
-                        <div
-                          className="
+                          <div
+                            className="
                             pointer-events-none
                             absolute
                             left-6
@@ -453,14 +457,14 @@ export function ContactSection() {
                             bg-white
                             opacity-95
                           "
-                        />
+                          />
 
-                        {/* ================================================== */}
-                        {/* SOFT BLUE CORNER LIGHT                            */}
-                        {/* ================================================== */}
+                          {/* ================================================== */}
+                          {/* SOFT BLUE CORNER LIGHT                            */}
+                          {/* ================================================== */}
 
-                        <div
-                          className="
+                          <div
+                            className="
                             pointer-events-none
                             absolute
                             -left-20
@@ -474,14 +478,14 @@ export function ContactSection() {
                             duration-700
                             group-hover:scale-125
                           "
-                        />
+                          />
 
-                        {/* ================================================== */}
-                        {/* SOFT PINK CORNER LIGHT                            */}
-                        {/* ================================================== */}
+                          {/* ================================================== */}
+                          {/* SOFT PINK CORNER LIGHT                            */}
+                          {/* ================================================== */}
 
-                        <div
-                          className="
+                          <div
+                            className="
                             pointer-events-none
                             absolute
                             -bottom-24
@@ -495,14 +499,14 @@ export function ContactSection() {
                             duration-700
                             group-hover:scale-125
                           "
-                        />
+                          />
 
-                        {/* ================================================== */}
-                        {/* WHITE FROSTED HIGHLIGHT                           */}
-                        {/* ================================================== */}
+                          {/* ================================================== */}
+                          {/* WHITE FROSTED HIGHLIGHT                           */}
+                          {/* ================================================== */}
 
-                        <div
-                          className="
+                          <div
+                            className="
                             pointer-events-none
                             absolute
                             -left-12
@@ -514,18 +518,18 @@ export function ContactSection() {
                             bg-white/55
                             blur-[28px]
                           "
-                        />
+                          />
 
-                        {/* ================================================== */}
-                        {/* CARD CONTENT                                       */}
-                        {/* ================================================== */}
+                          {/* ================================================== */}
+                          {/* CARD CONTENT                                       */}
+                          {/* ================================================== */}
 
-                        <div className="relative flex h-full flex-col">
-                          {/* TOP ROW */}
-                          <div className="flex items-center justify-between">
-                            {/* Number */}
-                            <span
-                              className="
+                          <div className="relative flex h-full flex-col">
+                            {/* TOP ROW */}
+                            <div className="flex items-center justify-between">
+                              {/* Number */}
+                              <span
+                                className="
                                 inline-flex
                                 h-7
                                 items-center
@@ -541,13 +545,13 @@ export function ContactSection() {
                                 text-[#0B1F3A]/55
                                 backdrop-blur-md
                               "
-                            >
-                              {String(cardNumber).padStart(2, "0")}
-                            </span>
+                              >
+                                {String(cardNumber).padStart(2, "0")}
+                              </span>
 
-                            {/* Contact icon */}
-                            <div
-                              className="
+                              {/* Contact icon */}
+                              <div
+                                className="
                                 relative
                                 flex
                                 h-12
@@ -567,9 +571,9 @@ export function ContactSection() {
                                 group-hover:bg-white/75
                                 group-hover:shadow-[0_12px_30px_rgba(11,31,58,0.10)]
                               "
-                            >
-                              <div
-                                className="
+                              >
+                                <div
+                                  className="
                                   pointer-events-none
                                   absolute
                                   inset-[3px]
@@ -577,41 +581,41 @@ export function ContactSection() {
                                   border
                                   border-white/70
                                 "
-                              />
+                                />
 
-                              <svg
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                stroke="currentColor"
-                                strokeWidth="1.55"
-                                className="relative h-[20px] w-[20px]"
-                                aria-hidden="true"
-                              >
-                                <circle cx="12" cy="8" r="3.2" />
-                                <path d="M5 20c.8-4 3.1-6 7-6s6.2 2 7 6" />
-                              </svg>
+                                <svg
+                                  viewBox="0 0 24 24"
+                                  fill="none"
+                                  stroke="currentColor"
+                                  strokeWidth="1.55"
+                                  className="relative h-[20px] w-[20px]"
+                                  aria-hidden="true"
+                                >
+                                  <circle cx="12" cy="8" r="3.2" />
+                                  <path d="M5 20c.8-4 3.1-6 7-6s6.2 2 7 6" />
+                                </svg>
+                              </div>
                             </div>
-                          </div>
 
-                          {/* ================================================= */}
-                          {/* PERSON INFORMATION                               */}
-                          {/* ================================================= */}
+                            {/* ================================================= */}
+                            {/* PERSON INFORMATION                               */}
+                            {/* ================================================= */}
 
-                          <div className="mt-auto pt-10">
-                            <p
-                              className="
+                            <div className="mt-auto pt-10">
+                              <p
+                                className="
                                 text-[10px]
                                 font-bold
                                 uppercase
                                 tracking-[0.24em]
                                 text-[#C2186B]/75
                               "
-                            >
-                              {contact.role}
-                            </p>
+                              >
+                                {contact.role}
+                              </p>
 
-                            <h3
-                              className={`
+                              <h3
+                                className={`
                                 mt-2
                                 font-display
                                 ${groupIndex === 1 ? "text-[21px] sm:text-[23px]" : "text-[25px] sm:text-[27px]"}
@@ -620,14 +624,14 @@ export function ContactSection() {
                                 tracking-[-0.04em]
                                 text-[#0B1F3A]
                               `}
-                            >
-                              {contact.name}
-                            </h3>
+                              >
+                                {contact.name}
+                              </h3>
 
-                            {/* Divider */}
-                            <div className="mt-5 flex items-center gap-2">
-                              <span
-                                className="
+                              {/* Divider */}
+                              <div className="mt-5 flex items-center gap-2">
+                                <span
+                                  className="
                                   h-[2px]
                                   w-9
                                   rounded-full
@@ -639,31 +643,31 @@ export function ContactSection() {
                                   duration-500
                                   group-hover:w-14
                                 "
-                              />
+                                />
 
-                              <span
-                                className="
+                                <span
+                                  className="
                                   h-1
                                   w-1
                                   rounded-full
                                   bg-[#E6007E]/40
                                 "
-                              />
-                            </div>
+                                />
+                              </div>
 
-                            {/* ================================================= */}
-                            {/* PHONE                                            */}
-                            {/* ================================================= */}
+                              {/* ================================================= */}
+                              {/* PHONE                                            */}
+                              {/* ================================================= */}
 
-                            <button
-                              type="button"
-                              onClick={() =>
-                                handleCopy(
-                                  contact.phone,
-                                  `${contact.email}-phone`
-                                )
-                              }
-                              className="
+                              <button
+                                type="button"
+                                onClick={() =>
+                                  handleCopy(
+                                    contact.phone,
+                                    `${contact.email}-phone`,
+                                  )
+                                }
+                                className="
                                 mt-5
                                 flex
                                 w-full
@@ -688,27 +692,27 @@ export function ContactSection() {
                                 hover:text-[#0B1F3A]
                                 active:scale-[0.99]
                               "
-                              aria-label={`Copy phone number ${contact.phone}`}
-                            >
-                              <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-white bg-[#EAF5FA]/80 text-[#0B1F3A]/70">
-                                <svg
-                                  viewBox="0 0 24 24"
-                                  fill="none"
-                                  stroke="currentColor"
-                                  strokeWidth="1.7"
-                                  className="h-[15px] w-[15px]"
-                                  aria-hidden="true"
-                                >
-                                  <path d="M6.5 3.5h3l1.5 4-2 1.5a15 15 0 0 0 6 6l1.5-2 4 1.5v3c0 1.1-.9 2-2 2C11.1 19.5 4.5 12.9 4.5 5.5c0-1.1.9-2 2-2Z" />
-                                </svg>
-                              </span>
+                                aria-label={`Copy phone number ${contact.phone}`}
+                              >
+                                <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-white bg-[#EAF5FA]/80 text-[#0B1F3A]/70">
+                                  <svg
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    strokeWidth="1.7"
+                                    className="h-[15px] w-[15px]"
+                                    aria-hidden="true"
+                                  >
+                                    <path d="M6.5 3.5h3l1.5 4-2 1.5a15 15 0 0 0 6 6l1.5-2 4 1.5v3c0 1.1-.9 2-2 2C11.1 19.5 4.5 12.9 4.5 5.5c0-1.1.9-2 2-2Z" />
+                                  </svg>
+                                </span>
 
-                              <span className="min-w-0 flex-1 truncate">
-                                {contact.phone}
-                              </span>
+                                <span className="min-w-0 flex-1 truncate">
+                                  {contact.phone}
+                                </span>
 
-                              <span
-                                className={`
+                                <span
+                                  className={`
                                   flex
                                   h-8
                                   w-8
@@ -720,41 +724,40 @@ export function ContactSection() {
                                   transition-all
                                   duration-300
                                   ${
-                                    copiedContact ===
-                                    `${contact.email}-phone`
+                                    copiedContact === `${contact.email}-phone`
                                       ? "border-[#8FBFA7]/50 bg-[#EAF7F0] text-[#3E8A62]"
                                       : "border-white/80 bg-white/55 text-[#0B1F3A]/45"
                                   }
                                 `}
-                              >
-                                {copiedContact ===
-                                `${contact.email}-phone` ? (
-                                  <Check
-                                    className="h-[14px] w-[14px]"
-                                    strokeWidth={2.2}
-                                  />
-                                ) : (
-                                  <Copy
-                                    className="h-[13px] w-[13px]"
-                                    strokeWidth={1.8}
-                                  />
-                                )}
-                              </span>
-                            </button>
+                                >
+                                  {copiedContact ===
+                                  `${contact.email}-phone` ? (
+                                    <Check
+                                      className="h-[14px] w-[14px]"
+                                      strokeWidth={2.2}
+                                    />
+                                  ) : (
+                                    <Copy
+                                      className="h-[13px] w-[13px]"
+                                      strokeWidth={1.8}
+                                    />
+                                  )}
+                                </span>
+                              </button>
 
-                            {/* ================================================= */}
-                            {/* EMAIL                                            */}
-                            {/* ================================================= */}
+                              {/* ================================================= */}
+                              {/* EMAIL                                            */}
+                              {/* ================================================= */}
 
-                            <button
-                              type="button"
-                              onClick={() =>
-                                handleCopy(
-                                  contact.email,
-                                  `${contact.email}-email`
-                                )
-                              }
-                              className="
+                              <button
+                                type="button"
+                                onClick={() =>
+                                  handleCopy(
+                                    contact.email,
+                                    `${contact.email}-email`,
+                                  )
+                                }
+                                className="
                                 mt-2
                                 flex
                                 w-full
@@ -779,34 +782,34 @@ export function ContactSection() {
                                 hover:text-[#C2186B]
                                 active:scale-[0.99]
                               "
-                              aria-label={`Copy email address ${contact.email}`}
-                            >
-                              <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-white bg-[#FFF0F6]/80 text-[#C2186B]/75">
-                                <svg
-                                  viewBox="0 0 24 24"
-                                  fill="none"
-                                  stroke="currentColor"
-                                  strokeWidth="1.7"
-                                  className="h-[15px] w-[15px]"
-                                  aria-hidden="true"
-                                >
-                                  <rect
-                                    x="3.5"
-                                    y="5"
-                                    width="17"
-                                    height="14"
-                                    rx="2"
-                                  />
-                                  <path d="m5 7 7 5 7-5" />
-                                </svg>
-                              </span>
+                                aria-label={`Copy email address ${contact.email}`}
+                              >
+                                <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-white bg-[#FFF0F6]/80 text-[#C2186B]/75">
+                                  <svg
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    strokeWidth="1.7"
+                                    className="h-[15px] w-[15px]"
+                                    aria-hidden="true"
+                                  >
+                                    <rect
+                                      x="3.5"
+                                      y="5"
+                                      width="17"
+                                      height="14"
+                                      rx="2"
+                                    />
+                                    <path d="m5 7 7 5 7-5" />
+                                  </svg>
+                                </span>
 
-                              <span className="min-w-0 flex-1 truncate">
-                                {contact.email}
-                              </span>
+                                <span className="min-w-0 flex-1 truncate">
+                                  {contact.email}
+                                </span>
 
-                              <span
-                                className={`
+                                <span
+                                  className={`
                                   flex
                                   h-8
                                   w-8
@@ -818,30 +821,29 @@ export function ContactSection() {
                                   transition-all
                                   duration-300
                                   ${
-                                    copiedContact ===
-                                    `${contact.email}-email`
+                                    copiedContact === `${contact.email}-email`
                                       ? "border-[#8FBFA7]/50 bg-[#EAF7F0] text-[#3E8A62]"
                                       : "border-white/80 bg-white/55 text-[#C2186B]/45"
                                   }
                                 `}
-                              >
-                                {copiedContact ===
-                                `${contact.email}-email` ? (
-                                  <Check
-                                    className="h-[14px] w-[14px]"
-                                    strokeWidth={2.2}
-                                  />
-                                ) : (
-                                  <Copy
-                                    className="h-[13px] w-[13px]"
-                                    strokeWidth={1.8}
-                                  />
-                                )}
-                              </span>
-                            </button>
+                                >
+                                  {copiedContact ===
+                                  `${contact.email}-email` ? (
+                                    <Check
+                                      className="h-[14px] w-[14px]"
+                                      strokeWidth={2.2}
+                                    />
+                                  ) : (
+                                    <Copy
+                                      className="h-[13px] w-[13px]"
+                                      strokeWidth={1.8}
+                                    />
+                                  )}
+                                </span>
+                              </button>
+                            </div>
                           </div>
                         </div>
-                      </div>
                       );
                     })}
                   </div>

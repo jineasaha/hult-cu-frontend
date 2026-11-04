@@ -237,13 +237,14 @@ export function StudentCommittee() {
             </div>
 
             <h2 className="font-display text-4xl font-bold tracking-[-0.045em] text-[#0F0F0F] sm:text-5xl">
-              Meet the{" "}
+              Hult Prize{" "}
               <span style={{ color: HULT_PINK }}>Student Committee</span>
             </h2>
 
             <p className="mx-auto mt-4 max-w-xl font-sans text-sm leading-6 text-[#4B4B4B] sm:text-base">
-              The students working together to build the Hult Prize experience
-              at the University of Calcutta.
+              Meet the student leaders and organising teams behind Hult Prize
+              OnCampus at the University of Calcutta, working together to
+              deliver the campus entrepreneurship competition.
             </p>
           </div>
         </Reveal>
@@ -254,7 +255,7 @@ export function StudentCommittee() {
 
         <Reveal>
           <SectionHeading
-            eyebrow="Student Leadership"
+            eyebrow="Hult Prize Student Leadership"
             title="Campus Directorate"
           />
 
@@ -274,21 +275,21 @@ export function StudentCommittee() {
         <Divider />
 
         <SectionHeading
-  eyebrow="Our Committees"
-  title="One Team. One Vision."
-/>
+          eyebrow="Hult Prize Organising Teams"
+          title="Meet Our Organising Teams"
+        />
 
-<div className="mt-10 grid grid-cols-1 gap-8 lg:grid-cols-2">
-  {teams.map((team, index) => (
-    <Reveal
-      key={team.name}
-      delay={index * 0.06}
-      className={index === teams.length - 1 ? "lg:col-span-2" : ""}
-    >
-      <TeamCard team={team} />
-    </Reveal>
-  ))}
-</div>
+        <div className="mt-10 grid grid-cols-1 gap-8 lg:grid-cols-2">
+          {teams.map((team, index) => (
+            <Reveal
+              key={team.name}
+              delay={index * 0.06}
+              className={index === teams.length - 1 ? "lg:col-span-2" : ""}
+            >
+              <TeamCard team={team} />
+            </Reveal>
+          ))}
+        </div>
       </Container>
     </Section>
   );

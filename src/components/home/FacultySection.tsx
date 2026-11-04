@@ -14,7 +14,7 @@ const faculties = [
   {
     name: "Prof. Swapan Kumar Ghosh",
     designation:
-      "Teacher-in-charge, HultPrize On-campus University of Calcutta and Campus co-ordinator of Ballygunge Science College campus",
+      "Teacher-in-Charge, Hult Prize OnCampus, University of Calcutta; Campus Coordinator, Ballygunge Science College Campus",
     emails: ["skgjft@caluniv.ac.in"],
     image: "/images/faculty/swapan_kumar_ghosh.png",
   },
@@ -27,21 +27,21 @@ const faculties = [
   {
     name: "Dr. Shampa Guin",
     designation:
-      "Professor, Institute of Radiophysics and Electronics, IIC Coordinator HultPrize and Campus co-ordinator of Rajabazar Science College campus",
+      "Professor, Institute of Radiophysics and Electronics; IIC Coordinator for Hult Prize; Campus Coordinator, Rajabazar Science College Campus",
     emails: ["sgrpe@caluniv.ac.in"],
     image: "/images/faculty/shampa_guin.jpg",
   },
   {
     name: "Prof. Soumya Sen",
     designation:
-      "Professor of AKCSIT, Teacher-In-Charge of First Year B.Tech. Courses, Campus co-ordinator from Saltlake, Technology Campus, University of Calcutta",
+      "Professor, AKCSIT; Teacher-in-Charge of First-Year B.Tech. Courses; Campus Coordinator, Salt Lake Technology Campus, University of Calcutta",
     emails: ["ssakc@caluniv.ac.in", "iamsoumyasen@gmail.com"],
     image: "/images/faculty/soumya_sen.jpeg",
   },
   {
     name: "Dr. Sharmistha Banerjee",
     designation:
-      "Professor and HOD, Department of MBA. Campus co-ordinator HultPrize from Alipore Campus University of Calcutta.",
+      "Professor and Head of Department, MBA; Hult Prize Campus Coordinator, Alipore Campus, University of Calcutta",
     emails: ["sharmisthabanerjee@hotmail.com"],
     image: "/images/faculty/sharmistha_banerjee.jpg",
   },
@@ -88,7 +88,8 @@ export function FacultySection() {
             </div>
 
             <h2 className="font-display text-4xl font-bold tracking-[-0.045em] text-[#0F0F0F] sm:text-5xl">
-              Faculties <span style={{ color: HULT_PINK }}>Involved</span>
+              Hult Prize{" "}
+              <span style={{ color: HULT_PINK }}>Faculty & Coordinators</span>
             </h2>
 
             <p className="mx-auto mt-4 max-w-xl font-sans text-sm leading-6 text-[#4B4B4B] sm:text-base">

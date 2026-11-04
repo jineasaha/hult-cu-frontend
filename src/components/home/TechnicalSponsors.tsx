@@ -97,15 +97,16 @@ export function TechnicalSponsors() {
             </div>
 
             <h2 className="font-display text-4xl font-bold tracking-[-0.045em] text-[#0F0F0F] sm:text-5xl">
-              Built With{" "}
+              Our{" "}
               <span className="bg-gradient-to-r from-[#0F0F0F] via-[#E6007E] to-[#741E3F] bg-clip-text text-transparent">
-                Great Partners
+                Technical Sponsors
               </span>
             </h2>
 
             <p className="mx-auto mt-4 max-w-xl font-sans text-sm leading-6 text-[#3F4148] sm:text-base">
-              Our technical sponsors help power the tools, technology, and
-              digital experience behind the Hult Prize journey.
+              Meet the technical partners supporting Hult Prize OnCampus at the
+              University of Calcutta and contributing to its technology,
+              innovation and digital initiatives.
             </p>
           </div>
         </Reveal>
@@ -163,7 +164,7 @@ export function TechnicalSponsors() {
               <span className="h-px w-8 bg-[#B8B4B8]" />
 
               <p className="font-sans text-[11px] font-bold uppercase tracking-[0.2em] text-[#65616A]">
-                Growing Our Technical Network
+                Become a Hult Prize Technical Partner
               </p>
 
               <span className="h-px w-8 bg-[#B8B4B8]" />
@@ -190,7 +191,8 @@ export function TechnicalSponsors() {
             </a>
 
             <p className="mt-3 text-center font-sans text-xs text-[#777278]">
-              Interested in supporting the next generation of changemakers?
+              Interested in supporting student innovation at the University of
+              Calcutta?
             </p>
           </div>
         </Reveal>

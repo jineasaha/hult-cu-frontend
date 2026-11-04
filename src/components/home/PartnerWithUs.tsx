@@ -73,12 +73,14 @@ export function PartnerWithUs() {
               </div>
 
               <h2 className="font-display text-4xl font-extrabold tracking-[-0.05em] text-[#0F0F0F] sm:text-5xl lg:text-6xl">
-                Partner With <span style={{ color: MAROON }}>Us</span>
+                Partner With{" "}
+                <span style={{ color: MAROON }}>Hult Prize CU</span>
               </h2>
 
               <p className="mx-auto mt-5 max-w-2xl font-sans text-sm leading-6 text-[#55535A] sm:text-base">
-                Join a movement that gives young innovators the platform,
-                community, and opportunity to create meaningful change.
+                Partner with Hult Prize OnCampus at the University of Calcutta
+                to support student entrepreneurship, innovation and sustainable
+                solutions to global challenges.
               </p>
             </div>
           </Reveal>
@@ -123,13 +125,15 @@ export function PartnerWithUs() {
                     {/* Main pitch */}
 
                     <h3 className="max-w-2xl font-display text-2xl font-bold leading-[1.15] tracking-[-0.04em] text-[#0F0F0F] sm:text-3xl lg:text-[36px]">
-                      Partner with the University of Calcutta&apos;s premier
-                      social innovation movement.
+                      Partner with Hult Prize OnCampus at the University of
+                      Calcutta to empower the next generation of social
+                      entrepreneurs.
                     </h3>
 
-                    <p className="mt-5 max-w-2xl font-sans font-semibold text-base leading-7 text-[#4B4B4B] sm:text-[17px] sm:leading-8">
-                      Support young entrepreneurs, gain brand visibility, and
-                      drive sustainable impact.
+                    <p className="mt-4 max-w-2xl font-sans font-semibold text-sm leading-6 text-[#666268] sm:text-[15px]">
+                      Your partnership helps student teams develop
+                      entrepreneurial ideas into ventures designed to create
+                      meaningful social and environmental impact.
                     </p>
 
                     <p className="mt-4 max-w-2xl font-sans font-semibold text-sm leading-6 text-[#666268] sm:text-[15px]">
@@ -145,7 +149,7 @@ export function PartnerWithUs() {
                     <div className="mt-8 flex flex-wrap items-center gap-3.5">
                       {/* Sponsorship Form Download */}
 
-                      <a
+                      {/* <a
                         href={SPONSORSHIP_FORM_HREF}
                         download
                         className="group inline-flex min-h-[52px] items-center justify-center gap-2.5 rounded-full px-7 py-3 font-sans text-sm font-bold text-white shadow-[0_8px_24px_rgba(122,31,61,0.22)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_12px_30px_rgba(122,31,61,0.30)]"
@@ -153,7 +157,7 @@ export function PartnerWithUs() {
                       >
                         Become a Sponsor
                         <ArrowDownToLine className="h-4 w-4 transition-transform duration-300 group-hover:translate-y-0.5" />
-                      </a>
+                      </a> */}
 
                       {/* Contact */}
 
@@ -168,10 +172,10 @@ export function PartnerWithUs() {
 
                     {/* Small form note */}
 
-                    <p className="mt-4 font-sans text-[11px] leading-5 text-[#88858A]">
+                    {/* <p className="mt-4 font-sans text-[11px] leading-5 text-[#88858A]">
                       Download the sponsorship form to explore the opportunity
                       and get started.
-                    </p>
+                    </p> */}
                   </div>
                 </div>
 

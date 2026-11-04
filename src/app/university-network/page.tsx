@@ -1,4 +1,4 @@
-"use client";
+import type { Metadata } from "next";
 
 import { Container } from "@/components/ui/Container";
 import { Reveal } from "@/components/ui/Reveal";
@@ -6,6 +6,24 @@ import { Section } from "@/components/ui/Section";
 
 import { campuses, districts } from "@/data/university-network";
 import type { District } from "@/types/university-network";
+
+export const metadata: Metadata = {
+  title: "University of Calcutta Campus & College Network",
+  description:
+    "Explore the University of Calcutta's campuses and affiliated colleges across West Bengal, organised by district. Find information about the University's academic network.",
+  alternates: {
+    canonical: "/university-network",
+  },
+  openGraph: {
+    type: "website",
+    locale: "en_IN",
+    siteName: "Hult Prize at the University of Calcutta",
+    title: "University of Calcutta Campus & College Network",
+    description:
+      "Explore the campuses and district-wise affiliated college directory of the University of Calcutta.",
+    url: "/university-network",
+  },
+};
 
 export default function UniversityNetwork() {
   return (
@@ -46,13 +64,13 @@ export default function UniversityNetwork() {
               {/* Main title */}
 
               <Reveal delay={0.08}>
-                <h1 className="mt-8 font-display text-5xl font-bold leading-[0.88] tracking-[-0.06em] sm:text-6xl lg:text-[7rem]">
-                  The{" "}
+                <h1 className="mt-8 font-display text-3xl font-bold leading-[0.88] tracking-[-0.06em] sm:text-6xl lg:text-[6rem]">
+                  University of{" "}
                   <span className="bg-linear-to-r from-[#f556f1] via-[#b545b5] to-[#b82c72] bg-clip-text text-transparent">
-                    University
+                    Calcutta
                   </span>
                   <br />
-                  Network
+                  Campus & College Network
                 </h1>
               </Reveal>
 
@@ -60,12 +78,10 @@ export default function UniversityNetwork() {
 
               <Reveal delay={0.15}>
                 <p className="mx-auto mt-8 max-w-2xl font-sans text-base leading-7 text-white/65 sm:text-lg sm:leading-8">
-                  Discover the campuses, institutions, and affiliated colleges
-                  that together form the academic network of the University of
-                  Calcutta.
+                  Explore the University of Calcutta campuses and its affiliated
+                  colleges across West Bengal.
                 </p>
               </Reveal>
-
 
               {/* Supporting statement */}
 

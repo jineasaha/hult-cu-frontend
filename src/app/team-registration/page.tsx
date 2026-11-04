@@ -10,9 +10,21 @@ import { ParticipationCompliance } from "@/components/team-registration/Particip
 import { CompetitionUpdatesAgreement } from "@/components/team-registration/CompetitionUpdatesAgreement";
 
 export const metadata: Metadata = {
-  title: "Team Registration",
+  title: "Hult Prize Team Registration",
   description:
-    "Everything you need to build your team, meet the eligibility requirements, register for Hult Prize OnCampus at the University of Calcutta, and prepare your venture for the competition.",
+    "Build your team for Hult Prize OnCampus at the University of Calcutta. Explore eligibility requirements, team formation, registration guidance, venture preparation and competition rules.",
+  alternates: {
+    canonical: "/team-registration",
+  },
+  openGraph: {
+    type: "website",
+    locale: "en_IN",
+    siteName: "Hult Prize at the University of Calcutta",
+    title: "Hult Prize Team Registration | University of Calcutta",
+    description:
+      "Find team eligibility, registration guidance and competition preparation information for Hult Prize OnCampus at the University of Calcutta.",
+    url: "/team-registration",
+  },
 };
 
 export default function TeamRegistration() {

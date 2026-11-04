@@ -481,7 +481,7 @@ export function AboutHero() {
           {/* HEADING */}
 
           <h1 className="font-display text-[clamp(3.4rem,7.5vw,6rem)] font-semibold leading-[1] tracking-[-0.065em] text-[#171522]">
-            <span className="block">Ideas that</span>
+            <span className="block">About the</span>
 
             <span
               className="mt-2 block bg-gradient-to-r from-hult-pink-base via-[#952a5f] to-[#7b1046] bg-clip-text text-transparent"
@@ -489,7 +489,7 @@ export function AboutHero() {
                 textShadow: "0 8px 35px rgba(230,0,126,0.08)",
               }}
             >
-              create impact.
+              Hult Prize.
             </span>
           </h1>
 

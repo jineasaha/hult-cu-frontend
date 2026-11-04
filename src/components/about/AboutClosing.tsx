@@ -17,7 +17,7 @@ export function AboutClosing() {
               <div className="m-auto -mt-15 flex h-25 w-25 items-center justify-center overflow-hidden rounded-xl">
                 <img
                   src="/images/logos/hult1.png"
-                  alt="Hult Prize"
+                  alt="Hult Prize logo"
                   className="h-full w-full object-contain p-1"
                 />
               </div>
