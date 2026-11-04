@@ -22,6 +22,10 @@ const dmSans = DM_Sans({
 export const metadata: Metadata = {
   metadataBase: new URL("https://hult-cu.vercel.app"),
 
+  verification: {
+    google: "WXj6qAl80c4M0aTslOEraxKlnew0rxC5gsol1F2E2MQ",
+  },
+
   title: {
     default: "Hult Prize at the University of Calcutta",
     template: "%s | Hult Prize CU",
