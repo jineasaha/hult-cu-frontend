@@ -20,14 +20,28 @@ const dmSans = DM_Sans({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://hult-cu.vercel.app"),
+
   title: {
-    default: "Hult Prize | University of Calcutta",
+    default: "Hult Prize at the University of Calcutta",
     template: "%s | Hult Prize CU",
   },
-  description:
-    "Hult Prize at the University of Calcutta — empowering students to build innovative solutions for a better world.",
-};
 
+  description:
+    "Discover Hult Prize OnCampus at the University of Calcutta. Explore the competition, team registration, student entrepreneurship, sustainable development goals, and opportunities to create global impact.",
+
+  applicationName: "Hult Prize at the University of Calcutta",
+
+  openGraph: {
+    type: "website",
+    locale: "en_IN",
+    siteName: "Hult Prize at the University of Calcutta",
+    title: "Hult Prize at the University of Calcutta",
+    description:
+      "Explore Hult Prize OnCampus at the University of Calcutta and discover opportunities to build entrepreneurial solutions for a better world.",
+    url: "/",
+  },
+};
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -35,9 +49,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${manrope.variable} ${dmSans.variable}`}
-      >
+      <body className={`${manrope.variable} ${dmSans.variable}`}>
         <Navbar />
 
         <main>{children}</main>
