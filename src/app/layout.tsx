@@ -27,25 +27,70 @@ export const metadata: Metadata = {
   },
 
   title: {
-    default: "Hult Prize at the University of Calcutta",
+    default: "Hult Prize University of Calcutta",
     template: "%s | Hult Prize CU",
   },
 
   description:
     "Discover Hult Prize OnCampus at the University of Calcutta. Explore the competition, team registration, student entrepreneurship, sustainable development goals, and opportunities to create global impact.",
 
-  applicationName: "Hult Prize at the University of Calcutta",
+  applicationName: "Hult Prize University of Calcutta",
+
+  icons: {
+    icon: [
+      { url: "/favicon/favicon.ico", sizes: "any" },
+      {
+        url: "/favicon/favicon-32x32.png",
+        sizes: "32x32",
+        type: "image/png",
+      },
+      {
+        url: "/favicon/favicon-16x16.png",
+        sizes: "16x16",
+        type: "image/png",
+      },
+    ],
+    apple: "/favicon/apple-touch-icon.png",
+  },
+
+  manifest: "/favicon/site.webmanifest",
 
   openGraph: {
     type: "website",
     locale: "en_IN",
-    siteName: "Hult Prize at the University of Calcutta",
+    siteName: "Hult Prize University of Calcutta",
     title: "Hult Prize at the University of Calcutta",
     description:
       "Explore Hult Prize OnCampus at the University of Calcutta and discover opportunities to build entrepreneurial solutions for a better world.",
     url: "/",
   },
 };
+const structuredData = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://hult-cu.vercel.app/#organization",
+      "name": "Hult Prize University of Calcutta",
+      "url": "https://hult-cu.vercel.app/",
+      "description":
+        "Hult Prize OnCampus at the University of Calcutta supports student entrepreneurship and the development of innovative solutions to global challenges.",
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://hult-cu.vercel.app/#website",
+      "url": "https://hult-cu.vercel.app/",
+      "name": "Hult Prize University of Calcutta",
+      "description":
+        "Official website for Hult Prize OnCampus at the University of Calcutta, featuring competition information, team registration, events and university initiatives.",
+      "inLanguage": "en-IN",
+      "publisher": {
+        "@id": "https://hult-cu.vercel.app/#organization",
+      },
+    },
+  ],
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -54,6 +99,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${manrope.variable} ${dmSans.variable}`}>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(structuredData).replace(/</g, "\\u003c"),
+          }}
+        />
         <Navbar />
 
         <main>{children}</main>
